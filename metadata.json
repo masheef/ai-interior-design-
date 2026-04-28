@@ -1,0 +1,6 @@
+{
+  "name": "Aura Home AI",
+  "description": "Sophisticated AI-powered interior design and decoration suggestion platform with spatial precision and Gemini image generation.",
+  "requestFramePermissions": ["camera"],
+  "majorCapabilities": []
+}

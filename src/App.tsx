@@ -13,7 +13,6 @@ import {
   Schedule as ScheduleIcon,
   ArrowForward as ArrowForwardIcon,
   Palette as PaletteIcon,
-  Straighten as StraightenIcon,
   Lightbulb as LightbulbIcon,
   Psychology as PsychologyIcon,
   CloudUpload as CloudUploadIcon,
@@ -40,6 +39,11 @@ import {
   auth
 } from './services/firebaseService';
 import { localStorageService } from './services/localStorageService';
+import { 
+  saveDesignLocally, 
+  getUserDesignsLocally, 
+  checkLocalServerHealth 
+} from './services/localDatabaseService';
 import { User as FirebaseUser } from 'firebase/auth';
 import { GoogleGenAI } from '@google/genai';
 import { getFurnitureModel, FURNITURE_MODELS } from './lib/furnitureCatalog';
@@ -158,8 +162,19 @@ export default function App() {
 
   const fetchHistory = async (uid: string) => {
     try {
-      const data = await getUserDesigns(uid);
-      setHistory(data.sort((a: any, b: any) => b.createdAt?.toMillis() - a.createdAt?.toMillis()));
+      let data;
+      // Try local database server first
+      const isLocalAvailable = await checkLocalServerHealth();
+      if (isLocalAvailable) {
+        data = await getUserDesignsLocally(uid);
+      } else {
+        data = await getUserDesigns(uid);
+      }
+      setHistory(data.sort((a: any, b: any) => {
+        const timeA = a.createdAt?.toMillis?.() || (a.createdAt ? new Date(a.createdAt).getTime() : 0);
+        const timeB = b.createdAt?.toMillis?.() || (b.createdAt ? new Date(b.createdAt).getTime() : 0);
+        return (timeB || 0) - (timeA || 0);
+      }));
     } catch (err) {
        console.error(err);
     }
@@ -261,12 +276,24 @@ export default function App() {
 
     try {
       setLoading(true);
-      await saveDesign(user.uid, {
-        ...params,
-        ...suggestion
-      });
+      // Try local database server first
+      const isLocalAvailable = await checkLocalServerHealth();
+      if (isLocalAvailable) {
+        await saveDesignLocally(user.uid, {
+          name: suggestion?.title || `${params.roomType} Plan`,
+          roomType: params.roomType,
+          params: params,
+          suggestion: suggestion,
+          previewImage: suggestion?.moodboardUrl || ""
+        });
+      } else {
+        await saveDesign(user.uid, {
+          ...params,
+          ...suggestion
+        });
+      }
       fetchHistory(user.uid);
-      alert("Design saved successfully!");
+      alert(isLocalAvailable ? "Design saved to your local database server!" : "Design saved to the cloud successfully!");
     } catch (err) {
       console.error(err);
       alert("Failed to save design.");
@@ -1323,7 +1350,7 @@ function ResultsView({ params, suggestion, onReset, onSave, onVisualize, onViewA
 
         <div className="md:col-span-3 bg-[#f5f3f0]/50 rounded-[2rem] p-8">
            <div className="flex items-center gap-2 mb-8">
-             <StraightenIcon />
+             <RulerIcon />
              <h3 className="text-xl font-bold">Specs</h3>
            </div>
            <div className="p-6 glass-aura rounded-2xl aura-glow mb-8">
@@ -1518,7 +1545,7 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
       });
     };
 
-    // Helper for hex colors
+    // Helper for hex colors (defined inside to be self-contained)
     function hexToRgb(hex: string) {
       const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
       return result ? {
@@ -1528,8 +1555,14 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
       } : null;
     }
 
-    // Small delay to ensure model is loaded before first apply
-    setTimeout(applyMaterialProperties, 100);
+    // Apply properties immediately if model is already loaded
+    applyMaterialProperties();
+
+    // Also listen for load event for initial placement
+    modelViewer.addEventListener('load', applyMaterialProperties);
+    return () => {
+      modelViewer.removeEventListener('load', applyMaterialProperties);
+    };
   }, [baseColor, metallic, roughness, material, modelUrl]);
 
   const capturePhoto = async () => {
@@ -1849,7 +1882,7 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
             measureMode ? "bg-aura-purple text-white" : "bg-black/40 text-white hover:bg-black/60"
           )}
         >
-          <StraightenIcon size={20} />
+          <RulerIcon size={20} />
         </button>
 
         {capturedPhotos.length > 0 && (
@@ -1898,7 +1931,7 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
                measureMode ? "bg-aura-purple text-white scale-110" : "bg-black/30 text-white hover:bg-black/50"
              )}
            >
-             <StraightenIcon size={24} />
+             <RulerIcon size={24} />
            </button>
            <button 
              onClick={() => setShowMaterialLab(!showMaterialLab)}

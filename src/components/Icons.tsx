@@ -27,7 +27,9 @@ import {
   Image as ImageIcon,
   X as XIcon,
   Camera,
-  Eye
+  Eye,
+  Database,
+  Bot
 } from 'lucide-react';
 
 export {
@@ -59,5 +61,7 @@ export {
   ImageIcon,
   XIcon,
   Camera,
-  Eye
+  Eye,
+  Database as DatabaseIcon,
+  Bot as BotIcon
 };

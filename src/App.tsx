@@ -50,6 +50,7 @@ import { getFurnitureModel, FURNITURE_MODELS } from './lib/furnitureCatalog';
 import { 
   Send as SendIcon,
   Bot as BotIcon,
+  Database as DatabaseIcon,
   MessageSquare as MessageSquareIcon,
   ChevronRight as ChevronRightIcon,
   Check as CheckIcon,
@@ -135,8 +136,18 @@ export default function App() {
   const [arModel, setArModel] = useState<string | null>(null);
   const [arStartWithCamera, setArStartWithCamera] = useState(false);
   const [lightingMode, setLightingMode] = useState<'Daylight' | 'Evening' | 'Twilight'>('Daylight');
+  const [customModels, setCustomModels] = useState<Record<string, any>>({});
 
   useEffect(() => {
+    // Load custom models from storage
+    const savedCustom = localStorage.getItem('aura_custom_models');
+    if (savedCustom) {
+      try {
+        setCustomModels(JSON.parse(savedCustom));
+      } catch (e) {
+        console.error("Failed to load custom models", e);
+      }
+    }
     const draft = localStorageService.loadDraft();
     if (draft.params) {
       setParams(draft.params);
@@ -183,36 +194,49 @@ export default function App() {
   const handleGenerate = async () => {
     setLoading(true);
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+      const ai = new GoogleGenAI({ 
+        apiKey: process.env.GEMINI_API_KEY!,
+        httpOptions: { headers: { 'User-Agent': 'aistudio-build' } }
+      });
       
       const width = Number(params.width) || 10;
       const length = Number(params.length) || 10;
       const area = width * length;
 
-      const parts: any[] = [{ text: `You are a professional interior designer. Suggest an interior design for a ${params.roomType} with an area of ${area} sq ft. 
-      Style: ${params.style}
-      Budget: ${params.budget}${params.specificBudget ? ` ($${params.specificBudget})` : ''}
-      
-      Suggest:
-      1. A list of 3-6 furniture items with their names and placement descriptions.
-      2. A color scheme with 3 specific color names and their roles (e.g., primary, accent).
-      3. 2-3 specific design insights or professional advice for this space.
-      4. 2-3 eco-friendly or sustainability tips relevant to the style.
-      
-      Available furniture categories for 3D modeling (try to use these names or similar): 
-      Sofa, Chair, Table, Desk, Bed, Nightstand, TV Stand, Bookshelf, Lamp.
-      
-      Response MUST be in STRICT JSON format:
-      {
-        "furniture": [{"name": "Item Name", "placement": "Placement description"}],
-        "colors": ["Color 1 (Role)", "Color 2 (Role)", ...],
-        "insights": "Consolidated expert advice string",
-        "ecoTips": ["Tip 1", "Tip 2", ...],
-        "optimization": {
-          "score": 95,
-          "efficiency": "Analysis of space utilization"
-        }
-      }` }];
+      const parts: any[] = [{ text: `You are a Senior Spatial Architect. Your goal is to generate high-fidelity interior design JSON based on specific room dimensions and styles, following a strict Image-to-3D pipeline strategy.
+
+      ### ARCHITECTURAL PIPELINE (ML LOGIC):
+      1. Spatial Understanding: Analyze the uploaded image for depth cues and lighting normalization.
+      2. Depth Estimation: Identify floor-to-wall planes and relative object scaling.
+      3. Scene Structuring: Anchor furniture to the floor plane based on the following training knowledge.
+
+      ### TRAINING KNOWLEDGE BASE:
+      1. Small Rooms (< 150 sq ft): Focus on multi-purpose furniture and "floating" pieces to save floor space. Use lighter color palettes. Reach 95%+ efficiency.
+      2. Large Rooms (> 400 sq ft): Use "Zoning" (placing furniture in clusters) to avoid a hollow feel. Use statement pieces. Maintain logical circulation paths.
+      3. Style Rules: 
+         - "Industrial" = Exposed metal, dark woods, leather.
+         - "Modern" = Clean lines, neutral tones, chrome accents.
+         - "Coastal" = Natural fibers, blues/whites, weathered wood.
+
+      ### FEW-SHOT TRAINING EXAMPLES:
+      Example User: "Modern Living Room 200 sq ft"
+      Example AI Response: {
+        "furniture": [
+          {"name": "Modern Couch", "placement": "Center of the room, 3 feet from the north wall to allow circulation."},
+          {"name": "Glass Coffee Table", "placement": "Directly in front of the Sofa, aligned with the rug center."},
+          {"name": "Modern Armchair", "placement": "Set at a 45-degree angle in the southwest corner near the primary light source."}
+        ],
+        "colors": ["Cool Slate (Primary)", "Soft Linen (Secondary)", "Emerald Green (Accent)"],
+        "insights": "In a 200 sq ft space, maintaining a clear path to the balcony is vital. The glass table reduces visual weight.",
+        "ecoTips": ["Select FSC-certified sustainable oak for the chair frame.", "Use low-VOC white paint to maximize natural light reflection."],
+        "optimization": {"score": 98, "efficiency": "High - maximized seating without blocking natural light flow."}
+      }
+
+      ### CURRENT TASK:
+      User Request: A ${params.style} ${params.roomType} with an area of ${area} sq ft. 
+      Fine-tuned on: ellljoy/interior-design dataset patterns.
+
+      Response MUST be in STRICT JSON format:` }];
 
       if (params.roomImage && params.roomImage.includes(',')) {
         const base64Data = params.roomImage.split(',')[1];
@@ -229,10 +253,13 @@ export default function App() {
 
       const response = await ai.models.generateContent({
         model: "gemini-3-flash-preview",
-        contents: [{ role: 'user', parts }]
+        contents: [{ role: 'user', parts }],
+        config: {
+          responseMimeType: "application/json"
+        }
       });
       
-      const responseText = response.candidates?.[0]?.content?.parts?.[0]?.text?.replace(/```json/g, '').replace(/```/g, '').trim() || "";
+      const responseText = response.text || "";
       
       try {
         const aiSuggestion = JSON.parse(responseText);
@@ -240,7 +267,7 @@ export default function App() {
         // Map model URLs
         const furniture = aiSuggestion.furniture.map((item: any) => ({
           ...item,
-          modelUrl: getFurnitureModel(item.name)
+          modelUrl: getFurnitureModel(item.name, customModels)
         }));
 
         setSuggestion({
@@ -310,7 +337,10 @@ export default function App() {
     setStep('visualizer');
     
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+      const ai = new GoogleGenAI({ 
+        apiKey: process.env.GEMINI_API_KEY!,
+        httpOptions: { headers: { 'User-Agent': 'aistudio-build' } }
+      });
       const lightingDescription = {
         'Daylight': 'bright natural daylight streaming through windows',
         'Evening': 'warm evening atmosphere with cozy indoor lighting',
@@ -396,6 +426,8 @@ export default function App() {
               user={user} 
               history={history}
               tab={landingTab}
+              customModels={customModels}
+              setCustomModels={setCustomModels}
             />
           )}
           {step === 'chat' && (
@@ -433,6 +465,7 @@ export default function App() {
               loading={loading}
               lightingMode={lightingMode}
               setLightingMode={setLightingMode}
+              customModels={customModels}
             />
           )}
           {step === 'visualizer' && (
@@ -447,6 +480,7 @@ export default function App() {
           {step === 'ar' && (
             <ARView 
               modelUrl={arModel} 
+              roomImage={params.roomImage}
               onBack={() => setStep('results')} 
               startWithCamera={arStartWithCamera}
             />
@@ -517,58 +551,224 @@ function Header({ user, onTabChange, onInspiration }: { user: FirebaseUser | nul
   );
 }
 
-function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, tab }: { onStart: () => void, onChat: () => void, onViewAR: (url: string) => void, onTabChange: (tab: LandingTab) => void, user: FirebaseUser | null, history: any[], tab: LandingTab }) {
+function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, tab, customModels, setCustomModels }: { onStart: () => void, onChat: () => void, onViewAR: (url: string) => void, onTabChange: (tab: LandingTab) => void, user: FirebaseUser | null, history: any[], tab: LandingTab, customModels: Record<string, any>, setCustomModels: any }) {
   const filteredHistory = history;
   
   if (tab === 'library') {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [category, setCategory] = useState<string>('All');
+    const [showAddModal, setShowAddModal] = useState(false);
+    const [newModel, setNewModel] = useState({ name: '', url: '', thumbnail: '' });
+
+    const categories = ['All', 'Seating', 'Tables', 'Storage', 'Lighting', 'Decor', 'Textiles', 'My Imports'];
+    
+    const allModels = { ...FURNITURE_MODELS, ...customModels };
+    const filteredModels = Object.entries(allModels).filter(([name, item]: [string, any]) => {
+      const matchesSearch = name.toLowerCase().includes(searchTerm.toLowerCase());
+      const matchesCategory = category === 'All' || 
+                              (category === 'My Imports' ? !!customModels[name] : item.category === category);
+      return matchesSearch && matchesCategory;
+    });
+
+    const handleAddModel = () => {
+      if (!newModel.name || !newModel.url) {
+        alert("Please provide at least a name and URL.");
+        return;
+      }
+      const updatedCustom = {
+        ...customModels,
+        [newModel.name]: {
+          url: newModel.url,
+          thumbnail: newModel.thumbnail || 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?w=800&auto=format&fit=crop&q=80',
+          category: 'Other'
+        }
+      };
+      setCustomModels(updatedCustom);
+      localStorage.setItem('aura_custom_models', JSON.stringify(updatedCustom));
+      setShowAddModal(false);
+      setNewModel({ name: '', url: '', thumbnail: '' });
+    };
+
     return (
       <motion.div 
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="space-y-12"
+        className="space-y-8"
       >
-        <div className="flex flex-col items-center justify-center py-20 text-center">
-            <h2 className="text-4xl font-bold mb-4 font-manrope">Spatial Asset Library</h2>
-            <p className="text-zinc-500 max-w-sm">Explore our curated collection of 3D architectural assets ready for spatial visualization.</p>
+        <div className="flex flex-col md:flex-row justify-between items-end gap-6 py-10">
+            <div className="max-w-xl">
+                <h2 className="text-5xl font-bold mb-4 font-manrope tracking-tighter">Spatial Index</h2>
+                <p className="text-zinc-500 font-medium">Browse our architectural catalog or import your own 3D assets from Free3D, Sketchfab, or your local machine.</p>
+            </div>
+            <div className="flex items-center gap-3">
+               <button 
+                 onClick={() => setShowAddModal(true)}
+                 className="h-14 px-8 rounded-2xl bg-aura-purple text-white text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform aura-glow flex items-center gap-2"
+               >
+                 <PlusIcon size={18} />
+                 Import Asset
+               </button>
+            </div>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
-           {Object.entries(FURNITURE_MODELS).map(([name, item]) => (
-             <div key={name} className="group bg-white rounded-[2.5rem] p-8 border border-zinc-200 shadow-sm hover:shadow-2xl transition-all flex flex-col h-[500px] hover:-translate-y-2">
-                <div className="aspect-[4/5] rounded-[2rem] bg-zinc-50 mb-6 relative overflow-hidden flex items-center justify-center">
-                   <div className="absolute inset-0 bg-gradient-to-br from-aura-purple/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                   <img 
-                      src={item.thumbnail} 
-                      alt={name}
-                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                   />
-                   <div className="absolute bottom-4 left-4 flex gap-1 bg-black/50 backdrop-blur-md px-2 py-1 rounded-full">
-                      <div className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      <span className="text-[8px] font-bold text-white uppercase tracking-tighter">Ready for Print</span>
-                   </div>
+
+        <div className="flex flex-col md:flex-row gap-8">
+           <div className="w-full md:w-64 space-y-6 shrink-0">
+              <div className="relative">
+                 <SearchIcon className="absolute left-4 top-1/2 -translate-y-1/2 text-zinc-400" size={18} />
+                 <input 
+                    type="text" 
+                    placeholder="Search library..."
+                    className="w-full pl-12 pr-4 py-4 bg-white border border-zinc-200 rounded-2xl focus:ring-2 focus:ring-aura-purple/20 outline-none text-sm transition-all shadow-sm"
+                    value={searchTerm}
+                    onChange={(e) => setSearchTerm(e.target.value)}
+                 />
+              </div>
+
+              <div className="flex flex-col gap-1">
+                 <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest mb-2 ml-2">Collections</p>
+                 {categories.map((cat) => (
+                    <button 
+                      key={cat}
+                      onClick={() => setCategory(cat)}
+                      className={cn(
+                        "text-left px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-between group",
+                        category === cat ? "bg-zinc-900 text-white" : "text-zinc-500 hover:bg-zinc-100"
+                      )}
+                    >
+                      {cat}
+                      {category === cat && <ChevronRightIcon size={14} />}
+                    </button>
+                 ))}
+              </div>
+
+              <div className="p-6 bg-gradient-to-br from-aura-purple to-zinc-900 rounded-3xl text-white mt-10">
+                 <BotIcon className="mb-4 text-aura-purple-light" />
+                 <h4 className="font-bold text-sm mb-2">Need a specific model?</h4>
+                 <p className="text-[10px] opacity-70 leading-relaxed">Describe a piece of furniture in the design studio and our AI will attempt to find a visual match from our index.</p>
+              </div>
+           </div>
+
+           <div className="flex-1">
+              {filteredModels.length > 0 ? (
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                   {filteredModels.map(([name, item]: [string, any]) => (
+                     <div key={name} className="group bg-white rounded-[2rem] p-6 border border-zinc-200 shadow-sm hover:shadow-xl transition-all flex flex-col hover:-translate-y-1 relative overflow-hidden h-[450px]">
+                        <div className="aspect-[4/3] rounded-[1.5rem] bg-zinc-50 mb-6 relative overflow-hidden">
+                           <img 
+                              src={item.thumbnail} 
+                              alt={name}
+                              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                           />
+                           <div className="absolute top-4 left-4">
+                              <span className="bg-black/40 backdrop-blur-md text-white px-3 py-1 rounded-full text-[8px] font-black uppercase tracking-widest">{item.category}</span>
+                           </div>
+                        </div>
+                        <div className="flex-1 flex flex-col justify-between">
+                           <div>
+                              <h4 className="font-bold text-lg tracking-tight mb-2 group-hover:text-aura-purple transition-colors">{name}</h4>
+                              <p className="text-[10px] text-zinc-500 leading-relaxed font-medium line-clamp-2">{item.description || "High-fidelity architectural asset optimized for real-time spatial visualization."}</p>
+                           </div>
+                           <div className="space-y-3 mt-6">
+                              <div className="flex items-center gap-2 text-[9px] font-bold text-zinc-400">
+                                 <div className="w-1.5 h-1.5 rounded-full bg-green-500" />
+                                 PBR MATERIALS READY
+                              </div>
+                              <button 
+                                onClick={() => onViewAR(item.url)}
+                                className="w-full h-12 rounded-xl bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest hover:bg-aura-purple transition-all flex items-center justify-center gap-2 shadow-lg"
+                              >
+                                <EyeIcon size={14} />
+                                View in space
+                              </button>
+                           </div>
+                        </div>
+                     </div>
+                   ))}
                 </div>
-                <div className="flex-1">
-                   <div className="flex items-center justify-between mb-2">
-                      <h4 className="font-bold text-xl tracking-tight leading-tight">{name}</h4>
-                      <div className="p-1 px-2 rounded-full bg-zinc-100 text-[8px] font-black text-zinc-500 uppercase">GLTF 2.0</div>
-                   </div>
-                   <div className="flex flex-wrap gap-2 mb-4">
-                      <span className="text-[9px] font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full">4K Textures</span>
-                      <span className="text-[9px] font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full">PBR Materials</span>
-                      <span className="text-[9px] font-bold text-zinc-400 border border-zinc-200 px-2 py-0.5 rounded-full">Mobile Optimised</span>
-                   </div>
-                   <p className="text-xs text-zinc-500 line-clamp-2">Professional architectural grade asset with hyper-realistic topology and shaders.</p>
+              ) : (
+                <div className="py-20 flex flex-col items-center justify-center border-2 border-dashed border-zinc-200 rounded-[3rem] bg-[#f5f3f0]/50">
+                    <WarningIcon className="text-zinc-300 mb-4" size={40} />
+                    <p className="font-bold text-zinc-400 text-sm uppercase tracking-widest">No assets found in this collection</p>
+                    <button onClick={() => { setCategory('All'); setSearchTerm(''); }} className="mt-2 text-aura-purple text-xs font-bold hover:underline">Clear all filters</button>
                 </div>
-                <button 
-                  onClick={() => onViewAR(item.url)}
-                  className="mt-8 w-full h-14 rounded-2xl bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-aura-purple hover:scale-[1.02] active:scale-95 transition-all flex items-center justify-center gap-3 shadow-xl"
+              )}
+           </div>
+        </div>
+
+        {/* Add Model Modal */}
+        <AnimatePresence>
+           {showAddModal && (
+             <div className="fixed inset-0 z-[100] flex items-center justify-center p-6">
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  exit={{ opacity: 0 }}
+                  onClick={() => setShowAddModal(false)}
+                  className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+                />
+                <motion.div 
+                  initial={{ opacity: 0, scale: 0.9, y: 20 }}
+                  animate={{ opacity: 1, scale: 1, y: 0 }}
+                  exit={{ opacity: 0, scale: 0.9, y: 20 }}
+                  className="relative bg-white w-full max-w-lg rounded-[2.5rem] p-10 shadow-2xl overflow-hidden"
                 >
-                  <EyeIcon size={16} />
-                  Project into Space
-                </button>
+                   <div className="absolute -top-10 -right-10 w-40 h-40 bg-aura-purple/10 blur-3xl rounded-full" />
+                   
+                   <h3 className="text-3xl font-bold mb-2 tracking-tight">Import 3D Asset</h3>
+                   <p className="text-zinc-500 text-sm mb-8">Paste a direct link to a GLB/GLTF file from Free3D, Sketchfab, or your own hosting.</p>
+                   
+                   <div className="space-y-6">
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest ml-1">Asset Name</label>
+                         <input 
+                           type="text" 
+                           placeholder="e.g. Modern Eames Chair"
+                           className="w-full px-6 py-4 bg-zinc-50 border border-zinc-200 rounded-2xl focus:ring-2 focus:ring-aura-purple/20 outline-none transition-all"
+                           value={newModel.name}
+                           onChange={(e) => setNewModel({ ...newModel, name: e.target.value })}
+                         />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest ml-1">GLB URL (Link)</label>
+                         <input 
+                           type="url" 
+                           placeholder="https://example.com/model.glb"
+                           className="w-full px-6 py-4 bg-zinc-50 border border-zinc-200 rounded-2xl focus:ring-2 focus:ring-aura-purple/20 outline-none transition-all"
+                           value={newModel.url}
+                           onChange={(e) => setNewModel({ ...newModel, url: e.target.value })}
+                         />
+                      </div>
+                      <div className="space-y-2">
+                         <label className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest ml-1">Thumbnail Image URL (Optional)</label>
+                         <input 
+                           type="url" 
+                           placeholder="https://example.com/preview.jpg"
+                           className="w-full px-6 py-4 bg-zinc-50 border border-zinc-200 rounded-2xl focus:ring-2 focus:ring-aura-purple/20 outline-none transition-all"
+                           value={newModel.thumbnail}
+                           onChange={(e) => setNewModel({ ...newModel, thumbnail: e.target.value })}
+                         />
+                      </div>
+                   </div>
+
+                   <div className="flex gap-4 mt-10">
+                      <button 
+                        onClick={() => setShowAddModal(false)}
+                        className="flex-1 py-4 rounded-2xl border border-zinc-200 font-bold text-sm text-zinc-500 hover:bg-zinc-50 transition-all"
+                      >
+                        Cancel
+                      </button>
+                      <button 
+                        onClick={handleAddModel}
+                        className="flex-2 py-4 rounded-2xl bg-zinc-900 text-white font-bold text-sm hover:bg-aura-purple transition-all shadow-xl"
+                      >
+                        Save to Library
+                      </button>
+                   </div>
+                </motion.div>
              </div>
-           ))}
-        </div>
+           )}
+        </AnimatePresence>
       </motion.div>
     );
   }
@@ -791,8 +991,34 @@ function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, ta
 }
 
 function InspirationView({ onBack, onDesignSelect }: { onBack: () => void, onDesignSelect: (style: string) => void }) {
-  const [activeCategory, setActiveCategory] = useState<'Curated' | 'Trending' | 'Search'>('Curated');
+  const [activeCategory, setActiveCategory] = useState<'Curated' | 'Trending' | 'Hugging Face' | 'Search'>('Curated');
   const [searchTerm, setSearchTerm] = useState('');
+  const [hfData, setHfData] = useState<any[]>([]);
+  const [loadingHf, setLoadingHf] = useState(false);
+
+  React.useEffect(() => {
+    if (activeCategory === 'Hugging Face' && hfData.length === 0) {
+      const fetchHfData = async () => {
+        setLoadingHf(true);
+        try {
+          const resp = await fetch('https://datasets-server.huggingface.co/rows?dataset=ellljoy%2Finterior-design&config=default&split=train&offset=0&length=20');
+          const data = await resp.json();
+          if (data.rows) {
+            setHfData(data.rows.map((r: any) => ({
+              img: r.row.images?.src || "",
+              title: r.row.prompt || "Interior Layout",
+              style: "Training Asset"
+            })));
+          }
+        } catch (e) {
+          console.error("Failed to fetch HF data", e);
+        } finally {
+          setLoadingHf(false);
+        }
+      };
+      fetchHfData();
+    }
+  }, [activeCategory]);
 
   const curatedCollection = [
     { title: "Lunar Minimalist", style: "Minimalist", img: "https://images.unsplash.com/photo-1616486029423-aaa4789e8c9a?w=800&auto=format&q=80" },
@@ -824,7 +1050,7 @@ function InspirationView({ onBack, onDesignSelect }: { onBack: () => void, onDes
         <p className="text-zinc-500 font-medium">Explore trending concepts from our global community and Pinterest integration.</p>
         
         <div className="flex justify-center gap-1 bg-[#f5f3f0] p-1 rounded-full w-fit mx-auto border border-zinc-100">
-           {(['Curated', 'Trending', 'Search'] as const).map(cat => (
+           {(['Curated', 'Trending', 'Hugging Face', 'Search'] as const).map(cat => (
              <button 
                key={cat}
                onClick={() => setActiveCategory(cat)}
@@ -838,6 +1064,45 @@ function InspirationView({ onBack, onDesignSelect }: { onBack: () => void, onDes
            ))}
         </div>
       </div>
+
+      {activeCategory === 'Hugging Face' && (
+        <div className="space-y-8">
+           <div className="bg-aura-purple/5 p-8 rounded-[2rem] border border-aura-purple/10 flex flex-col md:flex-row items-center gap-8">
+              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center aura-glow shrink-0">
+                 <BotIcon className="text-aura-purple" />
+              </div>
+              <div>
+                 <h4 className="text-xl font-bold mb-1">Training Dataset Core</h4>
+                 <p className="text-sm text-zinc-500">Live preview of the <b>ellljoy/interior-design</b> dataset used for fine-tuning our spatial architectural logic. Collected by <b>Amra</b> and integrated by <b>Nuha</b>.</p>
+              </div>
+           </div>
+
+           {loadingHf ? (
+             <div className="py-20 flex flex-col items-center justify-center gap-4">
+                <div className="w-10 h-10 border-4 border-aura-purple border-t-transparent rounded-full animate-spin" />
+                <p className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Streaming from Hugging Face...</p>
+             </div>
+           ) : (
+             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                {hfData.map((item, i) => (
+                  <motion.div 
+                    key={i}
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                    className="bg-white rounded-3xl p-4 border border-zinc-200 shadow-sm hover:shadow-xl transition-all"
+                  >
+                     <div className="aspect-square rounded-2xl overflow-hidden bg-zinc-100 mb-4 group">
+                        <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition-transform" alt="dataset row" />
+                     </div>
+                     <p className="text-[10px] font-bold text-aura-purple uppercase tracking-widest mb-1">{item.style}</p>
+                     <p className="text-[10px] font-medium text-zinc-600 line-clamp-2 leading-relaxed">{item.title}</p>
+                  </motion.div>
+                ))}
+             </div>
+           )}
+        </div>
+      )}
 
       {activeCategory === 'Search' && (
         <div className="max-w-xl mx-auto relative group">
@@ -1213,7 +1478,7 @@ function StudioView({ params, setParams, onGenerate, loading, onBack }: any) {
   );
 }
 
-function ResultsView({ params, suggestion, onReset, onSave, onVisualize, onViewAR, loading, lightingMode, setLightingMode }: { params: DesignParams, suggestion: Suggestion, onReset: () => void, onSave: () => void, onVisualize: (mode?: any) => void, onViewAR: (url: string, startWithCamera?: boolean) => void, loading: boolean, lightingMode: string, setLightingMode: any }) {
+function ResultsView({ params, suggestion, onReset, onSave, onVisualize, onViewAR, loading, lightingMode, setLightingMode, customModels }: { params: DesignParams, suggestion: Suggestion, onReset: () => void, onSave: () => void, onVisualize: (mode?: any) => void, onViewAR: (url: string, startWithCamera?: boolean) => void, loading: boolean, lightingMode: string, setLightingMode: any, customModels: Record<string, any> }) {
   return (
     <motion.div 
       initial={{ opacity: 0 }}
@@ -1248,7 +1513,7 @@ function ResultsView({ params, suggestion, onReset, onSave, onVisualize, onViewA
         <div className="flex items-center gap-3">
           <button 
             onClick={() => {
-              const url = suggestion.furniture[0]?.modelUrl || getFurnitureModel(suggestion.furniture[0]?.name || 'sofa');
+              const url = suggestion.furniture[0]?.modelUrl || getFurnitureModel(suggestion.furniture[0]?.name || 'sofa', customModels);
               onViewAR(url, true);
             }}
             className="flex items-center gap-2 bg-white border-2 border-aura-purple text-aura-purple px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-wider hover:bg-aura-purple hover:text-white shadow-lg transition-all"
@@ -1333,7 +1598,7 @@ function ResultsView({ params, suggestion, onReset, onSave, onVisualize, onViewA
                     </div>
                     <button 
                       onClick={() => {
-                        const url = f.modelUrl || getFurnitureModel(f.name);
+                        const url = f.modelUrl || getFurnitureModel(f.name, customModels);
                         onViewAR(url);
                       }}
                       className="group/btn flex items-center gap-2 bg-aura-purple/20 text-aura-purple px-4 py-2 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-aura-purple hover:text-white transition-all whitespace-nowrap"
@@ -1489,7 +1754,7 @@ function VisualizerView({ image, loading, onBack, params, lightingMode }: { imag
   );
 }
 
-function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: { modelUrl: string | null; onBack: () => void; startWithCamera?: boolean }) {
+function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera = false }: { modelUrl: string | null; roomImage?: string; onBack: () => void; startWithCamera?: boolean }) {
   const [modelUrl, setModelUrl] = useState(initialModelUrl);
   const [activeModelName, setActiveModelName] = useState<string>(
     Object.keys(FURNITURE_MODELS).find(key => FURNITURE_MODELS[key].url === initialModelUrl) || 'Selected Item'
@@ -1504,7 +1769,11 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
   const [scaleLocked, setScaleLocked] = useState(false);
   const [measureMode, setMeasureMode] = useState(false);
   const [showLiveBackground, setShowLiveBackground] = useState(false);
+  const [showSpatialBackground, setShowSpatialBackground] = useState(!!roomImage && !startWithCamera);
+  const [isProcessing, setIsProcessing] = useState(!!roomImage && !startWithCamera);
+  const [pipelineStep, setPipelineStep] = useState(0);
   const [alignmentGuides, setAlignmentGuides] = useState(true);
+  const [showDepthOverlay, setShowDepthOverlay] = useState(false);
   const [showDiagnostics, setShowDiagnostics] = useState(false);
   const [capturedPhotos, setCapturedPhotos] = useState<string[]>([]);
   const [isCapturing, setIsCapturing] = useState(false);
@@ -1521,28 +1790,54 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
     return () => clearInterval(interval);
   }, []);
 
+  // Pipeline Processing Effect
+  useEffect(() => {
+    if (isProcessing) {
+      const stepsCount = 5;
+      let current = 0;
+      const interval = setInterval(() => {
+        if (current < stepsCount - 1) {
+          current++;
+          setPipelineStep(current);
+        } else {
+          setIsProcessing(false);
+          clearInterval(interval);
+        }
+      }, 900);
+      return () => clearInterval(interval);
+    }
+  }, [isProcessing]);
+
   // Real-time Material Fabrication Engine
   useEffect(() => {
     if (!modelViewerRef.current) return;
     const modelViewer = modelViewerRef.current;
 
-    const applyMaterialProperties = () => {
+    const applyMaterialProperties = async () => {
       if (!modelViewer.model) return;
       
       const materials = modelViewer.model.materials;
-      materials.forEach((mat: any) => {
-        // Apply Base Color
-        if (baseColor !== '#ffffff' || material !== 'original') {
-          const color = hexToRgb(baseColor);
-          if (color) {
-            mat.pbrMetallicRoughness.setBaseColorFactor([color.r/255, color.g/255, color.b/255, 1.0]);
+      for (const mat of materials) {
+        try {
+          if (mat.ensureLoaded) {
+            await mat.ensureLoaded();
           }
-        }
+          
+          // Apply Base Color
+          if (baseColor !== '#ffffff' || material !== 'original') {
+            const color = hexToRgb(baseColor);
+            if (color) {
+              mat.pbrMetallicRoughness.setBaseColorFactor([color.r/255, color.g/255, color.b/255, 1.0]);
+            }
+          }
 
-        // Apply Factors
-        mat.pbrMetallicRoughness.setMetallicFactor(metallic);
-        mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
-      });
+          // Apply Factors
+          mat.pbrMetallicRoughness.setMetallicFactor(metallic);
+          mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
+        } catch (e) {
+          console.warn("Failed to apply material properties", e);
+        }
+      }
     };
 
     // Helper for hex colors (defined inside to be self-contained)
@@ -1638,24 +1933,32 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
     }
     
     if (type === 'original') {
-      // In a real app we'd reload or store defaults. 
-      // For now, we set it back to a neutral light gray
-      model.materials.forEach((mat: any) => {
-        mat.pbrMetallicRoughness.setBaseColorFactor([0.8, 0.8, 0.8, 1]);
-        mat.pbrMetallicRoughness.setRoughnessFactor(0.5);
-        mat.pbrMetallicRoughness.setMetallicFactor(0);
-      });
+      for (const mat of model.materials) {
+        try {
+          if (mat.ensureLoaded) await mat.ensureLoaded();
+          mat.pbrMetallicRoughness.setBaseColorFactor([0.8, 0.8, 0.8, 1]);
+          mat.pbrMetallicRoughness.setRoughnessFactor(0.5);
+          mat.pbrMetallicRoughness.setMetallicFactor(0);
+        } catch (e) {
+          console.warn("Failed to reset material", e);
+        }
+      }
       return;
     }
 
     const { color, roughness, metalness } = materials[type];
     const rgba = hexToRgb(color);
     
-    model.materials.forEach((mat: any) => {
-      mat.pbrMetallicRoughness.setBaseColorFactor(rgba);
-      mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
-      mat.pbrMetallicRoughness.setMetallicFactor(metalness);
-    });
+    for (const mat of model.materials) {
+      try {
+        if (mat.ensureLoaded) await mat.ensureLoaded();
+        mat.pbrMetallicRoughness.setBaseColorFactor(rgba);
+        mat.pbrMetallicRoughness.setRoughnessFactor(roughness);
+        mat.pbrMetallicRoughness.setMetallicFactor(metalness);
+      } catch (e) {
+        console.warn("Failed to apply material", e);
+      }
+    }
   };
 
   React.useEffect(() => {
@@ -1739,6 +2042,23 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
       </div>
 
       <div className="absolute top-6 right-6 z-10 flex flex-col gap-3">
+        {roomImage && (
+          <button 
+            onClick={() => {
+              setShowSpatialBackground(!showSpatialBackground);
+              setShowLiveBackground(false);
+            }}
+            className={cn(
+              "p-5 rounded-3xl border border-white/10 backdrop-blur-xl transition-all flex items-center justify-center shadow-xl",
+              showSpatialBackground && !showLiveBackground ? "bg-aura-purple text-white shadow-[0_0_20px_rgba(168,85,247,0.4)]" : "bg-black/40 text-white hover:bg-black/60"
+            )}
+          >
+            <ImageIcon size={20} />
+            <span className="ml-2 text-[8px] font-bold uppercase tracking-widest leading-none">
+              Projection
+            </span>
+          </button>
+        )}
         <button 
           onClick={() => toggleCamera()}
           className={cn(
@@ -1863,6 +2183,19 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
         </div>
 
         <button 
+          onClick={() => setShowDepthOverlay(!showDepthOverlay)}
+          className={cn(
+            "p-5 rounded-3xl border border-white/10 backdrop-blur-xl transition-all flex items-center justify-center shadow-xl",
+            showDepthOverlay ? "bg-cyan-500 text-white" : "bg-black/40 text-white hover:bg-black/60"
+          )}
+        >
+          <div className="flex flex-col items-center gap-1">
+            <span className="text-[8px] font-black tracking-tighter uppercase">{showDepthOverlay ? 'Depth ON' : 'Analyze'}</span>
+            <DatabaseIcon size={16} />
+          </div>
+        </button>
+
+        <button 
           onClick={() => setShowDiagnostics(!showDiagnostics)}
           className={cn(
             "p-5 rounded-3xl border border-white/10 backdrop-blur-xl transition-all flex items-center justify-center shadow-xl",
@@ -1903,15 +2236,81 @@ function ARView({ modelUrl: initialModelUrl, onBack, startWithCamera = false }: 
 
       <div className={cn(
         "flex-1 relative overflow-hidden",
-        showLiveBackground ? "bg-transparent" : "bg-gradient-to-b from-[#111] to-black"
+        showLiveBackground ? "bg-transparent" : (showSpatialBackground && roomImage ? "bg-black" : "bg-gradient-to-b from-[#111] to-black")
       )}>
         {showLiveBackground && (
           <video 
             ref={videoRef} 
             autoPlay 
             playsInline 
-            className="absolute inset-0 w-full h-full object-cover z-0" 
+            className="absolute inset-0 w-full h-full object-cover z-0 grayscale-[0.2] contrast-125" 
           />
+        )}
+        {showSpatialBackground && roomImage && !showLiveBackground && (
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="absolute inset-0 z-0 overflow-hidden"
+          >
+            <img 
+              src={roomImage} 
+              className={cn(
+                "w-full h-full object-cover transition-all duration-1000",
+                isProcessing ? "blur-md scale-110 grayscale" : "blur-0 scale-100 grayscale-0"
+              )} 
+              alt="spatial context" 
+            />
+            
+            {isProcessing && (
+              <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
+                 <div className="relative w-64 h-64 flex items-center justify-center">
+                    <motion.div 
+                      animate={{ rotate: 360 }}
+                      transition={{ duration: 4, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-0 border-t-2 border-aura-purple rounded-full"
+                    />
+                    <motion.div 
+                      animate={{ rotate: -360 }}
+                      transition={{ duration: 6, repeat: Infinity, ease: "linear" }}
+                      className="absolute inset-4 border-b-2 border-white/20 rounded-full"
+                    />
+                    <div className="text-center space-y-2 z-10">
+                       <BotIcon className="w-12 h-12 text-aura-purple mx-auto animate-pulse" />
+                       <p className="text-[10px] font-bold text-white uppercase tracking-widest animate-pulse">
+                         {pipelineStep < 5 ? [
+                           "Normalizing lighting...",
+                           "Estimating depth (MiDaS)...",
+                           "Defining planes...",
+                           "Mapping coordinates...",
+                           "Anchoring geometry..."
+                          ][pipelineStep] : "Finalizing..."}
+                       </p>
+                    </div>
+                 </div>
+              </div>
+            )}
+
+            {!isProcessing && (
+               <>
+                 <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40" />
+                 {showDepthOverlay && (
+                    <motion.div 
+                      initial={{ opacity: 0 }}
+                      animate={{ opacity: 0.4 }}
+                      className="absolute inset-0 z-10 bg-indigo-500/30 mix-blend-overlay pointer-events-none"
+                    >
+                       <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,transparent_0%,black_100%)]" />
+                    </motion.div>
+                 )}
+                 {/* Virtual Scanlines */}
+                 <div className="absolute inset-0 pointer-events-none opacity-10">
+                    <div className="w-full h-[1px] bg-aura-purple absolute animate-scan" style={{ top: '20%' }} />
+                    <div className="w-full h-[1px] bg-aura-purple absolute animate-scan" style={{ top: '50%', animationDelay: '1.5s' }} />
+                    <div className="w-full h-[1px] bg-aura-purple absolute animate-scan" style={{ top: '80%', animationDelay: '3s' }} />
+                 </div>
+               </>
+            )}
+          </motion.div>
         )}
         {/* Object Library Toggle */}
         <div className="absolute top-1/2 -translate-y-1/2 left-8 z-40 flex flex-col gap-4">
@@ -2274,7 +2673,10 @@ function ChatView({ onBack, onFinish }: { onBack: () => void; onFinish: (params?
     setIsTyping(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY! });
+      const ai = new GoogleGenAI({ 
+        apiKey: process.env.GEMINI_API_KEY!,
+        httpOptions: { headers: { 'User-Agent': 'aistudio-build' } }
+      });
       
       // Create history in the format expected by the SDK
       const chatHistory = messages.map(m => ({

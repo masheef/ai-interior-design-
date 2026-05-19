@@ -47,6 +47,7 @@ import {
 import { User as FirebaseUser } from 'firebase/auth';
 import { GoogleGenAI } from '@google/genai';
 import { getFurnitureModel, FURNITURE_MODELS } from './lib/furnitureCatalog';
+import { SpatialLab } from './components/SpatialLab';
 import { 
   Send as SendIcon,
   Bot as BotIcon,
@@ -137,6 +138,7 @@ export default function App() {
   const [arStartWithCamera, setArStartWithCamera] = useState(false);
   const [lightingMode, setLightingMode] = useState<'Daylight' | 'Evening' | 'Twilight'>('Daylight');
   const [customModels, setCustomModels] = useState<Record<string, any>>({});
+  const [isSpatialLabOpen, setIsSpatialLabOpen] = useState(false);
 
   useEffect(() => {
     // Load custom models from storage
@@ -410,8 +412,41 @@ export default function App() {
           setLandingTab(tab);
         }}
         onInspiration={() => setStep('inspiration')}
+        onSpatialLab={() => setIsSpatialLabOpen(true)}
       />
       <main className="max-w-7xl mx-auto px-4 md:px-10 pt-24">
+        <AnimatePresence>
+          {isSpatialLabOpen && (
+            <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 md:p-10">
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                onClick={() => setIsSpatialLabOpen(false)}
+                className="absolute inset-0 bg-black/80 backdrop-blur-md"
+              />
+              <SpatialLab 
+                onClose={() => setIsSpatialLabOpen(false)}
+                onModelGenerated={(url, name) => {
+                  const updatedCustom = {
+                    ...customModels,
+                    [name]: {
+                      url,
+                      thumbnail: "https://images.unsplash.com/photo-1633533402438-6629705a6332?w=800&auto=format&fit=crop&q=80",
+                      category: 'My Imports',
+                      description: 'AI Generated 3D Asset via Stability AI'
+                    }
+                  };
+                  setCustomModels(updatedCustom);
+                  localStorage.setItem('aura_custom_models', JSON.stringify(updatedCustom));
+                  setIsSpatialLabOpen(false);
+                  setLandingTab('library');
+                  setStep('landing');
+                }}
+              />
+            </div>
+          )}
+        </AnimatePresence>
         <AnimatePresence mode="wait">
           {step === 'landing' && (
             <LandingView 
@@ -423,6 +458,7 @@ export default function App() {
                 setStep('ar');
               }}
               onTabChange={(t) => setLandingTab(t)}
+              onSpatialLab={() => setIsSpatialLabOpen(true)}
               user={user} 
               history={history}
               tab={landingTab}
@@ -507,7 +543,7 @@ export default function App() {
   );
 }
 
-function Header({ user, onTabChange, onInspiration }: { user: FirebaseUser | null, onTabChange: (t: LandingTab) => void, onInspiration: () => void }) {
+function Header({ user, onTabChange, onInspiration, onSpatialLab }: { user: FirebaseUser | null, onTabChange: (t: LandingTab) => void, onInspiration: () => void, onSpatialLab: () => void }) {
   return (
     <motion.header 
       initial={{ y: -100 }}
@@ -518,11 +554,18 @@ function Header({ user, onTabChange, onInspiration }: { user: FirebaseUser | nul
         <AutoAwesomeIcon className="text-zinc-900 border-0" />
         <h1 className="font-manrope font-extrabold text-lg tracking-tighter">Aura Home AI</h1>
       </div>
-      <nav className="hidden md:flex items-center gap-8">
+      <nav className="hidden lg:flex items-center gap-8">
         <button onClick={() => onTabChange('all')} className="text-sm font-semibold tracking-wider font-manrope hover:text-aura-purple transition-colors">HOME</button>
         <button onClick={() => onTabChange('designs')} className="text-sm font-medium opacity-50 font-manrope hover:opacity-100 hover:text-aura-purple transition-colors">MY DESIGNS</button>
         <button onClick={() => onTabChange('library')} className="text-sm font-medium opacity-50 font-manrope hover:opacity-100 hover:text-aura-purple transition-colors">3D LIBRARY</button>
         <button onClick={onInspiration} className="text-sm font-medium opacity-50 font-manrope hover:opacity-100 hover:text-aura-purple transition-colors">INSPIRATION</button>
+        <button 
+          onClick={onSpatialLab} 
+          className="flex items-center gap-2 text-[10px] font-black text-aura-purple bg-aura-purple/10 px-3 py-1.5 rounded-full hover:bg-aura-purple hover:text-white transition-all tracking-widest border border-aura-purple/20"
+        >
+          <ZapIcon size={12} className="fill-current" />
+          SPATIAL LAB
+        </button>
       </nav>
       <div className="flex items-center gap-4">
         <SearchIcon className="text-zinc-400 cursor-pointer" />
@@ -551,7 +594,7 @@ function Header({ user, onTabChange, onInspiration }: { user: FirebaseUser | nul
   );
 }
 
-function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, tab, customModels, setCustomModels }: { onStart: () => void, onChat: () => void, onViewAR: (url: string) => void, onTabChange: (tab: LandingTab) => void, user: FirebaseUser | null, history: any[], tab: LandingTab, customModels: Record<string, any>, setCustomModels: any }) {
+function LandingView({ onStart, onChat, onViewAR, onTabChange, onSpatialLab, user, history, tab, customModels, setCustomModels }: { onStart: () => void, onChat: () => void, onViewAR: (url: string) => void, onTabChange: (tab: LandingTab) => void, onSpatialLab: () => void, user: FirebaseUser | null, history: any[], tab: LandingTab, customModels: Record<string, any>, setCustomModels: any }) {
   const filteredHistory = history;
   
   if (tab === 'library') {
@@ -602,6 +645,14 @@ function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, ta
                 <p className="text-zinc-500 font-medium">Browse our architectural catalog or import your own 3D assets from Free3D, Sketchfab, or your local machine.</p>
             </div>
             <div className="flex items-center gap-3">
+               <button 
+                 onClick={onSpatialLab}
+                 className="h-14 px-8 rounded-2xl bg-zinc-900 border border-zinc-200 text-white text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-transform flex items-center gap-3 group relative overflow-hidden"
+               >
+                 <div className="absolute inset-0 bg-aura-purple/20 group-hover:bg-aura-purple/40 transition-colors" />
+                 <ZapIcon size={14} className="text-aura-purple relative z-10" />
+                 <span className="relative z-10">Spatial Lab</span>
+               </button>
                <button 
                  onClick={() => setShowAddModal(true)}
                  className="h-14 px-8 rounded-2xl bg-aura-purple text-white text-xs font-bold uppercase tracking-widest hover:scale-105 transition-transform aura-glow flex items-center gap-2"
@@ -837,6 +888,13 @@ function LandingView({ onStart, onChat, onViewAR, onTabChange, user, history, ta
                 <AddCircleIcon />
                 Elevate Your Home
               </span>
+            </button>
+            <button 
+              onClick={onSpatialLab}
+              className="group bg-white border border-zinc-200 text-zinc-900 px-8 py-6 rounded-full font-bold flex items-center gap-4 shadow-xl hover:scale-[1.03] transition-all relative overflow-hidden"
+            >
+               <ZapIcon size={20} className="text-aura-purple" />
+               Spatial Lab Demo
             </button>
             <button 
               onClick={onChat}
@@ -1755,10 +1813,23 @@ function VisualizerView({ image, loading, onBack, params, lightingMode }: { imag
 }
 
 function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera = false }: { modelUrl: string | null; roomImage?: string; onBack: () => void; startWithCamera?: boolean }) {
-  const [modelUrl, setModelUrl] = useState(initialModelUrl);
-  const [activeModelName, setActiveModelName] = useState<string>(
-    Object.keys(FURNITURE_MODELS).find(key => FURNITURE_MODELS[key].url === initialModelUrl) || 'Selected Item'
+  const [placedModels, setPlacedModels] = useState<Array<{ id: string; url: string; x: number; y: number; name: string }>>(
+    initialModelUrl ? [{ id: 'init', url: initialModelUrl, x: 50, y: 50, name: 'Initial Model' }] : []
   );
+  const [selectedModelId, setSelectedModelId] = useState<string | null>(initialModelUrl ? 'init' : null);
+  const modelUrl = selectedModelId ? placedModels.find(m => m.id === selectedModelId)?.url : null;
+  const activeModelName = selectedModelId ? placedModels.find(m => m.id === selectedModelId)?.name : 'Selected Item';
+  
+  const setModelUrl = (url: string) => {
+    if (selectedModelId) {
+      setPlacedModels(prev => prev.map(m => m.id === selectedModelId ? { ...m, url } : m));
+    } else {
+      const newId = Math.random().toString(36).substring(7);
+      setPlacedModels(prev => [...prev, { id: newId, url, x: 50, y: 50, name: 'New Model' }]);
+      setSelectedModelId(newId);
+    }
+  };
+  
   const [showLibrary, setShowLibrary] = useState(false);
   const [material, setMaterial] = useState<'original' | 'wood' | 'metal' | 'fabric' | 'leather' | 'velvet'>('original');
   const [baseColor, setBaseColor] = useState('#ffffff');
@@ -1767,6 +1838,7 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
   const [showMaterialLab, setShowMaterialLab] = useState(false);
   const [placement, setPlacement] = useState<'floor' | 'wall'>('floor');
   const [scaleLocked, setScaleLocked] = useState(false);
+  const [showSpatialLab, setShowSpatialLab] = useState(false);
   const [measureMode, setMeasureMode] = useState(false);
   const [showLiveBackground, setShowLiveBackground] = useState(false);
   const [showSpatialBackground, setShowSpatialBackground] = useState(!!roomImage && !startWithCamera);
@@ -1998,6 +2070,17 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
               </span>
             </div>
           </div>
+          {placedModels.length > 0 && (
+            <button 
+              onClick={() => {
+                setPlacedModels([]);
+                setSelectedModelId(null);
+              }}
+              className="bg-red-500/20 backdrop-blur-md px-4 py-2 rounded-full text-[8px] font-bold text-red-500 hover:bg-red-500/30 transition-all border border-red-500/20 uppercase tracking-widest"
+            >
+              Clear Workspace
+            </button>
+          )}
         </div>
 
         {/* Technical Diagnostics Overlay */}
@@ -2218,6 +2301,16 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
           <RulerIcon size={20} />
         </button>
 
+        <button 
+          onClick={() => setShowSpatialLab(true)}
+          className="p-5 rounded-3xl border border-white/10 bg-aura-purple/20 backdrop-blur-xl text-aura-purple hover:bg-aura-purple/30 transition-all flex items-center justify-center shadow-xl group"
+        >
+          <div className="flex flex-col items-center gap-1 group-hover:scale-110 transition-transform">
+            <span className="text-[8px] font-black tracking-tighter uppercase text-white/50">Create</span>
+            <ZapIcon size={20} className="text-aura-purple" />
+          </div>
+        </button>
+
         {capturedPhotos.length > 0 && (
           <div className="bg-black/40 backdrop-blur-xl p-2 rounded-3xl border border-white/10 flex flex-col gap-2">
             {capturedPhotos.map((photo, i) => (
@@ -2234,10 +2327,27 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
         )}
       </div>
 
-      <div className={cn(
-        "flex-1 relative overflow-hidden",
-        showLiveBackground ? "bg-transparent" : (showSpatialBackground && roomImage ? "bg-black" : "bg-gradient-to-b from-[#111] to-black")
-      )}>
+      <div 
+        className={cn(
+          "flex-1 relative overflow-hidden",
+          showLiveBackground ? "bg-transparent" : (showSpatialBackground && roomImage ? "bg-black" : "bg-gradient-to-b from-[#111] to-black")
+        )}
+        onDragOver={(e) => e.preventDefault()}
+        onDrop={(e) => {
+          e.preventDefault();
+          const url = e.dataTransfer.getData('modelUrl');
+          const name = e.dataTransfer.getData('modelName');
+          if (url) {
+            const rect = e.currentTarget.getBoundingClientRect();
+            const x = ((e.clientX - rect.left) / rect.width) * 100;
+            const y = ((e.clientY - rect.top) / rect.height) * 100;
+            const newId = Math.random().toString(36).substring(7);
+            setPlacedModels(prev => [...prev, { id: newId, url, x, y, name: name || 'New Asset' }]);
+            setSelectedModelId(newId);
+          }
+        }}
+        onClick={() => setSelectedModelId(null)}
+      >
         {showLiveBackground && (
           <video 
             ref={videoRef} 
@@ -2258,8 +2368,25 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
                 "w-full h-full object-cover transition-all duration-1000",
                 isProcessing ? "blur-md scale-110 grayscale" : "blur-0 scale-100 grayscale-0"
               )} 
+              style={{
+                filter: showDepthOverlay ? 'contrast(2) brightness(0.5) grayscale(1)' : 'none'
+              }}
               alt="spatial context" 
             />
+            
+            {/* Edge Detection Overlay (Real Canvas implementation for "Proper" behavior) */}
+            <div className="absolute inset-0 pointer-events-none mix-blend-screen opacity-40">
+               <div 
+                 className="w-full h-full grayscale contrast-[2000%] invert scale-[1.01]"
+                 style={{ 
+                   backgroundImage: `url(${roomImage})`, 
+                   backgroundSize: 'cover', 
+                   backgroundPosition: 'center',
+                   filter: 'blur(0.5px) contrast(5000%) invert(1)',
+                   opacity: showDepthOverlay || isProcessing || alignmentGuides ? 0.6 : 0
+                 }}
+               />
+            </div>
             
             {isProcessing && (
               <div className="absolute inset-0 flex flex-col items-center justify-center bg-black/40 backdrop-blur-sm">
@@ -2414,21 +2541,55 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
                initial={{ opacity: 0, x: -50, scale: 0.95 }}
                animate={{ opacity: 1, x: 0, scale: 1 }}
                exit={{ opacity: 0, x: -50, scale: 0.95 }}
-               className="absolute top-1/2 -translate-y-1/2 left-28 z-40 bg-zinc-900/90 backdrop-blur-2xl border border-white/10 p-6 rounded-[2.5rem] w-80 shadow-2xl"
+               className="absolute top-1/2 -translate-y-1/2 left-28 z-40 bg-zinc-900/90 backdrop-blur-2xl border border-white/10 p-6 rounded-[2.5rem] w-80 shadow-2xl space-y-6"
             >
-               <div className="flex items-center justify-between mb-6">
-                  <h4 className="text-sm font-bold uppercase tracking-widest text-white">Object Library</h4>
+               <div className="flex items-center justify-between">
+                  <h4 className="text-sm font-bold uppercase tracking-widest text-white">Spatial Inventory</h4>
                   <button onClick={() => setShowLibrary(false)} className="text-zinc-500 hover:text-white">
                     <XIcon size={16} />
                   </button>
                </div>
-               <div className="space-y-3 max-h-[60vh] overflow-y-auto pr-2 scrollbar-none">
+
+               {/* Custom Manual Dataset Import */}
+               <div className="bg-white/5 border border-white/10 rounded-2xl p-4 space-y-3">
+                  <p className="text-[8px] font-bold text-aura-purple uppercase tracking-widest">Manual Dataset Link</p>
+                  <div className="flex gap-2">
+                     <input 
+                       type="text" 
+                       placeholder="Paste .glb URL..." 
+                       className="flex-1 bg-black/40 border border-white/10 rounded-lg px-3 py-2 text-[10px] text-white outline-none focus:border-aura-purple"
+                       onKeyDown={(e) => {
+                         if (e.key === 'Enter') {
+                            const val = (e.target as HTMLInputElement).value;
+                            if (val) {
+                               if (val.toLowerCase().endsWith('.obj')) {
+                                  alert('Note: .obj files must be converted to .glb for best AR results. Try using online converters!');
+                               }
+                               setModelUrl(val);
+                               setActiveModelName('Custom Import');
+                               setShowLibrary(false);
+                            }
+                         }
+                       }}
+                     />
+                  </div>
+                  <p className="text-[7px] text-zinc-500 leading-tight">
+                    Tip: Use GitHub "Raw" link or local "/filename.glb" if uploaded to /public. 
+                    <span className="text-aura-purple ml-1 cursor-pointer hover:underline" onClick={() => alert('Steps to use GitHub as a Dataset:\n1. Upload your .glb to a GitHub repo\n2. Click the file\n3. Click "Raw" button\n4. Copy that URL and paste here!')}>Why GitHub?</span>
+                  </p>
+               </div>
+
+               <div className="space-y-3 max-h-[40vh] overflow-y-auto pr-2 scrollbar-none">
                   {Object.keys(FURNITURE_MODELS).map((name) => (
                     <button 
                        key={name}
+                       draggable
+                       onDragStart={(e) => {
+                         e.dataTransfer.setData('modelUrl', FURNITURE_MODELS[name].url);
+                         e.dataTransfer.setData('modelName', name);
+                       }}
                        onClick={() => {
                          setModelUrl(FURNITURE_MODELS[name].url);
-                         setActiveModelName(name);
                          setShowLibrary(false);
                        }}
                        className={cn(
@@ -2443,7 +2604,7 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
                        </div>
                        <div className="flex-1">
                           <span className="text-[10px] font-bold block leading-none mb-1">{name}</span>
-                          <span className="text-[8px] opacity-50 font-medium">Ready for Project</span>
+                          <span className="text-[8px] opacity-50 font-medium">Verified Asset</span>
                        </div>
                        <ArchitectureIcon size={14} className={cn(
                          "opacity-0 transition-opacity",
@@ -2473,116 +2634,145 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
           )}
         </AnimatePresence>
 
-        {modelUrl ? (
-          /* @ts-ignore - model-viewer is a custom element */
-          <model-viewer
-            ref={modelViewerRef}
-            src={modelUrl}
-            ar
-            ar-modes="webxr scene-viewer quick-look"
-            ar-placement={placement}
-            ar-scale={scaleLocked ? "fixed" : "auto"}
-            camera-controls
-            touch-action="none"
-            enable-pan
-            interaction-prompt="auto"
-            shadow-intensity="2"
-            shadow-softness="0.5"
-            exposure="1.2"
-            environment-image="neutral"
-            auto-rotate
-            interpolation-decay={200}
-            camera-orbit="0deg 75deg 105%"
-            min-camera-orbit="auto auto 5%"
-            max-camera-orbit="auto auto 500%"
-            interaction-prompt-threshold={1500}
-            poster=""
-            loading="eager"
+        {placedModels.map((placed) => (
+          <div 
+            key={placed.id}
             style={{ 
-              width: '100%', 
-              height: '100%', 
-              backgroundColor: 'transparent',
-              position: 'relative',
-              zIndex: 1,
-              filter: isScanning ? "hue-rotate(90deg) brightness(1.2)" : "none"
+              position: 'absolute',
+              left: `${placed.x}%`,
+              top: `${placed.y}%`,
+              transform: 'translate(-50%, -50%)',
+              width: placed.id === selectedModelId ? '100%' : '150px',
+              height: placed.id === selectedModelId ? '100%' : '150px',
+              zIndex: placed.id === selectedModelId ? 10 : 5,
+              pointerEvents: placed.id === selectedModelId ? 'none' : 'auto'
+            }}
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedModelId(placed.id);
             }}
           >
-            {/* 3D Scanning/Printing Effect Overlay */}
-            <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden opacity-30">
-               <div className="w-full h-1 bg-aura-purple shadow-[0_0_20px_rgba(168,85,247,1)] absolute top-0 animate-scan" />
-            </div>
-
-            {/* Spatial Fabrication HUD */}
-            <AnimatePresence>
-              {isScanning && (
-                <motion.div 
-                  initial={{ opacity: 0, x: 20 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  exit={{ opacity: 0, x: 20 }}
-                  className="absolute top-10 right-10 z-30 pointer-events-none"
-                >
-                  <div className="bg-black/60 backdrop-blur-xl border border-white/20 p-4 rounded-2xl flex items-center gap-4">
-                     <div className="w-10 h-10 rounded-full border-2 border-aura-purple border-t-transparent animate-spin" />
-                     <div>
-                        <p className="text-[10px] font-black text-white/50 uppercase tracking-[0.2em] mb-1">Spatial Projection</p>
-                        <p className="text-sm font-bold text-white uppercase tracking-widest">Fabricating Asset...</p>
-                     </div>
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
-
-            <button slot="ar-button" className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-aura-purple text-white px-10 py-5 rounded-full font-bold shadow-2xl flex items-center gap-3 scale-110 aura-glow hover:scale-[1.15] transition-transform">
-              <ArchitectureIcon size={22} />
-              PLACE IN SPACE
-            </button>
-
-            {/* Photo Capture Mechanism */}
-            <div className="absolute bottom-16 right-12 z-20">
-              <button 
-                onClick={capturePhoto}
-                className={cn(
-                  "w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all bg-black/20 backdrop-blur-xl aura-glow-sm",
-                  isCapturing ? "border-aura-purple scale-90" : "border-white hover:border-aura-purple hover:scale-110"
-                )}
+            {placed.id === selectedModelId ? (
+              /* @ts-ignore - model-viewer is a custom element */
+              <model-viewer
+                ref={modelViewerRef}
+                src={placed.url}
+                ar
+                ar-modes="webxr scene-viewer quick-look"
+                ar-placement={placement}
+                ar-scale={scaleLocked ? "fixed" : "auto"}
+                camera-controls
+                touch-action="none"
+                enable-pan
+                interaction-prompt="auto"
+                shadow-intensity="2"
+                shadow-softness="0.5"
+                exposure="1.2"
+                environment-image="neutral"
+                auto-rotate
+                interpolation-decay={200}
+                camera-orbit="0deg 75deg 105%"
+                min-camera-orbit="auto auto 5%"
+                max-camera-orbit="auto auto 500%"
+                interaction-prompt-threshold={1500}
+                poster=""
+                loading="eager"
+                style={{ 
+                  width: '100%', 
+                  height: '100%', 
+                  backgroundColor: 'transparent',
+                  position: 'relative',
+                  zIndex: 1,
+                  filter: isScanning ? "hue-rotate(90deg) brightness(1.2)" : "none",
+                  pointerEvents: 'auto'
+                }}
               >
-                <Camera size={24} className="text-white" />
-              </button>
-            </div>
+                {/* 3D Scanning/Printing Effect Overlay */}
+                <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden opacity-30">
+                   <div className="w-full h-1 bg-aura-purple shadow-[0_0_20px_rgba(168,85,247,1)] absolute top-0 animate-scan" />
+                </div>
 
-            {isCapturing && (
-              <motion.div 
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                exit={{ opacity: 0 }}
-                className="absolute inset-0 bg-white z-[100] pointer-events-none"
-                transition={{ duration: 0.1 }}
-              />
-            )}
+                {/* Spatial Fabrication HUD */}
+                <AnimatePresence>
+                  {isScanning && (
+                    <motion.div 
+                      initial={{ opacity: 0, x: 20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      exit={{ opacity: 0, x: 20 }}
+                      className="absolute top-10 right-10 z-30 pointer-events-none"
+                    >
+                      <div className="bg-black/60 backdrop-blur-xl border border-white/20 p-4 rounded-2xl flex items-center gap-4">
+                         <div className="w-10 h-10 rounded-full border-2 border-aura-purple border-t-transparent animate-spin" />
+                         <div>
+                            <p className="text-[10px] font-black text-white/50 uppercase tracking-[0.2em] mb-1">Spatial Projection</p>
+                            <p className="text-sm font-bold text-white uppercase tracking-widest">Fabricating Asset...</p>
+                         </div>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
 
-            {alignmentGuides && (
-               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20">
-                  <div className="relative">
-                    <div className="w-48 h-48 border border-white/20 rounded-full animate-[ping_3s_linear_infinite]" />
-                    <div className="absolute inset-0 border-2 border-aura-purple/30 rounded-full scale-50 opacity-50" />
-                    <div className="absolute inset-0 flex items-center justify-center">
-                       <div className="w-1 h-1 bg-aura-purple rounded-full shadow-[0_0_10px_2px_rgba(151,71,255,0.8)]" />
-                    </div>
-                  </div>
-                  <div className="absolute top-full mt-8 text-center w-64 -left-8">
-                     <p className="text-[10px] font-medium text-white/50 animate-pulse">Drag to position • Pinch to scale/zoom • Two-finger drag to rotate</p>
-                  </div>
-               </div>
-            )}
+                <button slot="ar-button" className="absolute bottom-16 left-1/2 -translate-x-1/2 bg-aura-purple text-white px-10 py-5 rounded-full font-bold shadow-2xl flex items-center gap-3 scale-110 aura-glow hover:scale-[1.15] transition-transform">
+                  <ArchitectureIcon size={22} />
+                  PLACE IN SPACE
+                </button>
 
-            {measureMode && (
-              <div slot="hotspot-dim" className="bg-white text-zinc-900 px-4 py-2 rounded-2xl text-[10px] font-bold shadow-2xl border border-zinc-100 flex items-center gap-2">
-                 <div className="w-1.5 h-1.5 rounded-full bg-aura-purple animate-pulse" />
-                 Measuring: 1.25m from Surface
+                {/* Photo Capture Mechanism */}
+                <div className="absolute bottom-16 right-12 z-20">
+                  <button 
+                    onClick={capturePhoto}
+                    className={cn(
+                      "w-16 h-16 rounded-full border-4 flex items-center justify-center transition-all bg-black/20 backdrop-blur-xl aura-glow-sm",
+                      isCapturing ? "border-aura-purple scale-90" : "border-white hover:border-aura-purple hover:scale-110"
+                    )}
+                  >
+                    <Camera size={24} className="text-white" />
+                  </button>
+                </div>
+
+                {alignmentGuides && (
+                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none z-20">
+                      <div className="relative">
+                        <div className="w-48 h-48 border border-white/20 rounded-full animate-[ping_3s_linear_infinite]" />
+                        <div className="absolute inset-0 border-2 border-aura-purple/30 rounded-full scale-50 opacity-50" />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                           <div className="w-1 h-1 bg-aura-purple rounded-full shadow-[0_0_10px_2px_rgba(151,71,255,0.8)]" />
+                        </div>
+                      </div>
+                      <div className="absolute top-full mt-8 text-center w-64 -left-8">
+                         <p className="text-[10px] font-medium text-white/50 animate-pulse">Drag to position • Pinch to scale/zoom • Two-finger drag to rotate</p>
+                      </div>
+                   </div>
+                )}
+              </model-viewer>
+            ) : (
+              <div 
+                className="w-full h-full bg-aura-purple/10 border border-aura-purple/30 rounded-3xl backdrop-blur-sm flex items-center justify-center cursor-move hover:bg-aura-purple/20 transition-all shadow-xl group"
+                draggable
+                onDragEnd={(e) => {
+                  const rect = e.currentTarget.parentElement?.parentElement?.getBoundingClientRect();
+                  if (rect) {
+                    const x = ((e.clientX - rect.left) / rect.width) * 100;
+                    const y = ((e.clientY - rect.top) / rect.height) * 100;
+                    setPlacedModels(prev => prev.map(m => m.id === placed.id ? { ...m, x, y } : m));
+                  }
+                }}
+              >
+                <div className="text-center group-hover:scale-110 transition-transform">
+                   <BoxIcon className="text-aura-purple mx-auto mb-1" size={24} />
+                   <p className="text-[8px] font-bold text-white uppercase tracking-widest">{placed.name}</p>
+                </div>
+                <div className="absolute -top-2 -right-2 w-6 h-6 bg-red-500 rounded-full flex items-center justify-center text-white cursor-pointer opacity-0 group-hover:opacity-100 transition-opacity" onClick={(e) => {
+                  e.stopPropagation();
+                  setPlacedModels(prev => prev.filter(m => m.id !== placed.id));
+                }}>
+                  <XIcon size={12} />
+                </div>
               </div>
             )}
-          </model-viewer>
-        ) : (
+          </div>
+        ))}
+        {placedModels.length === 0 && (
           <div className="h-full flex flex-col items-center justify-center text-white gap-4">
             <div className="w-12 h-12 border-4 border-aura-purple border-t-transparent rounded-full animate-spin" />
             <p className="text-xs font-bold uppercase tracking-widest text-zinc-500">Initializing AR Neural Link...</p>
@@ -2605,6 +2795,11 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
             }).map(([name, url]) => (
               <button
                 key={name}
+                draggable
+                onDragStart={(e) => {
+                  e.dataTransfer.setData('modelUrl', url);
+                  e.dataTransfer.setData('modelName', name);
+                }}
                 onClick={() => setModelUrl(url)}
                 className={cn(
                   "flex-shrink-0 group relative w-20 h-20 rounded-2xl border transition-all overflow-hidden",
@@ -2645,6 +2840,22 @@ function ARView({ modelUrl: initialModelUrl, roomImage, onBack, startWithCamera 
            <span className="px-3 py-1 bg-white/5 rounded text-[8px] font-bold text-zinc-500 uppercase tracking-widest">Ray-tracing enabled</span>
            <span className="px-3 py-1 bg-white/5 rounded text-[8px] font-bold text-zinc-500 uppercase tracking-widest">Global Illumination V2</span>
         </div>
+
+        {/* Creative Studio (Spatial Lab) Modal */}
+        <AnimatePresence>
+          {showSpatialLab && (
+            <div className="fixed inset-0 z-[200] flex items-center justify-center bg-black/80 backdrop-blur-md">
+               <SpatialLab 
+                 onClose={() => setShowSpatialLab(false)}
+                 onModelGenerated={(url, name) => {
+                    setModelUrl(url);
+                    setActiveModelName(name);
+                    setShowSpatialLab(false);
+                 }}
+               />
+            </div>
+          )}
+        </AnimatePresence>
       </div>
     </motion.div>
   );

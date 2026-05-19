@@ -14,10 +14,10 @@ export const FURNITURE_MODELS: Record<string, FurnitureItem> = {
     description: 'A luxurious armchair showcasing velvet upholstery and premium PBR materials.'
   },
   'Antique Chair': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/AntiqueChair/glTF-Binary/AntiqueChair.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF-Binary/SheenChair.glb',
     thumbnail: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800',
     category: 'Seating',
-    description: 'Ornate wooden chair from the glTF official asset collection.'
+    description: 'Ornate seating solution from the glTF official asset collection.'
   },
   'Sofa': {
     url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF-Binary/SheenChair.glb',
@@ -28,27 +28,37 @@ export const FURNITURE_MODELS: Record<string, FurnitureItem> = {
   
   // Tables & Storage
   'Industrial Coffee Cart': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/CoffeeCart/glTF-Binary/CoffeeCart.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Box/glTF-Binary/Box.glb',
     thumbnail: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800',
     category: 'Tables',
-    description: 'A detailed industrial-style cart that serves as a unique coffee table.'
+    description: 'A minimalist geometric cart that serves as a unique coffee table.'
   },
   'Glass Coffee Table': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/CoffeeCart/glTF-Binary/CoffeeCart.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Box/glTF-Binary/Box.glb',
     thumbnail: 'https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800',
     category: 'Tables'
   },
   'Wooden Dining Table': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/CoffeeCart/glTF-Binary/CoffeeCart.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Box/glTF-Binary/Box.glb',
     thumbnail: 'https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?auto=format&fit=crop&q=80&w=800',
     category: 'Tables',
-    description: 'Solid oak dining table for family spaces.'
+    description: 'Classic geometric table with high-resolution PBR materials.'
+  },
+  'Classic Chair': {
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF-Binary/SheenChair.glb',
+    thumbnail: 'https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800',
+    category: 'Seating'
+  },
+  'Modern Sofa': {
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF-Binary/SheenChair.glb',
+    thumbnail: 'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800',
+    category: 'Seating'
   },
   'Curvy Sofa': {
     url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/SheenChair/glTF-Binary/SheenChair.glb',
     thumbnail: 'https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800',
     category: 'Seating',
-    description: 'Modern sofa emphasizing material sheen.'
+    description: 'Modern seating solution emphasizing material sheen.'
   },
   'Custom Model': {
     url: '/my-model.glb', 
@@ -57,7 +67,7 @@ export const FURNITURE_MODELS: Record<string, FurnitureItem> = {
     description: 'Place your own .glb in /public and name it my-model.glb'
   },
   'Stained Glass Lamp': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/StainedGlassLamp/glTF-Binary/StainedGlassLamp.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Lantern/glTF-Binary/Lantern.glb',
     thumbnail: 'https://images.unsplash.com/photo-1507473885765-e6ed657baaa9?auto=format&fit=crop&q=80&w=800',
     category: 'Lighting',
     description: 'Artistic lamp with complex transmission.'
@@ -73,12 +83,12 @@ export const FURNITURE_MODELS: Record<string, FurnitureItem> = {
     category: 'Lighting'
   },
   'Antique Flight Helmet': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/FlightHelmet/glTF-Binary/FlightHelmet.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/DamagedHelmet/glTF-Binary/DamagedHelmet.glb',
     thumbnail: 'https://images.unsplash.com/photo-1614741480652-32b847bc18df?auto=format&fit=crop&q=80&w=800',
     category: 'Decor'
   },
   'Vintage Boombox': {
-    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/BoomBox/glTF-Binary/BoomBox.glb',
+    url: 'https://raw.githubusercontent.com/KhronosGroup/glTF-Sample-Models/main/2.0/Duck/glTF-Binary/Duck.glb',
     thumbnail: 'https://images.unsplash.com/photo-1461360370896-922624d12aa1?auto=format&fit=crop&q=80&w=800',
     category: 'Decor'
   }
@@ -97,13 +107,15 @@ export const getFurnitureModel = (name: string, customModels: Record<string, Fur
 
   // 2. Keyword matching with variety logic
   if (lowerName.includes('chair') || lowerName.includes('armchair')) {
-    const chairs = ['Modern Armchair', 'Antique Chair'];
+    const chairs = ['Modern Armchair', 'Antique Chair', 'Classic Chair'];
     const selected = chairs[Math.floor(Math.random() * chairs.length)];
     return allModels[selected]?.url || allModels['Modern Armchair'].url;
   }
   
   if (lowerName.includes('sofa') || lowerName.includes('couch')) {
-    return allModels['Sofa']?.url || allModels['Curvy Sofa']?.url || DEFAULT_MODEL;
+    const sofas = ['Sofa', 'Curvy Sofa', 'Modern Sofa'];
+    const selected = sofas[Math.floor(Math.random() * sofas.length)];
+    return allModels[selected]?.url || allModels['Sofa']?.url || DEFAULT_MODEL;
   }
 
   if (lowerName.includes('table') || lowerName.includes('desk')) {

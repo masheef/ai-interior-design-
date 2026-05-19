@@ -47,5 +47,10 @@ service cloud.firestore {
       
       allow delete: if isSignedIn() && resource.data.userId == request.auth.uid;
     }
+
+    // 3. Connection Test
+    match /test/connection {
+      allow read: if true;
+    }
   }
 }

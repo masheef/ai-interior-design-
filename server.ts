@@ -2,10 +2,19 @@ import express from "express";
 import path from "path";
 import cors from "cors";
 import Database from "better-sqlite3";
+import multer from "multer";
+import axios from "axios";
+import FormData from "form-data";
 
 async function startServer() {
   const app = express();
   const PORT = 3000;
+
+  // Setup Multer for memory storage
+  const upload = multer({ 
+    storage: multer.memoryStorage(),
+    limits: { fileSize: 5 * 1024 * 1024 } // 5MB limit
+  });
 
   // Initialize SQLite Database
   // Fallback to /tmp if the current directory is not writable (common in some container environments)
@@ -40,6 +49,80 @@ async function startServer() {
   // API Routes
   app.get("/api/health", (req, res) => {
     res.json({ status: "ok", persistence: "local-sqlite", dbPath });
+  });
+
+  // Stability AI Stable Fast 3D Integration
+  app.post("/api/stability/3d", upload.single("image"), async (req: any, res: any) => {
+    const apiKey = process.env.STABILITY_API_KEY;
+    
+    if (!apiKey) {
+      return res.status(500).json({ error: "STABILITY_API_KEY not configured" });
+    }
+
+    try {
+      let imageBuffer: Buffer;
+      let filename: string;
+      let contentType: string;
+
+      if (req.file) {
+        imageBuffer = req.file.buffer;
+        filename = req.file.originalname;
+        contentType = req.file.mimetype;
+      } else if (req.body.image_url) {
+        const imageRes = await axios.get(req.body.image_url, { responseType: 'arraybuffer' });
+        imageBuffer = Buffer.from(imageRes.data);
+        filename = "input.png";
+        contentType = (imageRes.headers['content-type'] as string) || 'image/png';
+      } else {
+        return res.status(400).json({ error: "No image file or URL provided" });
+      }
+
+      const formData = new FormData();
+      formData.append("image", imageBuffer, {
+        filename,
+        contentType,
+      });
+      formData.append("texture_resolution", "512");
+
+      const response = await axios.post(
+        "https://api.stability.ai/v2beta/3d/stable-fast-3d",
+        formData,
+        {
+          headers: {
+            ...formData.getHeaders(),
+            "Authorization": `Bearer ${apiKey}`,
+            "Accept": "model/gltf-binary",
+          },
+          responseType: "arraybuffer",
+        }
+      );
+
+      res.setHeader("Content-Type", "model/gltf-binary");
+      res.send(response.data);
+    } catch (error: any) {
+      let errorData = error.response?.data;
+      
+      // Convert Buffer/ArrayBuffer to string if necessary
+      if (errorData && (Buffer.isBuffer(errorData) || errorData instanceof ArrayBuffer)) {
+        try {
+          const buffer = Buffer.isBuffer(errorData) ? errorData : Buffer.from(errorData);
+          errorData = buffer.toString('utf8');
+          // Try to parse as JSON if it looks like JSON
+          if (errorData.trim().startsWith('{')) {
+            errorData = JSON.parse(errorData);
+          }
+        } catch (e) {
+          errorData = "Error parsing response buffer";
+        }
+      }
+
+      console.error("Stability 3D Error:", errorData || error.message);
+      res.status(error.response?.status || 500).json({ 
+        error: "Stability AI Generation Failed",
+        details: typeof errorData === 'string' ? errorData : JSON.stringify(errorData) || error.message,
+        raw: errorData 
+      });
+    }
   });
 
   // Save a design

@@ -1,0 +1,61 @@
+// BACKUP: furnitureCatalog.ts - Original fuzzy search implementation (2026-06-02)
+// This is a backup before ML model integration. See inference.py for new approach.
+
+export interface FurnitureItem {
+  url: string;
+  thumbnail: string;
+  category: 'Seating' | 'Tables' | 'Storage' | 'Lighting' | 'Decor' | 'Textiles' | 'Other';
+  description?: string;
+  polyHavenId?: string;
+  keyTags: string[];
+}
+
+// Synonym groups: maps a word to all its synonyms for fuzzy matching
+const SYNONYM_GROUPS: Record<string, string[]> = {
+  sofa: ['couch', 'settee', 'loveseat', 'divan', 'chesterfield'],
+  chair: ['seat', 'armchair', 'recliner', 'throne', 'bench'],
+  table: ['desk', 'surface', 'stand', 'counter'],
+  cabinet: ['cupboard', 'credenza', 'sideboard', 'buffet'],
+  bed: ['bunk', 'mattress', 'headboard', 'platform', 'frame'],
+  shelf: ['bookcase', 'bookshelf', 'shelving', 'rack', 'case'],
+  lamp: ['light', 'luminaire', 'lantern'],
+  dresser: ['chest', 'commode', 'drawer', 'bureau'],
+  stool: ['ottoman', 'footstool', 'bench'],
+  vase: ['planter', 'pot', 'urn', 'vessel'],
+  mirror: ['glass', 'reflector'],
+  clock: ['timepiece', 'chronometer'],
+  picture: ['frame', 'art', 'painting', 'print', 'canvas', 'poster'],
+};
+
+function expandSynonyms(word: string): string[] {
+  for (const [, syns] of Object.entries(SYNONYM_GROUPS)) {
+    if (syns.includes(word) || word === Object.keys(SYNONYM_GROUPS).find(k => SYNONYM_GROUPS[k].includes(word) || k === word)) {
+      const key = Object.keys(SYNONYM_GROUPS).find(k => k === word || SYNONYM_GROUPS[k].includes(word));
+      if (key) return [word, ...SYNONYM_GROUPS[key]];
+    }
+  }
+  return [word];
+}
+
+export const FURNITURE_MODELS: Record<string, FurnitureItem> = {
+  'Modern Armchair': {
+    url: '/api/polyhaven/gltf/modern_arm_chair_01?res=2k',
+    thumbnail: 'https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800',
+    category: 'Seating',
+    description: 'Modern wooden armchair with warm oak frame and plush black leather cushions.',
+    polyHavenId: 'modern_arm_chair_01',
+    keyTags: ['modern', 'armchair', 'chair', 'seat', 'seating', 'leather', 'contemporary', 'lounge', 'wood', 'cushion', 'recliner']
+  },
+};
+
+export const DEFAULT_MODEL = '/api/polyhaven/gltf/modern_arm_chair_01?res=2k';
+
+export const getFurnitureModel = (name: string, customModels: Record<string, FurnitureItem> = {}): string => {
+  // OLD FUZZY SEARCH LOGIC - See machine_learning/api.py for ML-based replacement
+  return DEFAULT_MODEL;
+};
+
+export function findModelsByKeyTags(tags: string[]): Array<{ name: string; item: FurnitureItem; score: number }> {
+  // OLD FUZZY SEARCH - Replaced by ML semantic search in api.py
+  return [];
+}

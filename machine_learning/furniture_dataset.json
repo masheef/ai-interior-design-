@@ -1,0 +1,1815 @@
+{
+  "dataset_metadata": {
+    "name": "Furniture 3D/Visual Multimodal Machine Learning Dataset",
+    "version": "1.0.0",
+    "description": "Comprehensive complete package (Items 1 to 53 of 53). Extremely detailed annotated visual and 3D metadata dataset for training advanced layout generators, multi-modal classifiers, and furniture detection models. Category, URL, and thumbnail structures kept fully intact.",
+    "total_records_in_this_part": 53,
+    "total_records_expected": 53
+  },
+  "items": [
+    {
+      "id": "modern_armchair",
+      "name": "Modern Armchair",
+      "url": "/api/polyhaven/gltf/modern_arm_chair_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "modern_arm_chair_01",
+      "annotations": {
+        "description": "This premium modern lounge armchair is crafted with an elegant and highly durable warm organic oak wood frame, seamlessly integrated with exceptionally plush, deep black leather cushions designed for ultimate back support, premium comfort, and a sophisticated aesthetic statement in upscale interior living rooms or modern corporate office environments.",
+        "keyTags": [
+          "modern", "armchair", "chair", "seat", "seating", "leather", "contemporary", "lounge", "wood", "cushion", "recliner",
+          "interior", "living-room", "furniture", "comfort", "scandinavian", "nordic", "black", "oak", "wooden-frame",
+          "style", "design", "relaxing", "cozy", "decor", "premium", "home-decor", "sleek", "ergonomic", "upholstered",
+          "lounge-chair", "reading", "apartment", "minimalist", "luxury", "indoor", "studio-lighting", "accent-chair",
+          "warm-tones", "high-end", "commercial", "sturdy", "comfortable", "armrests", "soft-padding", "high-quality",
+          "woodworking", "classic-modern", "clean-lines", "residential", "styling", "office-lounge", "bestseller", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 85.0, "height": 95.0, "depth": 90.0 },
+          "bounding_box_3d": {
+            "min": [-0.425, 0.0, -0.45],
+            "max": [0.425, 0.95, 0.45]
+          },
+          "estimated_polygons": 28400,
+          "center_of_mass": [0.0, 0.45, -0.05]
+        },
+        "taxonomy": {
+          "style_classifier": "Mid-Century Modern / Scandinavian",
+          "materials": { "oak_wood_percentage": 45.0, "leather_percentage": 50.0, "foam_fill_percentage": 5.0 },
+          "wordnet_synset": "armchair.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What material is the frame of the armchair made of?", "a": "The frame of the armchair is crafted from warm oak wood." },
+          { "q": "Describe the aesthetic style of this furniture piece.", "a": "It features a contemporary/mid-century modern style with clean lines, comfortable leather seating, and organic wood tones." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "A modern scandinavian armchair with rich black leather upholstery and refined oak arms, cinematic studio lighting, photorealistic interior design photography."
+        }
+      }
+    },
+    {
+      "id": "antique_chair",
+      "name": "Antique Chair",
+      "url": "/api/polyhaven/gltf/ArmChair_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "ArmChair_01",
+      "annotations": {
+        "description": "An exquisite vintage Victorian-era parlor armchair showcasing extremely detailed, hand-carved mahogany wood frame patterns on the high backrest, coupled with elegant curved cabriole legs and luxurious traditional fabric upholstery that presents deep historical charm, museum-grade classical restoration details, and a timeless look.",
+        "keyTags": [
+          "antique", "vintage", "chair", "seat", "victorian", "gothic", "wood", "classic", "upholstery", "armchair",
+          "royal", "aristocratic", "luxury", "historical", "carved-wood", "mahogany", "parlor", "hand-crafted", "ornate",
+          "museum-quality", "heritage", "traditional", "fancy", "velvet", "cabriole-legs", "high-back", "reception", "castle",
+          "manor", "palace", "gilded", "rich-colors", "patterned-fabric", "plush-cushion", "carving", "period-furniture",
+          "decor-accent", "estate", "retro", "baroque", "rococo", "artisan", "wooden-legs", "hallway-chair", "collector",
+          "rare-antique", "restored", "timeless", "prestige", "sophisticated", "majestic", "elaborate", "prestigious"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 78.0, "height": 115.0, "depth": 82.0 },
+          "bounding_box_3d": {
+            "min": [-0.39, 0.0, -0.41],
+            "max": [0.39, 1.15, 0.41]
+          },
+          "estimated_polygons": 65000,
+          "center_of_mass": [0.0, 0.55, 0.02]
+        },
+        "taxonomy": {
+          "style_classifier": "Victorian Gothic Revival / Antique",
+          "materials": { "carved_mahogany_percentage": 65.0, "fabric_upholstery_percentage": 30.0, "metal_springs_percentage": 5.0 },
+          "wordnet_synset": "armchair.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Are there intricate carvings visible on this armchair?", "a": "Yes, it has highly detailed classical wood carvings on the high back and curved legs." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "An ornate gothic revival Victorian armchair in carved mahogany, royal velvet upholstery, dramatic side illumination, baroque interior."
+        }
+      }
+    },
+    {
+      "id": "sofa",
+      "name": "Sofa",
+      "url": "/api/polyhaven/gltf/Sofa_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "Sofa_01",
+      "annotations": {
+        "description": "A magnificent three-seater vintage Victorian wooden sofa with decorative gothic-style high-contrast brocade fabric upholstery, detailed dark walnut trim, curved armrests, and deep button-tufted support, delivering a brilliant visual point-of-interest for majestic lounges, historical estates, grand gothic themes, and elegant classical interior assemblies.",
+        "keyTags": [
+          "sofa", "couch", "settee", "loveseat", "vintage", "victorian", "gothic", "wood", "upholstery", "decorative",
+          "brocade", "walnut-wood", "three-seater", "grand", "mansion", "tufted", "luxurious", "classic", "historical",
+          "traditional", "elegant", "royal", "ornate-trim", "lounge-furniture", "saloon", "hallway-seating", "stately",
+          "heavy-wood", "period-piece", "museum", "dark-academia", "classic-style", "velvet-feel", "carved-scrolls",
+          "curved-arms", "luxury-living", "home-staging", "baroque-sofa", "heritage-decor", "exquisite", "hand-finished",
+          "grandeur", "opulent", "sophistication", "statement-piece", "comfortable-lounge", "plush", "pompous", "manorial"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 195.0, "height": 110.0, "depth": 90.0 },
+          "bounding_box_3d": {
+            "min": [-0.975, 0.0, -0.45],
+            "max": [0.975, 1.1, 0.45]
+          },
+          "estimated_polygons": 92000,
+          "center_of_mass": [0.0, 0.5, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Classic Victorian / Gothic Revival",
+          "materials": { "dark_walnut_wood": 50.0, "brocade_upholstery": 45.0, "brass_tacks": 5.0 },
+          "wordnet_synset": "sofa.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "How many seats does this vintage sofa comfortably accommodate?", "a": "It accommodates approximately three people as a full-size settee." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Victorian mahogany 3-seater sofa with dark brocade upholstery, high gothic wooden arches, classic estate design, volumetric studio lighting."
+        }
+      }
+    },
+    {
+      "id": "classic_chair",
+      "name": "Classic Chair",
+      "url": "/api/polyhaven/gltf/WoodenChair_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1592078615290-033ee584e267?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "WoodenChair_01",
+      "annotations": {
+        "description": "An exceptionally ornate Victorian Gothic wooden chair outstandingly customized with a pointed tracer back mimicking medieval cathedral archways. Made of 100% fine dark solid oak, this piece brings absolute structural durability, historical reverence, architectural majesty, and dark academic design vibes directly to high-end dining table rooms or gothic setups.",
+        "keyTags": [
+          "classic", "chair", "seat", "victorian", "gothic", "ornate", "wood", "antique", "wooden", "sculptural",
+          "archway-design", "pointed-back", "cathedral-style", "solid-oak", "dark-wood", "handcrafted", "dining-chair",
+          "accent-piece", "medieval", "church-chair", "dark-academia", "study-room", "library-seating", "carved-detail",
+          "sturdy-wooden", "rustic-classical", "vintage-decor", "historical-style", "curio", "period-art", "rare",
+          "collectible-furniture", "gothic-revival", "high-backrest", "woodworking-art", "no-padding", "hardwood",
+          "castle-theme", "throne-minor", "nordic-gothic", "artisan-frame", "elaborate-carving", "durable", "rigid-structure",
+          "parlor-accent", "distinctive", "mystic-vibes", "ancient-look", "craftsmanship", "prestigious", "solemn"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 55.0, "height": 105.0, "depth": 58.0 },
+          "bounding_box_3d": {
+            "min": [-0.275, 0.0, -0.29],
+            "max": [0.275, 1.05, 0.29]
+          },
+          "estimated_polygons": 48000,
+          "center_of_mass": [0.0, 0.48, 0.01]
+        },
+        "taxonomy": {
+          "style_classifier": "Neo-Gothic / Cathedral Woodwork",
+          "materials": { "carved_oak": 98.0, "iron_fasteners": 2.0 },
+          "wordnet_synset": "chair.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Does this chair contain soft padding or cushions?", "a": "No, it is a solid, unpadded ornate wooden chair with detailed architectural carvings." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "High back gothic cathedral wooden chair, masterpiece carpentry, antique oak textures, dark atmospheric illumination, extreme detail."
+        }
+      }
+    },
+    {
+      "id": "modern_sofa",
+      "name": "Modern Sofa",
+      "url": "/api/polyhaven/gltf/sofa_02?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "sofa_02",
+      "annotations": {
+        "description": "An elegant and stylish Chesterfield-inspired modern sofa covered in deeply tufted buttoned premium leather, structurally resting upon a sturdy, beautifully carved birch wood frame base. This sofa unites classical high-luxury aesthetics with clean, modern linear adjustments, creating an exquisitely balanced seating option for city penthouses or fine luxury lounges.",
+        "keyTags": [
+          "sofa", "couch", "modern", "leather", "tufted", "wood", "elegant", "settee", "loveseat", "divan",
+          "chesterfield", "deep-tufting", "buttons", "premium-seating", "luxury-couch", "black-leather", "birch-wood",
+          "sturdy-base", "architectural", "living-room-centerpiece", "parlor", "hotel-lobby-style", "commercial-seating",
+          "office-reception", "chic-sofa", "comfortable", "plush-cushioning", "scrolled-back", "low-profile", "heavy-duty",
+          "exclusive-design", "soft-touch", "urban-living", "sophisticated-decor", "timeless-appeal", "tailored",
+          "top-grain", "button-detailed", "interior-designer-choice", "lounge-suite", "prestige-furniture", "fine-stitching",
+          "executive", "bestselling-couch", "high-density-foam", "luxurious-living", "refined", "stately", "classy"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 210.0, "height": 88.0, "depth": 95.0 },
+          "bounding_box_3d": {
+            "min": [-1.05, 0.0, -0.475],
+            "max": [1.05, 0.88, 0.475]
+          },
+          "estimated_polygons": 74000
+        },
+        "taxonomy": {
+          "style_classifier": "Chesterfield / Classic Transition",
+          "materials": { "premium_leather": 60.0, "birch_wood_base": 25.0, "internal_foam": 15.0 },
+          "wordnet_synset": "sofa.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What characterizes the cushions on this modern sofa?", "a": "It features deep tufted buttons across the cushions, providing standard elegant textures." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Modern luxury tufted leather sofa, chesterfield style with slim carved wooden frame base, warm minimalist loft ambient."
+        }
+      }
+    },
+    {
+      "id": "curvy_sofa",
+      "name": "Curvy Sofa",
+      "url": "/api/polyhaven/gltf/sofa_03?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1493663284031-b7e3aefcae8e?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "sofa_03",
+      "annotations": {
+        "description": "An incredibly graceful vintage Rococo revival curvilinear sofa wrapped in gorgeous, top-tier full-grain worn leather, defined by spectacular outward scrolled masterfully carved wooden arms and gilded gold outlines that celebrate early nineteenth-century aristocratic craftsmanship, ideal for immersive antique collections and atmospheric luxury drawing chambers.",
+        "keyTags": [
+          "sofa", "couch", "vintage", "victorian", "leather", "antique", "carved", "elegant", "scrolled-arms",
+          "gilded-wood", "rococo-style", "curvy-settee", "drawing-room", "royal-palace", "baroque-lounge", "artisan-craft",
+          "full-grain-leather", "dark-gold-trim", "masterpiece", "interior-staging", "estate-luxury", "heritage-collector",
+          "ornate-woodwork", "cabriole-legs-sofa", "comfortable-classic", "timeless-elegance", "luxurious-ambiance",
+          "high-end-antique", "stately-manor-style", "parlor-couch", "exclusive", "rare-rococo", "upholstered-leather",
+          "grandeur-design", "historic-reproduction", "period-drama-set", "finest-materials", "handcrafted-frame",
+          "chatea-style", "lux-decor", "fancy-seating", "distinguished", "celebrity-choice", "opulency", "rich-brown-tone",
+          "exquisite-curves", "traditional-charm", "high-end-residential", "bureau-accent", "prestigious"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 220.0, "height": 98.0, "depth": 100.0 }
+        },
+        "taxonomy": {
+          "style_classifier": "Rococo Revival / Victorian",
+          "materials": { "full_grain_leather": 55.0, "gilded_wood": 35.0, "spring_core": 10.0 }
+        },
+        "multimodal_vqa": [
+          { "q": "What shape are the armrests?", "a": "The armrests have a distinct scrolled, outward-curving Victorian design." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Victorian baroque scrolled-arm curved leather sofa, wood carved elements, luxury dark estate mood."
+        }
+      }
+    },
+    {
+      "id": "mid_century_lounge_chair",
+      "name": "Mid Century Lounge Chair",
+      "url": "/api/polyhaven/gltf/mid_century_lounge_chair?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "mid_century_lounge_chair",
+      "annotations": {
+        "description": "The ultimate icon of corporate and high-end residential comfort, this Mid-Century Modern lounge chair boasts an ergonomically molded plywood grain shell base paired perfectly with deep, buttery-soft black leather cushions and an architectural die-cast aluminum splayed swivel base, delivering supreme orthopedic relaxation, iconic status, and retro modernism.",
+        "keyTags": [
+          "mid-century", "lounge", "chair", "seat", "retro", "modern", "leather", "wood", "recliner", "armchair",
+          "eames-inspired", "molded-plywood", "rosewood-veneer", "aluminum-swivel-base", "orthopedic-comfort",
+          "buttery-leather", "premium-lounger", "executive-chair", "penthouse-decor", "architectural-classic",
+          "iconic-seating", "retro-chic", "high-end-furniture", "modernist-movement", "ergonomic-design",
+          "relaxing-den", "reading-reading-nook", "study-room-chair", "collector-favorite", "distinguished-look",
+          "swiveling", "headrest-support", "premium-grade-leather", "luxury-relaxer", "classic-modern-design",
+          "stylish-apartment", "studio-apartment", "designer-original", "high-density-padding", "exceptional-quality",
+          "comfort-focused", "minimalist-office", "director-seating", "statement-armchair", "sturdy-craft", "sleek",
+          "timeless-modern", "warm-oak-wood-shell", "superior-ergonomics", "bestselling-modern-classic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 84.0, "height": 84.0, "depth": 85.0 }
+        },
+        "taxonomy": {
+          "style_classifier": "Eames Era / Mid-Century Modern",
+          "materials": { "molded_plywood": 40.0, "leather": 50.0, "diecast_aluminum": 10.0 }
+        },
+        "multimodal_vqa": [
+          { "q": "Does this chair rotate or tilt?", "a": "It is based on the iconic mid-century design with automatic tilt angle stability and rotational cast aluminum base." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Mid century modern plywood lounge chair, luxurious black grain leather, photorealistic modern penthouse setting."
+        }
+      }
+    },
+    {
+      "id": "ottoman",
+      "name": "Ottoman",
+      "url": "/api/polyhaven/gltf/Ottoman_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "Ottoman_01",
+      "annotations": {
+        "description": "A very handsome, heavy-duty square lounge ottoman showcasing beautiful stacked cushioned tiers beautifully bound in rich, dark chocolate brown leather. This multi-functional furniture accessory serves flawlessly as a comfortable footrest, supplementary seating alternative, or low-profile coffee table surface space for space-conscious, high-style modern or transitional living arrangements.",
+        "keyTags": [
+          "ottoman", "seating", "leather", "lounge", "footstool", "stool", "upholstery", "footrest", "pouf",
+          "square-ottoman", "stacked-cushions", "brown-leather", "transitional-style", "accent-stool", "under-desk",
+          "compact-seating", "auxiliary-chair", "comfort-helper", "handy-furniture", "soft-surface", "dark-chocolate",
+          "heavy-duty-foam", "wood-internal-box", "robust-stitching", "plush-feeling", "living-room-pouf", "bedside-step",
+          "sleek-design", "unobtrusive", "durable-materials", "premium-grade", "flexible-placement", "multipurpose",
+          "smart-living", "cozy-den", "apartment-essentials", "luxury-footrest", "designer-staging", "neat-finish",
+          "low-profile", "stable-base", "orthopedic-rest", "relaxing-legroom", "modular-addition", "tasteful", "stylish",
+          "expert-upholstery", "classic-brown", "high-resilience", "minimalist-footrest"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 60.0, "height": 42.0, "depth": 60.0 }
+        },
+        "taxonomy": {
+          "style_classifier": "Transitional Lounge",
+          "materials": { "upholstered_leather": 70.0, "foam_padding": 20.0, "hardwood_internal_box": 10.0 }
+        },
+        "multimodal_vqa": [
+          { "q": "What is the primary function of this piece?", "a": "It serves as a footrest or auxiliary seating option." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic square leather ottoman tufted cushion top, warm mood lighting, architectural placement blueprint study."
+        }
+      }
+    },
+    {
+      "id": "dining_chair",
+      "name": "Dining Chair",
+      "url": "/api/polyhaven/gltf/dining_chair_02?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1594007759138-0f0ac1c73b3b?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "dining_chair_02",
+      "annotations": {
+        "description": "A magnificent contemporary dining room chair meticulously structured with tufted top-grain warm brown waxed leather, exquisitely combined with slender, dark tinted espresso solid beech wood splayed legs to provide exceptional stability, structural weight capability, sophisticated modernist charm, and an utterly comfortable sitting format for fine hospitality or private luxury dinners.",
+        "keyTags": [
+          "dining", "chair", "seat", "modern", "leather", "wood", "elegant", "dining room", "tufted-chair",
+          "brown-leather-seat", "beech-wood", "espresso-legs", "splayed-legs", "sturdy", "comfortable-dining",
+          "contemporary-furniture", "slim-legs", "high-end-dining", "hospitality-standard", "steakhouse-chair",
+          "luxury-interior", "restaurant-seating", "parlor-chair", "chic-dinette", "mid-century-dining", "waxed-finish",
+          "back-support", "premium-materials", "dining-set-addition", "home-makeover", "modernist-chic", "polished-surface",
+          "timeless-silhouette", "comfy-pad", "strong-construction", "architectural-lines", "stylish-seat", "formal-dining",
+          "room-decor-refresh", "exquisite-craft", "designer-approved", "woodworking", "ergonomic-backrest", "bestseller",
+          "resilient", "office-visitor-chair", "classy", "fashionable", "cozy-dining", "premium-dining-chair"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 50.0, "height": 90.0, "depth": 52.0 }
+        },
+        "taxonomy": {
+          "style_classifier": "Contemporary Elegant Dining",
+          "materials": { "waxed_leather": 45.0, "walnut_finished_beech": 45.0, "interior_padding": 10.0 }
+        },
+        "multimodal_vqa": [
+          { "q": "What style are the legs of this dining chair?", "a": "The chair features tapered dark wooden legs splaying out slightly from the seat base." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Chic modern dining chair in brown leather, tufted back, solid ash wood tapering frame, pure white background studio packshot."
+        }
+      }
+    },
+    {
+      "id": "rocking_chair",
+      "name": "Rocking Chair",
+      "url": "/api/polyhaven/gltf/Rockingchair_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "Rockingchair_01",
+      "annotations": {
+        "description": "An authentic Shaker-style vintage rocking chair built robustly from heirloom-quality hand-polished solid amber cherry wood, showcasing a beautifully supportive slatted tall spindle backrest and perfectly tension-balanced curved floor runners that execute a exceptionally silent, smooth rocking movement ideal for comforting nurseries, quiet library reading settings, or rustic farmhouse living rooms.",
+        "keyTags": [
+          "rocking", "chair", "seat", "vintage", "wood", "traditional", "antique", "wooden", "cherry-wood",
+          "shaker-style", "nursery-rocker", "slow-sway", "spindle-backrest", "wooden-runners", "rustic-farmhouse",
+          "maternity-relax", "cozy-hearth-side", "hand-finished", "heirloom-furniture", "classic-american", "slatted-design",
+          "patio-vintage", "reading-nook", "comfort-sway", "old-school-rocker", "grandparents-favorite", "soothing-motion",
+          "sturdy-wooden-joints", "peaceful-sitting", "nostalgic-decor", "sculpted-wooden", "tall-back-chair",
+          "cozy-cabin", "authentic-craftsmanship", "cabin-furniture", "cottagecore", "solid-cherry", "smooth-sanding",
+          "comfortable", "restful", "indoor-porch-style", "simple-art", "expert-lumber", "relaxation-tool", "well-balanced",
+          "timeless-woodwork", "classic-rocking-chair", "quiet-swivel", "hardwood-runners", "premium-vintage-chair"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 64.0, "height": 102.0, "depth": 92.0 }
+        },
+        "taxonomy": {
+          "style_classifier": "American Country Craft / Shaker Style",
+          "materials": { "cherry_wood": 100.0 }
+        },
+        "multimodal_vqa": [
+          { "q": "How does this chair stand?", "a": "It stands on two curved wooden rocker rails designed for a gentle swaying motion." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Cozy rustic wooden rocking chair, polished amber cherry wood finish, detailed grains, next to fireplace hearth."
+        }
+      }
+    },
+    {
+      "id": "bar_stool",
+      "name": "Bar Stool",
+      "url": "/api/polyhaven/gltf/bar_chair_round_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "bar_chair_round_01",
+      "annotations": {
+        "description": "This classic round wooden bar stool is engineered with a high-strength solid birch construction brushed with a stark industrial dark finish, complete with an ergonomic integrated wrap-around circular steel footrest ensuring extra structural stability and sustained comfort for luxury kitchen islands, high-top bar layouts, or upscale pub environments.",
+        "keyTags": [
+          "bar", "stool", "seating", "chair", "kitchen", "counter", "pub", "tall", "wooden", "birch", "industrial", "footrest", "circular", "round", "wood", "sturdy", "comfortable", "island", "cafe", "bistro", "high-stool", "dining", "interior", "rustic", "modern", "design", "decor", "craftsmanship", "carpentry", "furniture", "lounge", "black-finish", "stark", "classic", "minimalist", "sleek", "durable", "high-top", "commercial", "residential", "tavern", "luxury", "solid-wood", "heavy-duty", "steel-ring", "easy-clean", "ergonomic", "accent-stool", "apartment", "urban-living", "home-bar", "bestseller"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 42.0, "height": 75.0, "depth": 42.0 },
+          "bounding_box_3d": {
+            "min": [-0.21, 0.0, -0.21],
+            "max": [0.21, 0.75, 0.21]
+          },
+          "estimated_polygons": 12500,
+          "center_of_mass": [0.0, 0.38, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Industrial Modern / Pub Classic",
+          "materials": { "birch_wood_percentage": 85.0, "steel_footrest_percentage": 15.0 },
+          "wordnet_synset": "barstool.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Does this bar stool have a backrest or armrest?", "a": "No, it is a streamlined, low-profile round backless and armless bar stool designed to slide easily under counters." },
+          { "q": "What is the function of the circular metal frame near the bottom?", "a": "It acts as a sturdily integrated circular footrest for comfortable seating convenience while reinforcing the stool structure." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "An elegant round wooden bar stool with a classic black finish and circular steel footrest, studio lighting, photorealistic modern loft kitchen setup."
+        }
+      }
+    },
+    {
+      "id": "bench",
+      "name": "Bench",
+      "url": "/api/polyhaven/gltf/painted_wooden_bench?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "painted_wooden_bench",
+      "annotations": {
+        "description": "A robust and classically styled painted wooden bench presenting an elegantly curved slatted backrest and spacious contoured bench seating area, beautifully protected with weather-resistant forest green milk paint to deliver outstanding lifetime endurance in lush backyard gardens, rustic entryways, hallway mudrooms, or scenic park landscapes.",
+        "keyTags": [
+          "bench", "seating", "wooden", "garden", "outdoor", "park", "entryway", "rustic", "painted", "green", "patio", "backyard", "slatted", "wood", "weather-proof", "forest-green", "sturdy", "cottage", "porch", "hallway", "mudroom", "craftstage", "timber", "classic", "traditional", "landscape", "yard", "comfortable", "durable", "outdoor-living", "cottagecore", "woodworking", "veranda", "leisure", "relax", "waiting-area", "public-bench", "lawn", "cozy", "scenic", "heritage", "home-decor", "accent-piece", "rustic-style", "heavy-duty", "solid-construct", "scandinavian", "cabin", "retreat", "summer", "bestseller"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 150.0, "height": 88.0, "depth": 62.0 },
+          "bounding_box_3d": {
+            "min": [-0.75, 0.0, -0.31],
+            "max": [0.75, 0.88, 0.31]
+          },
+          "estimated_polygons": 21000,
+          "center_of_mass": [0.0, 0.42, -0.02]
+        },
+        "taxonomy": {
+          "style_classifier": "Garden Traditional / Country Craftsman",
+          "materials": { "solid_pine_wood": 95.0, "weatherproof_paint": 5.0 },
+          "wordnet_synset": "bench.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What kind of paint finish does this garden bench feature?", "a": "It features a rich, weather-resistant forest green painted finish that protects the wood." },
+          { "q": "Is this bench designed for multiple people?", "a": "Yes, its spacious 150 cm wide frame comfortably accommodates two to three adults." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "A traditional wooden park bench in deep painted forest green, slatted backrest, positioned in a misty botanical garden, high-resolution photography."
+        }
+      }
+    },
+    {
+      "id": "chinese_armchair",
+      "name": "Chinese Armchair",
+      "url": "/api/polyhaven/gltf/chinese_armchair?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "chinese_armchair",
+      "annotations": {
+        "description": "An authentic traditional Chinese solid rosewood armchair, representing classical Ming Dynasty elegance with its iconic horseshoe armrest, delicately hand-carved floral openwork on the back splat, and sturdy mortise-and-tenon structural joints that radiate rich historical charm and majestic prestige in private collections or formal Asian-themed parlor spaces.",
+        "keyTags": [
+          "chinese", "armchair", "chair", "seat", "traditional", "oriental", "wood", "carved", "asian", "rosewood", "ming-dynasty", "horseshoe-back", "dynasty", "historical", "antique", "heritage", "mortise-and-tenon", "handcrafted", "exquisite", "parlor", "palace", "mansion", "collector", "sculptural", "classic-oriental", "red-wood", "lacquered", "office-lounge", "study-room", "dining-host", "prestige", "stately", "bureau", "decor-accent", "museum-piece", "imperial", "dynastic", "woodworking", "royal-seating", "scrolled-ends", "sturdy", "durable", "rare-collectible", "cultural-design", "timeless", "sophisticated", "traditional-crafts", "fine-art", "majestic", "elaborate-carving", "bestseller", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 62.0, "height": 98.0, "depth": 58.0 },
+          "bounding_box_3d": {
+            "min": [-0.31, 0.0, -0.29],
+            "max": [0.31, 0.98, 0.29]
+          },
+          "estimated_polygons": 34000,
+          "center_of_mass": [0.0, 0.49, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Classical Chinese / Ming Dynasty Era",
+          "materials": { "solid_rosewood": 98.0, "traditional_lacquer": 2.0 },
+          "wordnet_synset": "armchair.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the defining design shape of this chair's backrest?", "a": "It features a traditional horseshoe-shaped backrest curve that wraps continuously to form the armrests." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Traditional Chinese crimson rosewood armchair, circular horseshoe curved arms, elegant hand-carved details, pristine white studio catalog lighting."
+        }
+      }
+    },
+    {
+      "id": "painted_sofa",
+      "name": "Painted Sofa",
+      "url": "/api/polyhaven/gltf/painted_wooden_sofa?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "painted_wooden_sofa",
+      "annotations": {
+        "description": "An incredibly charming cottage-style painted wooden sofa hosting extra-plush canvas-upholstered cushions resting in a hand-finished wooden slat frame painted in a delightful buttery soft cream color, perfect for adding a bright, cozy, welcoming, and cheerful country seating atmosphere in family living areas or sunny enclosed backyard sunrooms.",
+        "keyTags": [
+          "sofa", "couch", "painted", "wooden", "colorful", "settee", "traditional", "cottage", "country", "cream", "soft-tones", "canvas", "upholstered", "cushions", "sunroom", "bright", "cozy", "backyard", "sturdy-wood", "hand-finished", "slat-frame", "family-living", "lounge", "relaxing", "apartment", "living-room", "decor", "home-staging", "bestseller", "scandinavian", "farmhouse-chic", "charming", "relax", "casual-seating", "comfortable-cushions", "shabby-chic", "pastel", "fresh-look", "playful", "welcoming", "durable-structure", "solid-timber", "soft-padding", "high-resilience", "reception", "furniture-design", "timeless-couch", "spring-support", "easy-wash", "cheerful", "rustic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 180.0, "height": 85.0, "depth": 88.0 },
+          "bounding_box_3d": {
+            "min": [-0.9, 0.0, -0.44],
+            "max": [0.9, 0.85, 0.44]
+          },
+          "estimated_polygons": 58000,
+          "center_of_mass": [0.0, 0.4, 0.01]
+        },
+        "taxonomy": {
+          "style_classifier": "Farmhouse Cottage / Shabby Chic",
+          "materials": { "painted_hardwood": 45.0, "cotton_canvas_upholstery": 45.0, "foam_padding": 10.0 },
+          "wordnet_synset": "sofa.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What tone are the canvas cushions of this painted sofa?", "a": "The cushions feature a bright, natural warm canvas tone that complements the soft cream-painted finish." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Bright farmhouse cottage painted wooden sofa with comfortable deep canvas cushions, sunny country living room setting, warm morning light, photorealistic."
+        }
+      }
+    },
+    {
+      "id": "wooden_stool",
+      "name": "Wooden Stool",
+      "url": "/api/polyhaven/gltf/wooden_stool_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "wooden_stool_01",
+      "annotations": {
+        "description": "A simple yet masterfully designed three-legged rustic wooden stool turned from premium solid heartwood pine, exhibiting beautiful natural timber ring grains, structural wedge leg bindings, and an organic saddle-contoured seat face that delivers incredibly reliable multi-purpose service as casual seating, portable footstools, or plants display stands anywhere in modern homes.",
+        "keyTags": [
+          "stool", "wooden", "seating", "footstool", "rustic", "simple", "ottoman", "pine", "three-legged", "handmade", "timber", "natural-grain", "carpentry", "accent-piece", "compact", "plant-stand", "side-table", "woodworking", "nordic", "scandinavian", "minimalist", "craft", "heartwood", "sturdy", "durable", "cottage", "cabin", "farmhouse", "portable", "utility", "saddle-seat", "organic", "wood-turned", "stave", "wedged-joints", "natural-finish", "lightweight", "convenient", "versatile", "extra-seating", "living-room", "kitchen-helper", "bedroom-stool", "under-desk", "bestseller", "cozy-accent", "collector-craft", "robust", "traditional-joinery", "interior-design", "chic", "clean-lines"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 38.0, "height": 45.0, "depth": 38.0 },
+          "bounding_box_3d": {
+            "min": [-0.19, 0.0, -0.19],
+            "max": [0.19, 0.45, 0.19]
+          },
+          "estimated_polygons": 9200,
+          "center_of_mass": [0.0, 0.22, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Organic Minimalist / Rustic Folk Art",
+          "materials": { "solid_pine_heartwood": 100.0 },
+          "wordnet_synset": "stool.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "How many legs does this wooden stool stand on?", "a": "It stands on a highly stable, classic three-legged flared tripod design." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "A modern minimalist three-legged solid pine stool with beautiful natural ring grains, dramatic studio lighting, soft gray backdrop."
+        }
+      }
+    },
+    {
+      "id": "folding_stool",
+      "name": "Folding Stool",
+      "url": "/api/polyhaven/gltf/folding_wooden_stool?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&q=80&w=800",
+      "category": "Seating",
+      "polyHavenId": "folding_wooden_stool",
+      "annotations": {
+        "description": "An exceptionally clever and highly versatile collapsible folding wooden stool constructed with premium-grade beechwood scissors-style leg hinges and a sturdily double-woven natural rattan rope seating mesh, making it a perfectly portable, lightweight, and space-saving aesthetic seating option for picnics, cozy fireplace hearths, or modern studio apartments.",
+        "keyTags": [
+          "folding", "stool", "wooden", "camp", "portable", "seating", "collapsible", "rattan", "woven-seat", "scissors-legs", "space-saver", "beechwood", "hearth-side", "picnic", "flexible-stool", "lightweight", "easy-store", "woven-strap", "outdoor-camping", "studio-apartment", "minimalist", "clever-design", "versatile", "auxiliary-chair", "wood-hardware", "sturdy", "comfortable-mesh", "cozy", "patio", "porch", "balcony-furniture", "compact", "functional", "natural-materials", "nordic-style", "utility-stool", "easy-carry", "leather-accents", "solid-joints", "rest-sitting", "cabin-decor", "travel-gear", "artisan-woven", "home-refresh", "modernist", "bestseller", "handy", "durable-fibers", "warm-tones", "traditional-folding", "practical"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 42.0, "height": 48.0, "depth": 40.0 },
+          "bounding_box_3d": {
+            "min": [-0.21, 0.0, -0.2],
+            "max": [0.21, 0.48, 0.2]
+          },
+          "estimated_polygons": 14200,
+          "center_of_mass": [0.0, 0.24, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Scandinavian Utility / Mid-Century Portable",
+          "materials": { "beechwood_frame": 75.0, "natural_rattan_rope_weave": 20.0, "steel_hinge_hardware": 5.0 },
+          "wordnet_synset": "stool.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the sitting surface of the folding stool crafted with?", "a": "It features a highly durable, tight double-woven natural rattan rope net seating mesh." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "A modern collapsible beechwood folding stool with integrated natural rattan rope woven seat pad, isolated on clean catalog white, photorealistic."
+        }
+      }
+    },
+    {
+      "id": "industrial_coffee_table",
+      "name": "Industrial Coffee Table",
+      "url": "/api/polyhaven/gltf/industrial_coffee_table?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "industrial_coffee_table",
+      "annotations": {
+        "description": "This bold and edgy industrial-style coffee table showcases a rugged perforated heavy-steel base frame masterfully merged with a thick structural top slab of beautifully distressed, reclaimed barn oak wood, delivering an excellent urban aesthetic and expansive display surface for modern loft living rooms or office lounges.",
+        "keyTags": [
+          "industrial", "coffee", "table", "metal", "steel", "rustic", "wood", "urban", "living-room", "perforated-frame", "reclaimed-oak", "loft-style", "thick-top", "heavy-duty", "distressed-wood", "credenza-height", "bold-design", "edgy", "reception-table", "centerpiece", "durable-steel", "welded-joints", "patina", "textured", "warehouse-vibes", "carpentry", "metalworking", "black-steel", "sturdiness", "interior-design", "apartment-living", "lounge-furniture", "coffee-table", "low-profile", "display-surface", "woodworking", "authentic-materials", "strength", "masculine-decor", "industrial-chic", "retro-industrial", "bestseller", "sturdy", "solid-oak", "scratch-resistant", "cozy-loft", "designer-choice", "timeless", "rustic-wood", "craftsmanship", "practical"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 120.0, "height": 45.0, "depth": 65.0 },
+          "bounding_box_3d": {
+            "min": [-0.6, 0.0, -0.325],
+            "max": [0.6, 0.45, 0.325]
+          },
+          "estimated_polygons": 18200,
+          "center_of_mass": [0.0, 0.22, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Industrial Chic / Urban Reclaimed",
+          "materials": { "reclaimed_oak_wood": 55.0, "perforated_steel": 45.0 },
+          "wordnet_synset": "coffee_table.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What kind of wood is utilized for the tabletop?", "a": "The tabletop is crafted from thick, ruggedly distressed reclaimed barn oak wood." },
+          { "q": "Describe the unique feature of the metal framework.", "a": "It uses an urban perforated steel frame pattern that gives a light, airy industrial feel." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "An industrial coffee table featuring a reclaimed oak wood top on a black perforated metal mesh base, warm studio lighting inside a modern brick loft."
+        }
+      }
+    },
+    {
+      "id": "modern_coffee_table",
+      "name": "Modern Coffee Table",
+      "url": "/api/polyhaven/gltf/modern_coffee_table_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "modern_coffee_table_01",
+      "annotations": {
+        "description": "An outstandingly elegant contemporary rectangular coffee table featuring an exquisite luxury honed white stone slab top surfaces, seamlessly set flush into a crisp and beautifully finished warm natural ash wood frame featuring clean linear geometric profiles ideal for enhancing high-design city penthouses or chic apartment reception spaces.",
+        "keyTags": [
+          "modern", "coffee", "table", "contemporary", "stone", "wood", "rectangular", "white-stone", "ash-wood", "geometric", "linear", "sleek-profile", "chic", "penthouse", "city-living", "mansion", "reception", "luxury", "honed-finish", "lounge-center", "minimalist", "nordic", "scandinavian", "bright-decor", "sturdy", "living-room-display", "designer", "architectural", "gorgeous-grain", "clean-lines", "sophisticated", "durable-top", "scratch-resistant", "easy-wipe", "fine-furniture", "understated", "flat-surface", "neutral-palette", "room-styling", "home-improvement", "premium-grade", "elegant", "bestseller", "modernist", "stately", "parlor", "air-atmosphere", "light-tone", "expert-fitting", "classic-modern", "warmth", "aesthetic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 110.0, "height": 40.0, "depth": 60.0 },
+          "bounding_box_3d": {
+            "min": [-0.55, 0.0, -0.3],
+            "max": [0.55, 0.4, 0.3]
+          },
+          "estimated_polygons": 11000,
+          "center_of_mass": [0.0, 0.2, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Contemporary Organic / Minimalist Luxe",
+          "materials": { "honed_white_stone_slab": 50.0, "ash_wood_frame": 50.0 },
+          "wordnet_synset": "coffee_table.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What sits inside the wooden frame to form the surface?", "a": "A high-end, honed white stone quartz or marble slab is set flush in the ash wood frame." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Minimalist rectangular coffee table containing a honed white marble inlay on a warm ash wood frame, photorealistic architectural digest style."
+        }
+      }
+    },
+    {
+      "id": "round_coffee_table",
+      "name": "Round Coffee Table",
+      "url": "/api/polyhaven/gltf/coffee_table_round_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "coffee_table_round_01",
+      "annotations": {
+        "description": "A visually breathtaking contemporary circular coffee table boasting a polished luxury white Carrara marble top displaying exquisite natural grey veins, masterfully supported by an artful set of interlocking, looping golden brass metal legs that bring deep artistic sophistication, sculptural presence, and light-filled luxury to grand living lounges.",
+        "keyTags": [
+          "coffee", "table", "round", "marble", "modern", "metal", "contemporary", "circular", "carrara-top", "gold-legs", "metallic-loop", "brass", "interlocking-base", "sculptural-art", "living-room-luxury", "vibrant", "elegant", "fancy", "veined-marble", "high-end", "mansion-style", "chic-lounge", "geometric-base", "radiant", "centerpiece", "durable-materials", "easy-maintain", "apartment-accent", "hotel-lobby", "glamour", "art-deco", "mid-century", "designer-furniture", "fine-detailing", "polished-surface", "airy", "luxurious", "curved-lines", "sophisticated", "bestselling-table", "home-refresh", "exquisite", "sturdy", "corrosion-free-brass", "stately", "high-quality", "graceful", "shining", "royal", "gilded", "urban-chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 85.0, "height": 45.0, "depth": 85.0 },
+          "bounding_box_3d": {
+            "min": [-0.425, 0.0, -0.425],
+            "max": [0.425, 0.45, 0.425]
+          },
+          "estimated_polygons": 23000,
+          "center_of_mass": [0.0, 0.22, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Glamourous Contemporary / Mid-Century Luxe",
+          "materials": { "carrara_marble_slab": 60.0, "brass_plated_steel": 40.0 },
+          "wordnet_synset": "coffee_table.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the primary material and shape of the tabletop?", "a": "It is a beautifully circular polished white Carrara marble tabletop." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "A luxury round coffee table with exquisite Carrara marble slab top and looping satin brass legs, cinematic studio lighting."
+        }
+      }
+    },
+    {
+      "id": "wooden_dining_table",
+      "name": "Wooden Dining Table",
+      "url": "/api/polyhaven/gltf/round_wooden_table_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "round_wooden_table_01",
+      "annotations": {
+        "description": "An heirloom-quality vintage-inspired round dining table meticulously carved from solid American black walnut wood, showcasing an exceptionally elegant hand-turned central pedestal column that gracefully flares out into four splayed carved legs to provide absolute stability and an intimate, welcoming dining layout for gourmet family kitchens.",
+        "keyTags": [
+          "wooden", "dining", "table", "round", "vintage", "pedestal", "classic", "kitchen", "american-walnut", "solid-wood", "hand-turned", "carved-legs", "heirloom", "dining-room", "gathering", "warm-finish", "rustic-elegance", "sturdy-base", "family-lunches", "intimate-dinner", "breakfast-nook", "classic-furniture", "woodworking", "carpentry", "durable-table", "timeless-design", "historic-charm", "shaker-style", "traditional-dining", "hospitality", "premium-grade", "highly-polished", "dark-tones", "cottagecore", "mansion-dining", "cozy", "sculpted-pedestal", "flat-top", "heavy-structure", "easy-maintenance", "bestselling-table", "designer-staging", "authentic", "prestige", "fine-timber", "luxurious", "inviting", "stable-four-feet", "circular-top", "craftsmanship", "high-end"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 110.0, "height": 75.0, "depth": 110.0 },
+          "bounding_box_3d": {
+            "min": [-0.55, 0.0, -0.55],
+            "max": [0.55, 0.75, 0.55]
+          },
+          "estimated_polygons": 31000,
+          "center_of_mass": [0.0, 0.38, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Classic Traditional / Elegant Farmhouse",
+          "materials": { "american_walnut_wood": 100.0 },
+          "wordnet_synset": "dining_table.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Does this table have corner legs?", "a": "No, it features a singular central decorative turned pedestal pillar that splits into four splayed feet." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic round dark walnut dining pedestal table with beautiful hand-turned support column, rustic luxury dining room, soft lighting, depth of field."
+        }
+      }
+    },
+    {
+      "id": "wooden_side_table",
+      "name": "Wooden Side Table",
+      "url": "/api/polyhaven/gltf/side_table_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "side_table_01",
+      "annotations": {
+        "description": "An exceptionally elegant, hand-polished and classically styled wooden side table turned from premium solid alder wood, displaying beautiful circular natural ring grains and a small handy storage shelf below to serve as a perfect lamp stand or couch-side companion in master bedrooms, cozy lounges, or traditional reading alcoves.",
+        "keyTags": [
+          "wooden", "side", "table", "accent-table", "bedroom", "living-room", "furniture", "alder", "turned-legs", "lamp-stand", "cozy", "rustic", "classical", "natural-grain", "woodworking", "carpentry", "timber", "quality-craft", "traditional", "interior-design", "home-decor", "apartment", "compact", "small-table", "bedside", "storage", "shelf", "display-shelf", "polished-wood", "sturdy", "durable", "vintage-inspired", "solid-alder", "lounge-decor", "office-corner", "convenient", "versatile", "handy-table", "bestseller", "cottage", "cabin-rustic", "farmhouse-charm", "shaker-decor", "elegance", "premium-finish", "easy-assembly", "interior-staging", "minimalist-side", "understated-luxury", "expert-sanded", "chic", "timeless"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 45.0, "height": 62.0, "depth": 45.0 },
+          "bounding_box_3d": {
+            "min": [-0.225, 0.0, -0.225],
+            "max": [0.225, 0.62, 0.225]
+          },
+          "estimated_polygons": 9500,
+          "center_of_mass": [0.0, 0.31, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Traditional American / Vintage Accent",
+          "materials": { "solid_alder_wood": 100.0 },
+          "wordnet_synset": "table.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "Does this side table have an integrated power outlet or USB port?", "a": "No, it is a traditional pure wood construction with no built-in electronic properties." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic round wooden side table with light warm natural grains, dynamic cozy ambient, studio catalogs profile style."
+        }
+      }
+    },
+    {
+      "id": "console_table",
+      "name": "Console Table",
+      "url": "/api/polyhaven/gltf/ClassicConsole_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "ClassicConsole_01",
+      "annotations": {
+        "description": "A majestic neoclassical hall console table crafted from finest cherry wood, presenting detailed hand-carved floral flourishes along its slender apron and fluted cabriole legs to bring outstanding historical prestige, visual greeting elegance, and high-contrast display area in mansion entryways, grand hallways, or upscale living salons.",
+        "keyTags": [
+          "console", "table", "classic", "neoclassical", "hallway", "entryway", "cherry-wood", "carved", "cabriole-legs", "fluted", "ornate", "parlor", "prestige", "historical", "mansion", "palace", "stately", "premium", "furniture", "interior-styling", "greetings-table", "elegance", "carving-detail", "hand-finished", "traditional-decor", "castle-vibe", "heritage", "bestseller", "grandeur", "opulent", "woodworking", "expert-carpentry", "durable", "sturdiness", "narrow-profile", "accent-table", "luxury-living", "refined-finish", "classy", "timeless", "antique-style", "museum-reproduction", "sophisticated", "interior-staging", "high-end", "royal", "gilded", "chic", "heirloom", "magnificent"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 125.0, "height": 82.0, "depth": 40.0 },
+          "bounding_box_3d": {
+            "min": [-0.625, 0.0, -0.2],
+            "max": [0.625, 0.82, 0.2]
+          },
+          "estimated_polygons": 32000,
+          "center_of_mass": [0.0, 0.41, -0.01]
+        },
+        "taxonomy": {
+          "style_classifier": "Neoclassical Hallway Accent / Formal Antique",
+          "materials": { "cherry_wood": 95.0, "lacquer_finish": 5.0 },
+          "wordnet_synset": "table.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the shape of the legs of this console table?", "a": "It features elegant fluted cabriole legs that gracefully flare outward." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Neoclassical hallway console table with ornate cherry wood details, casting dramatic morning entryway long shadows."
+        }
+      }
+    },
+    {
+      "id": "nightstand",
+      "name": "Nightstand",
+      "url": "/api/polyhaven/gltf/ClassicNightstand_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1532372320978-9b4d6a3a854c?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "ClassicNightstand_01",
+      "annotations": {
+        "description": "This classically proportioned bedside nightstand is beautifully hand-constructed from solid honey oak, featuring a spacious pull-out storage drawer with a solid brass pull handle and a lower open shelf designed to offer versatile storage options for bedtime books, personal accessories, and accent lighting in modern or master bedroom suites.",
+        "keyTags": [
+          "nightstand", "bedside", "table", "drawer", "shelf", "oak-wood", "honey-oak", "bedroom", "storage", "classic", "brass-handle", "cabinet", "interior-design", "sturdy", "durable", "solid-wood", "furniture", "home-decor", "convenient", "handy", "compact", "apartment-living", "luxury-bedroom", "cozy-ambiance", "woodworking", "carpentry", "handcrafted", "bestseller", "traditional", "shaker-style", "open-shelf", "easy-reach", "night-companion", "sleeping", "styling", "staging", "expert-finish", "smooth-drawers", "heavy-duty", "cottage", "rustic-charm", "timeless", "elegant", "understated", "sleek-lines", "craftsmanship", "practical", "premium-grade", "residential", "modernist", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 50.0, "height": 65.0, "depth": 45.0 },
+          "bounding_box_3d": {
+            "min": [-0.25, 0.0, -0.225],
+            "max": [0.25, 0.65, 0.225]
+          },
+          "estimated_polygons": 11000,
+          "center_of_mass": [0.0, 0.325, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Shaker Traditional / Bedroom Classic",
+          "materials": { "honey_oak_wood": 90.0, "brass_hardware": 10.0 },
+          "wordnet_synset": "nightstand.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "How many drawers are integrated into this nightstand?", "a": "It has exactly one smooth-sliding top drawer with a brass pull handle." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Craftsmanship bedside traditional oak nightstand with high-contrast brass pull-handle, isolated on warm cream studio backdrop."
+        }
+      }
+    },
+    {
+      "id": "classic_coffee_table",
+      "name": "Classic Coffee Table",
+      "url": "/api/polyhaven/gltf/CoffeeTable_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "CoffeeTable_01",
+      "annotations": {
+        "description": "A robust and classically styled rectangular wooden coffee table crafted from solid dark cherry wood, presenting tapered square legs and a spacious, highly polished tabletop display surface that comfortably hosts books, coffee cups, or flower arrangements to form the ultimate central anchor point in elegant living rooms or drawing salons.",
+        "keyTags": [
+          "coffee-table", "classic", "wooden", "cherry-wood", "rectangular", "tapered-legs", "living-room", "lounge", "centerpiece", "parlor", "sturdy", "durable", "solid-wood", "polished-top", "traditional", "heritage", "prestige", "furniture", "interior-design", "home-decor", "stately", "spacious", "flat-top", "woodworking", "carpentry", "hand-finished", "timeless-classic", "warm-tones", "luxury-living", "apartment-accent", "reception-table", "bestseller", "rustic", "farmhouse-elegant", "heavy-duty", "expert-sanded", "chic", "refined", "grandeur", "cozy-setting", "gathering-center", "styling", "home-staging", "practical", "functional", "craftsmanship", "wooden-furniture", "timeless", "sophisticated", "royal"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 115.0, "height": 45.0, "depth": 65.0 },
+          "bounding_box_3d": {
+            "min": [-0.575, 0.0, -0.325],
+            "max": [0.575, 0.45, 0.325]
+          },
+          "estimated_polygons": 13000,
+          "center_of_mass": [0.0, 0.22, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Federal Traditional / Parlor Centerpiece",
+          "materials": { "cherry_wood": 100.0 },
+          "wordnet_synset": "coffee_table.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Does this coffee table have drawers or storage components?", "a": "No, it is a streamlined four-legged coffee table with a flat solid top without extra shelves or cavities." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Timeless dark cherry stained rectangular wooden coffee table, studio isolated setup alignment."
+        }
+      }
+    },
+    {
+      "id": "desk",
+      "name": "Desk",
+      "url": "/api/polyhaven/gltf/metal_office_desk?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1518455027359-f3f8164ba6bd?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "metal_office_desk",
+      "annotations": {
+        "description": "This heavy-duty industrial-modern office desk features a welded powder-coated structural steel support frame integrated with a premium dark walnut laminate surface slab, complete with two built-in steel drawers on ball-bearing glides to provide high-strength organizational efficiency and aesthetic layout focus in modern corporate offices or home study studios.",
+        "keyTags": [
+          "desk", "office", "study", "workspace", "computer", "writing-desk", "steel-frame", "walnut-top", "drawers", "industrial", "modern", "work-from-home", "sturdy", "heavy-duty", "durable", "functional", "organization", "metal-drawers", "executive", "professional", "minimalist", "sleek-lines", "storage", "utility", "furniture", "interior-styling", "apartment", "loft-style", "commercial-grade", "scratch-resistant", "easy-clean", "high-productivity", "creative-studio", "laptop-table", "bestseller", "urban-living", "welded-joints", "ball-bearing", "smooth-glide", "premium-walnut", "powder-coat", "corrosion-resistant", "ergonomic", "focus", "quality-construct", "solid-built", "chic", "corporate", "timeless", "architectural", "industrial-chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 140.0, "height": 76.0, "depth": 70.0 },
+          "bounding_box_3d": {
+            "min": [-0.7, 0.0, -0.35],
+            "max": [0.7, 0.76, 0.35]
+          },
+          "estimated_polygons": 19500,
+          "center_of_mass": [0.1, 0.38, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Industrial Modernist / Executive Studio",
+          "materials": { "walnut_laminate": 40.0, "powdercoated_steel": 60.0 },
+          "wordnet_synset": "desk.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Is the height of this industrial desk adjustable?", "a": "No, it is a rigid fixed-height industrial desk standing at a standard 76 cm height." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Industrial metal desk with rich wooden grain worktop, glowing task lighting, modern loft background."
+        }
+      }
+    },
+    {
+      "id": "rustic_nightstand",
+      "name": "Rustic Nightstand",
+      "url": "/api/polyhaven/gltf/painted_wooden_nightstand?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1532372320978-9b4d6a3a854c?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "painted_wooden_nightstand",
+      "annotations": {
+        "description": "A charming and rustic hand-painted wooden bedside nightstand weathered to absolute perfection with soft distressed robin's egg blue milk paint, hosting an upper drawer with an antique iron pull and a lower slatted rack that brings amazing farmhouse warmth, country cottage aesthetics, and handy bedside convenience.",
+        "keyTags": [
+          "nightstand", "rustic", "painted", "wooden", "blue", "distressed", "weathered", "farmhouse", "cottage", "drawer", "slatted-rack", "bedside", "bedroom", "cozy", "shabby-chic", "vintage", "milk-paint", "hand-finished", "iron-pull", "furniture", "interior-decor", "home-staging", "charming", "quaint", "storage", "convenience", "compact", "bestseller", "cottagecore", "woodworking", "carpentry", "artisan-made", "unique-accent", "soft-tones", "relaxing", "sleeping-den", "styling", "apartment-chic", "durable", "sturdy", "pine-wood", "weather-proofed", "colorful-furniture", "pastels", "retro", "timeless", "novelty", "decorative", "practical", "warmth", "inviting"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 46.0, "height": 62.0, "depth": 40.0 },
+          "bounding_box_3d": {
+            "min": [-0.23, 0.0, -0.2],
+            "max": [0.23, 0.62, 0.2]
+          },
+          "estimated_polygons": 14000,
+          "center_of_mass": [0.0, 0.31, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Rustic Cottage / Distressed Folk Art",
+          "materials": { "distressed_pine": 95.0, "forged_iron_handle": 5.0 },
+          "wordnet_synset": "nightstand.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What finish does this nightstand have?", "a": "It features a beautiful hand-weathered robin's egg blue milk paint finish." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Farmhouse chic distressed blue wooden nightstand with slatted bottom shelf, warm cottage morning ambient."
+        }
+      }
+    },
+    {
+      "id": "tall_side_table",
+      "name": "Tall Side Table",
+      "url": "/api/polyhaven/gltf/side_table_tall_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "side_table_tall_01",
+      "annotations": {
+        "description": "An exceptionally elegant slender tall wooden side table beautifully styled with elongated turned legs and a rich glossy mahogany finish, perfect for elevating decorative ceramic vases, green potted plants, or sculpture accents in narrow hallway corners, entrance vestibules, or high-backed reading sofa niches.",
+        "keyTags": [
+          "side-table", "tall", "slender", "wooden", "mahogany", "turned-legs", "accent-table", "hallway", "corner", "plant-stand", "pedestal", "classic", "elegant", "glossy-finish", "furniture", "home-decor", "interior-design", "narrow-profile", "sturdy", "durable", "high-end", "apartment-living", "entryway", "vestibule", "woodworking", "carpentry", "handcrafted", "bestseller", "traditional", "victorian-inspired", "sculpture-display", "vibe", "styling", "staging", "expert-finish", "cherry-tones", "heavy-duty", "cottage", "rustic-elegance", "timeless", "unobtrusive", "sleek-lines", "craftsmanship", "practical", "premium-grade", "residential", "modernist", "chic", "sophisticated", "gorgeous"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 38.0, "height": 78.0, "depth": 38.0 },
+          "bounding_box_3d": {
+            "min": [-0.19, 0.0, -0.19],
+            "max": [0.19, 0.78, 0.19]
+          },
+          "estimated_polygons": 11500,
+          "center_of_mass": [0.0, 0.39, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Victorian Classic / Ornamental Accent Pedestal",
+          "materials": { "solid_mahogany_wood": 100.0 },
+          "wordnet_synset": "table.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "Can this tall table support a heavy television?", "a": "No, it features a slender, high-profile framework best suited for lightweight decorative objects up to 15 kg." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Refined mahogany tall accent table with elegant turned legs, isolated on clean catalog white."
+        }
+      }
+    },
+    {
+      "id": "small_round_table",
+      "name": "Small Round Table",
+      "url": "/api/polyhaven/gltf/round_wooden_table_02?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1467043153537-a4fba2cd39ef?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "round_wooden_table_02",
+      "annotations": {
+        "description": "A delightful and highly versatile small circular wooden table crafted from solid white ash, hosting a three-legged tripod base and a beautiful natural sand-blasted grain face that excels as a casual coffee table, side dining table, or quick laptop workstation in cozy sunrooms, studios, or Scandinavian cafes.",
+        "keyTags": [
+          "round-table", "small", "wooden", "ash-wood", "tripod", "three-legged", "circular", "natural-finish", "scandinavian", "nordic", "sunroom", "bistro", "cafe", "bestseller", "sturdy", "durable", "laptop-table", "coffee-table", "furniture", "interior-decor", "minimalist", "sleek", "modern", "home-staging", "practical", "functional", "compact-living", "apartment", "studio-furniture", "woodworking", "carpentry", "artisan-made", "clean-lines", "unobtrusive", "lightweight", "easy-move", "decor-accent", "cozy", "welcoming", "easy-clean", "scratch-resistant", "solid-built", "quality", "design", "timeless", "aesthetic", "warm-tones", "dining-nook", "chic", "versatile"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 70.0, "height": 60.0, "depth": 70.0 },
+          "bounding_box_3d": {
+            "min": [-0.35, 0.0, -0.35],
+            "max": [0.35, 0.6, 0.35]
+          },
+          "estimated_polygons": 12000,
+          "center_of_mass": [0.0, 0.28, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Scandinavian Nordic / Organic Minimalist",
+          "materials": { "solid_ash_wood": 100.0 },
+          "wordnet_synset": "table.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "What type of wood pattern is visible on the surface?", "a": "It showcases natural open-pore ash wood lines with sand-blasted organic grain contours." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Three-legged circular light ash wood small table under bright nordic morning window, cinematic architectural photography."
+        }
+      }
+    },
+    {
+      "id": "chinese_console_table",
+      "name": "Chinese Console Table",
+      "url": "/api/polyhaven/gltf/chinese_console_table?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
+      "category": "Tables",
+      "polyHavenId": "chinese_console_table",
+      "annotations": {
+        "description": "This magnificent classical Chinese console table represents ancient oriental craftsmanship, built with solid camphor wood stained in brilliant dark lacquered crimson, presenting detailed openwork cloud-carving geometric side brackets and continuous mortise joints that add an air of historic mystery and imperial prestige to grand hallways or entrance foyers.",
+        "keyTags": [
+          "chinese", "console", "table", "oriental", "asian", "traditional", "camphor-wood", "lacquered", "crimson", "carved", "cloud-pattern", "foyer", "hallway", "prestige", "historical", "antique", "imperial", "museum", "sculptural", "woodworking", "carpentry", "mortise-and-tenon", "hand-rubbed", "bestseller", "dynasty", "heritage", "stately", "ornate", "parlor", "interior-styling", "staging", "durable", "sturdy", "heavy-built", "timeless", "unique-accent", "luxury", "elaborate-carving", "collector-piece", "royal", "culture", "finest-lacquer", "expert-craft", "red-wood", "grandeur", "opulent", "sophisticated", "exclusive", "gorgeous", "art-history", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 135.0, "height": 85.0, "depth": 38.0 },
+          "bounding_box_3d": {
+            "min": [-0.675, 0.0, -0.19],
+            "max": [0.675, 0.85, 0.19]
+          },
+          "estimated_polygons": 38000,
+          "center_of_mass": [0.0, 0.43, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Imperial Chinese / Qing Dynasty Era Console",
+          "materials": { "solid_camphor_wood": 97.0, "pigmented_traditional_lacquer": 3.0 },
+          "wordnet_synset": "table.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "Are the joints constructed with metal nails?", "a": "No, it utilizes traditional Chinese mortise-and-tenon joinery without any metal fasteners." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Stately crimson-lacquered Chinese console table with ornamental hand-carved cloud patterns, catalog lighting."
+        }
+      }
+    },
+    {
+      "id": "chandelier",
+      "name": "Chandelier",
+      "url": "/api/polyhaven/gltf/Chandelier_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "Chandelier_01",
+      "annotations": {
+        "description": "This spectacular vintage scroll-arm metal chandelier is designed to suspend gracefully from high ceilings, featuring six beautifully structured candelabra bulbs resting in warm copper-patina rings, delivering an expansive, casting amber glow and deep historic medieval elegance in banquet halls, grand dining rooms, or rustic farmhouse living salons.",
+        "keyTags": [
+          "chandelier", "lighting", "ceiling", "lamp", "vintage", "metal", "scroll-arm", "candelabra", "bulbs", "high-ceiling", "banquet-hall", "dining-room", "rustic", "farmhouse", "medieval-gothic", "copper-patina", "glow", "warm-light", "elegant", "ornate", "pendant", "hanging", "fixture", "premium", "luxury", "stately", "interior-design", "ceiling-decoration", "bestseller", "grandeur", "opulent", "illumination", "durable", "heavy-duty", "steel-chains", "classic", "historic-mood", "castle-look", "hotel-lobby", "drawing-room", "cozy-ambiance", "architectural", "visual-focus", "expert-patina", "design-classic", "timeless", "noble", "sturdy-mount", "radiant", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 80.0, "height": 95.0, "depth": 80.0 },
+          "bounding_box_3d": {
+            "min": [-0.4, -0.95, -0.4],
+            "max": [0.4, 0.0, 0.4]
+          },
+          "estimated_polygons": 52000,
+          "center_of_mass": [0.0, -0.48, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Medieval Gothic Revival / Rustic Manor Chandelier",
+          "materials": { "patinated_wrought_iron": 90.0, "electrical_components": 10.0 },
+          "wordnet_synset": "chandelier.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "How is this lighting device powered?", "a": "It operates through hardwired AC electrical infrastructure routed along the hanging steel chains." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic medieval wrought iron chandelier with six burning candelabras, hanging from heavy timber cathedral beams."
+        }
+      }
+    },
+    {
+      "id": "modern_ceiling_lamp",
+      "name": "Modern Ceiling Lamp",
+      "url": "/api/polyhaven/gltf/modern_ceiling_lamp_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "modern_ceiling_lamp_01",
+      "annotations": {
+        "description": "A sleek and ultra-minimalist modern ceiling dome lamp featuring a semi-spherical spun aluminum shade washed in a stark matte black finish, accented elegantly with a brushed brass central mounting tube that projects soft, wide-angle diffused downlight perfect for highlighting minimalist dining tables or clean modern kitchens.",
+        "keyTags": [
+          "ceiling-lamp", "modern", "lighting", "dome", "aluminum", "matte-black", "brass-accent", "minimalist", "sleek", "pendant", "hanging-fixture", "diffused-light", "dining-room", "kitchen-island", "contemporary", "scandinavian", "nordic-style", "bright", "downlight", "sturdy", "durable", "easy-install", "design", "interior-decor", "apartment-lighting", "loft-living", "bestseller", "unobtrusive", "clean-lines", "metallic", "high-quality", "low-profile", "architectural-glass", "soft-glow", "ambient", "styling", "reception-lighting", "commercial-grade", "scratch-resistant", "easy-wipe", "expert-finished", "glare-free", "cozy", "trendy", "urban-chic", "timeless", "sophisticated", "elegant", "understated", "luminous"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 45.0, "height": 35.0, "depth": 45.0 },
+          "bounding_box_3d": {
+            "min": [-0.225, -0.35, -0.225],
+            "max": [0.225, 0.0, 0.225]
+          },
+          "estimated_polygons": 14000,
+          "center_of_mass": [0.0, -0.15, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Scandinavian Minimalist / Contemporary Industrial",
+          "materials": { "spun_aluminum": 85.0, "brushed_brass": 15.0 },
+          "wordnet_synset": "pendant.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the exterior color of the lamp dome?", "a": "The dome exterior is finished in a beautiful stark matte black." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Minimalist spun black aluminum semi-spherical pendant light fixture with brushed brass connector, architectural style."
+        }
+      }
+    },
+    {
+      "id": "desk_lamp",
+      "name": "Desk Lamp",
+      "url": "/api/polyhaven/gltf/desk_lamp_arm_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "desk_lamp_arm_01",
+      "annotations": {
+        "description": "An outstandingly engineered executive desk lamp featuring a double-articulated steel cantilever arm system and a heavy, stable cast-iron base finished in sleek matte chrome, offering high-precision directional illumination control and refined mid-century architectural style for mechanical drawing boards, laptop desks, or reading tables.",
+        "keyTags": [
+          "desk-lamp", "lighting", "workspace", "articulated", "cantilever-arm", "steel", "cast-iron-base", "matte-chrome", "directional", "precision", "executive", "office", "study-room", "work-from-home", "sturdy", "durable", "functional", "heavy-base", "mid-century", "architectural", "reading", "drafting-lamp", "furniture-accessory", "interior-decor", "adjustable", "task-light", "bestseller", "sleek-lines", "industrial-chic", "modernist", "efficient", "bright-LED", "easy-switch", "focus-light", "metalworking", "high-quality", "commercial-grade", "reliable", "ergonomic", "apartment-helper", "styling", "design", "timeless", "unobtrusive", "clever-joints", "flexible", "utility", "cozy-den", "expert-craft", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 20.0, "height": 65.0, "depth": 48.0 },
+          "bounding_box_3d": {
+            "min": [-0.1, 0.0, -0.24],
+            "max": [0.1, 0.65, 0.24]
+          },
+          "estimated_polygons": 26000,
+          "center_of_mass": [0.0, 0.25, 0.05]
+        },
+        "taxonomy": {
+          "style_classifier": "Architectural Drafting Lamp / Mid-Century Professional",
+          "materials": { "tubular_steel": 70.0, "cast_iron": 20.0, "chrome_finish": 10.0 },
+          "wordnet_synset": "table_lamp.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Can the user change the direction of light with this lamp?", "a": "Yes, its articulated cantilever steel limbs and swiveling bracket joints let you direct light precisely." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Polished cantilever arm architect desk lamp, warm casting light pool on blueprint drawings."
+        }
+      }
+    },
+    {
+      "id": "bookshelf",
+      "name": "Classic Oak Bookshelf",
+      "url": "/api/polyhaven/gltf/wooden_bookshelf_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "wooden_bookshelf_01",
+      "annotations": {
+        "description": "A magnificent towering open bookshelf built from premium solid royal oak wood, containing five spacious, heavy-duty display shelves and presenting beautiful natural grain knots, providing ample storage capacity and classic library vibes for study suites, office collections, or elegant drawing chambers.",
+        "keyTags": [
+          "bookshelf", "bookcase", "shelving", "storage", "wooden", "oak-wood", "solid-wood", "high-profile", "library", "study", "living-room", "furniture", "display-shelves", "sturdy", "durable", "woodworking", "carpentry", "traditional-style", "expert-sanded", "prestige", "timeless", "heirloom", "shelves", "office-storage", "hardwood", "organizer", "book-lover", "cabinetry", "home-library", "interiors", "stately", "luxurious", "classic", "rustic", "natural-finish", "study-room", "storage-unit", "heavy-duty-shelves", "grain-pattern", "craftsmanship", "high-quality", "grandeur", "bestseller", "noble", "sturdy-frames", "organizing", "shelving-unit", "house-decor", "architectural", "room-styling", "danish-woodwork", "elegant"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 90.0, "height": 180.0, "depth": 35.0 },
+          "bounding_box_3d": {
+            "min": [-0.45, 0.0, -0.175],
+            "max": [0.45, 1.8, 0.175]
+          },
+          "estimated_polygons": 12000,
+          "center_of_mass": [0.0, 0.9, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "English Country Library / Solid Hardwood Storage",
+          "materials": { "solid_oak_wood": 100.0 },
+          "wordnet_synset": "bookcase.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Are the individual shelves height-adjustable on this traditional library piece?", "a": "No, it features fixed, structurally integrated solid oak display partitions to maximize loading weight limits." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Elegant towering solid royal oak wooden bookshelf against dark slate wall, cinematic atmospheric library vibe."
+        }
+      }
+    },
+    {
+      "id": "wardrobe",
+      "name": "Grand Cedar Wardrobe",
+      "url": "/api/polyhaven/gltf/wooden_wardrobe_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "wooden_wardrobe_01",
+      "annotations": {
+        "description": "An opulent, highly spacious double-door wardrobe crafted from aromatic American cedar timber, displaying exquisite hand-polished wood panel curves, an integrated brass hanging rail, and automatic brass latch closures, bringing substantial storage capability, eye-safe wood scent, and stately bedroom majesty.",
+        "keyTags": [
+          "wardrobe", "closet", "cabinet", "double-door", "cedar-wood", "aromatic", "bedroom", "storage", "clothes-hanging", "classic", "brass-hardware", "furniture", "home-decor", "luxurious", "traditional-style", "carpentry", "heavy-duty", "cedar-smell", "armoire", "royal", "interior-styling", "organizer", "garment-storage", "master-bedroom", "wooden-closet", "cabinetry", "panel-details", "craftsmanship", "high-end", "traditional", "wood-grain", "heritage", "antiques", "polishing", "latch-closures", "bedroom-suite", "stately", "sturdy", "durable", "designer-furniture", "large-capacity", "brass-latch", "shelving-compartment", "vintage-look", "aromatic-cedar", "mansion-decor", "stretching-timber", "clothes-rack", "organizing", "apartment-furniture", "fine-grain", "exclusive"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 110.0, "height": 200.0, "depth": 60.0 },
+          "bounding_box_3d": {
+            "min": [-0.55, 0.0, -0.3],
+            "max": [0.55, 2.0, 0.3]
+          },
+          "estimated_polygons": 16000,
+          "center_of_mass": [0.0, 1.0, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Federal American Bedroom / Aromatic Cedar Armoire",
+          "materials": { "solid_cedar_wood": 95.0, "heavy_brass_hardware": 5.0 },
+          "wordnet_synset": "wardrobe.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Is there a storage mirror inside the cedar doors?", "a": "No, the interior features classic cedar paneled wood with a robust hanging brass tube, keeping the look traditional." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Opulent American cedar wood wardrobe armoire with exquisite grains, standing in a sunny modern bedroom."
+        }
+      }
+    },
+    {
+      "id": "chest_of_drawers",
+      "name": "Pine Chest of Drawers",
+      "url": "/api/polyhaven/gltf/wood_chest_drawers_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "wood_chest_drawers_01",
+      "annotations": {
+        "description": "A charming, rustic pine chest featuring four wide, easy-glide storage drawers with beautifully crafted turned wooden pulls, standing on robust squat support legs to offer dynamic, user-friendly clothing or accessory storage in classic dorms or master bedrooms.",
+        "keyTags": [
+          "chest-of-drawers", "dresser", "storage", "pine-wood", "drawers", "turned-pulls", "rustic", "bedroom", "furniture",
+          "home-organization", "cozy", "cottage", "woodworking", "carpentry", "solid-pine", "natural-wood", "farmhouse",
+          "warm-tones", "multi-drawer", "cabinet", "wood-grain", "interior", "sturdy", "residential", "dresser.n.01", "clothing-storage", "accessory-storage", "four-drawers", "easy-glide", "turned-handles", "rustic-styling", "home-decor", "apartment", "shabby-chic", "vintage", "craftsmanship", "durable", "solid-wood-chest", "bedroom-furniture", "storage-organization", "turned-wooden-pulls", "smooth-running", "heavy-duty", "traditional", "wood-paneling", "heirloom-dresser", "sanded-wood", "timber-drawers", "comfortable", "scandinavian", "warm-yellow-grain", "timeless"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 80.0, "height": 100.0, "depth": 45.0 },
+          "bounding_box_3d": { "min": [-0.4, 0.0, -0.225], "max": [0.4, 1.0, 0.225] },
+          "estimated_polygons": 18000,
+          "center_of_mass": [0.0, 0.5, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Country Farmhouse Dresser / Bedroom Wooden Cabinet",
+          "materials": { "solid_pine_wood": 90.0, "heavy_duty_steel_glides": 10.0 },
+          "wordnet_synset": "chest_of_drawers.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "How many drawers are included in this pine chest?", "a": "It features exactly four deep, full-width drawers mounted on smooth slides." },
+          { "q": "What style does this wooden chest show?", "a": "It exhibits country farmhouse rustic woodwork with a warm-toned natural timber grain finish." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Charming pine wood bedroom chest of drawers with natural warm yellow finish, isolated white background."
+        }
+      }
+    },
+    {
+      "id": "sideboard",
+      "name": "Teak Credenza Sideboard",
+      "url": "/api/polyhaven/gltf/vintage_sideboard_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "vintage_sideboard_01",
+      "annotations": {
+        "description": "An incredibly stylish mid-century modern credenza sideboard masterfully turned from premium teak wood, combining sliding doors with hand-woven organic cane webbing and elegant tapered wooden support legs to deliver high-class dining storage and media placement.",
+        "keyTags": [
+          "sideboard", "credenza", "buffet", "teak-wood", "mid-century-modern", "cane-webbing", "sliding-doors", "dining-room",
+          "living-room", "furniture", "retro-chic", "woodworking", "premium-grade", "danish-design", "tapered-legs", "woven-cane", "dining-storage", "media-storage", "modernist", "scandinavian", "teak-credenza", "organic-materials", "retro", "cabinet", "craftsmanship", "hand-woven", "rattan-accent", "low-profile", "media-cabinet", "stylish-storage", "elegant", "apartment", "modern", "home-styling", "interior-designer", "nordic", "durable", "wood-grain", "teakweight", "sturdy", "chic", "timeless", "sophisticated", "high-end", "credenza- sideboard", "bestseller", "geometric-frame", "sanded-teak", "warm-tones", "dining-buffet", "room-divider", "classic-vintage"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 150.0, "height": 75.0, "depth": 42.0 },
+          "bounding_box_3d": { "min": [-0.75, 0.0, -0.21], "max": [0.75, 0.75, 0.21] },
+          "estimated_polygons": 22000,
+          "center_of_mass": [0.0, 0.375, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Danish Modernist Sideboard / High-End Credenza",
+          "materials": { "premium_teak_wood": 85.0, "natural_cane_fiber": 15.0 },
+          "wordnet_synset": "sideboard.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the style of the cabinet doors on this sideboard?", "a": "The doors are smooth-sliding panels detailed with highly airy natural cane weave mesh." },
+          { "q": "Can this unit support media gear?", "a": "Yes, its robust teak top panel is excellent for televisions or media placement up to 75kg." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Danish modern teak sideboard with cane web sliding fronts, retro minimalist living room mockup, photorealistic."
+        }
+      }
+    },
+    {
+      "id": "filing_cabinet",
+      "name": "Steel Filing Cabinet",
+      "url": "/api/polyhaven/gltf/metal_filing_cabinet_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "metal_filing_cabinet_01",
+      "annotations": {
+        "description": "A commercial-grade, heavy-gauge steel vertical filing cabinet featuring four deep storage drawers with lockable chrome pull-latches and anti-tip mechanism, providing outstanding corporate document organization and security in administrative spaces.",
+        "keyTags": [
+          "filing-cabinet", "metal-cabinet", "office-storage", "steel", "organization", "lockable", "heavy-duty",
+          "commercial-grade", "drawers", "corporate-office", "administrative", "anti-tip", "archive", "locks", "four-drawers", "document-safe", "security-cabinet", "metal-filing", "powder-coated", "chrome-latches", "office-furniture", "utility-storage", "administrative-records", "file-organizer", "sturdy", "durable-steel", "professional", "workspace", "business-storage", "sheet-metal", "secure", "cabinetry", "central-lock", "glide-runners", "smooth-drawers", "industrial", "grey-steel", "matte-finish", "heavy-built", "business-essential", "archive-cabinet", "anti-topple", "office-fixtures", "efficiency", "storage-drawers", "organizational-systems", "folder-holder", "commercial-utility", "rigid-structure", "workspace-setup", "heavy-load-drawers", "bestseller"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 46.0, "height": 132.0, "depth": 62.0 },
+          "bounding_box_3d": { "min": [-0.23, 0.0, -0.31], "max": [0.23, 1.32, 0.31] },
+          "estimated_polygons": 13000,
+          "center_of_mass": [0.0, 0.66, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Industrial Functional Office / Utility Archive",
+          "materials": { "industrial_powdercoated_steel": 100.0 },
+          "wordnet_synset": "filing_cabinet.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Is there an central key lock integrated into this cabinet?", "a": "Yes, it contains a top-mounted cylinder key lock that secures all four storage compartments simultaneously." },
+          { "q": "What is the structural casing made of?", "a": "The shell is crafted fully from thick matte-grey powder-coated sheet steel." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Sturdy industrial matte-grey steel four-drawer filing cabinet standing in modern offices."
+        }
+      }
+    },
+    {
+      "id": "storage_cabinet",
+      "name": "Retro Glass Storage Cabinet",
+      "url": "/api/polyhaven/gltf/retro_storage_cabinet?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "retro_storage_cabinet",
+      "annotations": {
+        "description": "A magnificent mid-century glass-front showcase cabinet styled with rich walnut laminate framing, featuring two sliding tempered glass doors and adjustable inner glass shelves to exhibit decorative kitchen plates, crystal glasses, or antique collections.",
+        "keyTags": [
+          "storage-cabinet", "showcase", "china-cabinet", "glass-doors", "retro", "walnut", "display", "tempered-glass",
+          "adjustable-shelves", "living-room", "dining-room", "furniture", "mid-century-modern", "china-storage", "walnut-laminate", "sliding-glass", "crystal-display", "exhibit-cabinet", "vitrine", "glassware-holder", "retro-styling", "apartment", "cabinetry", "tempered-shelves", "mdf-frame", "craftsmanship", "sturdy", "durable", "display-chest", "interior-design", "dining-room-credenza", "glass-showcase", "elegant-cabinet", "antique-holder", "dining-buffet", "chic", "modernist", "scandinavian", "warm-walnut", "rich-grain", "sliding-panels", "luminous", "curio-cabinet", "home-staging", "designer-furniture", "glass-shelving", "woodworking", "decor-cabinet", "hospitality-standard", "prestigious", "timeless", "sophisticated"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 90.0, "height": 120.0, "depth": 40.0 },
+          "bounding_box_3d": { "min": [-0.45, 0.0, -0.2], "max": [0.45, 1.2, 0.2] },
+          "estimated_polygons": 14500,
+          "center_of_mass": [0.0, 0.6, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Mid-Century Showcase / Dining Room Vitrine",
+          "materials": { "walnut_laminate_mdf": 80.0, "tempered_glass": 20.0 },
+          "wordnet_synset": "cabinet.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Are the sliding doors on this retro storage unit glass or wood?", "a": "They are templates of thick, tempered double-sliding glass panes with etched finger pulls." },
+          { "q": "What framing material surrounds the glass pane doors?", "a": "The robust structural surrounds are premium walnut-laminate finished MDF panels." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Retro mid-century dining showcase cabinet with clean walnut grain sides, hosting glowing crystalware, architectural photo."
+        }
+      }
+    },
+    {
+      "id": "credenza",
+      "name": "Solid Wood Credenza",
+      "url": "/api/polyhaven/gltf/credenza_wood_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "credenza_wood_01",
+      "annotations": {
+        "description": "An exceptionally premium solid teak wood credenza, showcasing a long, flat top display area and three center seamless hand-crafted pull drawers bordered by two spacious cabinet storage blocks, providing ultimate executive organizing luxury inside study dens.",
+        "keyTags": [
+          "credenza", "teak", "solid-wood", "executive-office", "study-room", "buffet-table", "high-end", "furniture",
+          "woodworking", "carpentry", "timeless", "prestige", "mid-century", "office-cabinet", "recessed-handles", "solid-teak", "drawers", "spacious-cabinets", "flat-top", "display-credenza", "lounge-furniture", "craftsmanship", "seamless-drawers", "scandinavian", "danish-design", "timeless-elegance", "premium-grade", "no-handles", "recessed-notches", "sturdy", "durable", "heavy-duty", "executive-desk-storage", "credenza-cabinet", "teak-grain", "traditional", "interior-design", "bestseller", "exclusive", "gorgeous", "artisan-build", "antique-future", "rich-wood-texture", "home-organization", "chic", "minimalist", "sleek", "prestige-office", "study-credence", "durable-hardware", "smooth-running-drawers", "stately"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 160.0, "height": 70.0, "depth": 45.0 },
+          "bounding_box_3d": { "min": [-0.8, 0.0, -0.225], "max": [0.8, 0.7, 0.225] },
+          "estimated_polygons": 24000,
+          "center_of_mass": [0.0, 0.35, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Mid-Century Scandinavian Executive / Teak Bureau",
+          "materials": { "solid_teak_wood": 100.0 },
+          "wordnet_synset": "credenza.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Can this wooden credenza bear a heavy high-definition media screen?", "a": "Yes, its solid inner frame reinforcement and broad squat leg layout easily supports up to 80 kg." },
+          { "q": "Are there any brass pulls on the front face drawers?", "a": "No, this Scandinavian style model deploys handle-less recessed wood notches." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic solid teak credenza standing against clear modern gallery backdrop, casting soft catalog floor shadows."
+        }
+      }
+    },
+    {
+      "id": "accent_cabinet",
+      "name": "Reclaimed Wood Accent Cabinet",
+      "url": "/api/polyhaven/gltf/carved_accent_cabinet?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1595428774223-ef52624120d2?auto=format&fit=crop&q=80&w=800",
+      "category": "Storage",
+      "polyHavenId": "carved_accent_cabinet",
+      "annotations": {
+        "description": "A delightful artistic accent cabinet expertly constructed from colorful reclaimed boat wood panels, offering highly distinct natural textures and an inner shelving layout beneath double doors with rustic iron ring pulls to form a unique rustic focal centerpiece.",
+        "keyTags": [
+          "accent-cabinet", "reclaimed-wood", "colorful", "distressed", "artisan-made", "rustic", "living-room",
+          "foyer-cabinet", "focal-piece", "unique", "traditional", "iron-ring", "bohemian", "upcycled-wood", "boat-wood", "double-doors", "iron-pulls", "shelving", "eco-friendly", "handmade", "distressed-finish", "rustic-accent", "centerpiece", "natural-textures", "artistic-cabinet", "maritime-lumber", "bohemian-decor", "shabby-chic", "antique-look", "cottagecore", "woodworking", "expert-carpentry", "weathered-paint", "home-styling", "apartment", "foyer-furniture", "iron-hardware", "double-cabinet-doors", "sealed-lumber", "collector", "statement-piece", "highly-textured", "authentic-wood", "upcycled-furniture", "colorful-timber", "durable", "sturdy", "exclusive", "creative-styling", "retro", "rustic-charm", "bestseller"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 65.0, "height": 85.0, "depth": 38.0 },
+          "bounding_box_3d": { "min": [-0.325, 0.0, -0.19], "max": [0.325, 0.85, 0.19] },
+          "estimated_polygons": 26000,
+          "center_of_mass": [0.0, 0.425, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Eco Chic Reclaimed / Rustic Bohemian Cabinets",
+          "materials": { "reclaimed_hardwood_timber": 95.0, "forged_iron_hardware": 5.0 },
+          "wordnet_synset": "cabinet.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Explain the source of colors on this sideboard cabinet.", "a": "The colors arise from natural historical paint on reclaimed maritime lumber, left intact and sealed beautifully." },
+          { "q": "What type of cabinet door pulls are installed?", "a": "The wood cabinet incorporates matching heavy forged dark iron ring pulls." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Bohemian rustic accent cabinet made of colorful distressed reclaimed boat panels, dramatic frontal catalog close-shot."
+        }
+      }
+    },
+    {
+      "id": "floor_lamp",
+      "name": "Modern Floor Lamp",
+      "url": "/api/polyhaven/gltf/modern_floor_lamp_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "modern_floor_lamp_01",
+      "annotations": {
+        "description": "An exceptionally tall, minimalist modern floor pillar lamp styled with a sleek brushed nickel steel tube support stand and balanced elegantly with a large drum linen fabric shade, projecting soft, warm-tone diffused light ideal for cozy living salons.",
+        "keyTags": [
+          "floor-lamp", "lighting", "modern", "brushed-nickel", "drum-shade", "pillar-lamp", "minimalist",
+          "scandinavian", "living-room", "reading-light", "cozy", "bedroom", "floor-lighting", "tall-lamp", "steel-stand", "fabric-shade", "linen-drum", "diffused-light", "brushed-steel", "nickel-plated", "lounge-lamp", "minimalist-pillar", "apartment", "reading-reading", "bedroom-lighting", "stands", "easy-wipe", "satin-finish", "shining", "heavy-base", "ambient-lighting", "contemporary", "scandinavian-design", "lighting-fixtures", "durable", "sturdy", "sleek-profile", "office-lounge", "soft-glow", "warm-tone", "torchiere", "brass-fixtures", "modernist", "interior-design", "bestseller", "architectural", "gorgeous", "hotel-room", "room-styling", "decor-lighting", "high-quality", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 45.0, "height": 160.0, "depth": 45.0 },
+          "bounding_box_3d": { "min": [-0.225, 0.0, -0.225], "max": [0.225, 1.6, 0.225] },
+          "estimated_polygons": 15500,
+          "center_of_mass": [0.0, 0.8, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Scandinavian Minimalist Floor Lighting / Modern Torchiere",
+          "materials": { "brushed_steel_nickel_plating": 60.0, "linen_fabric_on_wire": 40.0 },
+          "wordnet_synset": "floor_lamp.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the shape of the lamp's shade?", "a": "It uses a classic clean cylindrical white linen drum shade." },
+          { "q": "What is the structural frame finished with?", "a": "The main steel tube support stands finished in premium brushed satin nickel plating." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Minimalist brushed nickel floor lamp glowing warm amber, casting tall geometric corner shadows next to lounge armchair."
+        }
+      }
+    },
+    {
+      "id": "wall_sconce",
+      "name": "Industrial Wall Sconce",
+      "url": "/api/polyhaven/gltf/industrial_wall_sconce?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "industrial_wall_sconce",
+      "annotations": {
+        "description": "A rugged industrial gooseneck wall sconce lamp featuring a heavy matte black wrought iron mounting pipe and a clear blown-glass shade containing a glowing Edison filament bulb, to cast dynamic retro warmth across corridors and bedside walls.",
+        "keyTags": [
+          "wall-sconce", "lighting", "industrial-sconce", "gooseneck", "black-iron", "edison-bulb", "glass-shade",
+          "vintage", "corridor", "hallway", "accent-light", "mounting-fixtures", "matte-black", "wrought-iron", "blown-glass", "filament-bulb", "corridor-lighting", "bedside-lamp", "retro-glow", "ambient-light", "loft-style", "rustic", "steel-mounting", "glowing", "warm-light", "fixture", "scence", "steel-lighting", "heavy-duty-mount", "glass-cover", "easy-installation", "wall-mount", "kitchen-sconce", "restaurant-lighting", "cafe-decor", "industrial-chic", "antique-bulb", "handblown-glass", "patinated-iron", "durable", "sturdy", "scratch-resistant", "bathroom-sconce", "timeless", "sophisticated", "elegant", "design", "contemporary-industrial", "architectural", "bestseller", "room-amber-glow", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 18.0, "height": 32.0, "depth": 22.0 },
+          "bounding_box_3d": { "min": [-0.09, -0.16, -0.11], "max": [0.09, 0.16, 0.11] },
+          "estimated_polygons": 8500,
+          "center_of_mass": [0.0, 0.0, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Industrial Vintage Gooseneck / Loft Accent Sconce",
+          "materials": { "patinated_wrought_iron": 80.0, "handblown_pot_glass": 20.0 },
+          "wordnet_synset": "sconce.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What light source does this sconce include?", "a": "It comes with a classic decorative amber Edison winding wire filament bulb." },
+          { "q": "How is this lamp fixed?", "a": "It fixes securely flush onto standard drywall or concrete wall junctions using a circular iron fixture base." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Industrial black iron gooseneck wall sconce with a glowing raw filament bulb inside rustic loft kitchen."
+        }
+      }
+    },
+    {
+      "id": "bedside_lamp",
+      "name": "Cozy Bedroom Table Lamp",
+      "url": "/api/polyhaven/gltf/cozy_bedside_lamp?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "cozy_bedside_lamp",
+      "annotations": {
+        "description": "An elegant, highly welcoming bedroom nightstand table lamp composed of a beautiful textured teal glazed crackle ceramic urn base and topped with a tapered flaxen linen shade, yielding a relaxing, eye-safe bedtime atmosphere.",
+        "keyTags": [
+          "bedside-lamp", "table-lamp", "lighting", "ceramic-base", "linen-shade", "teal-glazed", "bedroom", "warm-glow", "cozy", "night-light", "decor", "crackle-finish", "nightstand-lamp", "urn-shape", "flaxen-linen", "bedtime-ambiance", "ceramic-urn", "textured-pottery", "eye-safe", "bedroom-decor", "relaxation", "ambient-lighting", "tabletop", "interior-styling", "glaze-finish", "glazing", "handcrafted-look", "hotel-room", "guest-bedroom", "cozy-lighting", "traditional-style", "american-decor", "swivel-link", "thumb-wheel-switch", "sturdy", "durable", "high-end", "apartment", "contemporary", "classic-urn", "light-fixture", "bedroom-suite-essential", "designer-lamp", "calming-glow", "night-glow", "residential-lighting", "premium-quality", "bestseller", "chic", "scandinavian", "warm-amber-glow", "reading-lamp"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 28.0, "height": 45.0, "depth": 28.0 },
+          "bounding_box_3d": { "min": [-0.14, 0.0, -0.14], "max": [0.14, 0.45, 0.14] },
+          "estimated_polygons": 9800,
+          "center_of_mass": [0.0, 0.225, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Traditional American Bedside / Cozy Ceramic Decor",
+          "materials": { "glazed_crackle_ceramic": 70.0, "flax_linen_fabric_on_cardboard": 30.0 },
+          "wordnet_synset": "table_lamp.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Does the power cord of this bedside companion contain an in-line switch?", "a": "Yes, it contains an integrated thumb wheel roller on-off toggle in-line switch." },
+          { "q": "Describe the outer coating on the pottery base.", "a": "It shows an aesthetic crackled glaze design over a deep teal urn form." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Bedside table lamp with teal crackle pottery base, shining softly on oak bedroom nightstand."
+        }
+      }
+    },
+    {
+      "id": "table_lamp_modern",
+      "name": "Minimalist Brass Desk Lamp",
+      "url": "/api/polyhaven/gltf/minimalist_table_lamp?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Lighting",
+      "polyHavenId": "minimalist_table_lamp",
+      "annotations": {
+        "description": "A stunning minimalist table lamp showcasing an elegant dome spun-metal canopy shade and column base in hand-brushed satin brass, bringing premium Bauhaus aesthetics, high-contrast focal brilliance, and warm diffused desk task light.",
+        "keyTags": [
+          "table-lamp", "lighting", "modern", "brass", "satin-finish", "minimalist", "bauhaus-design", "desk-lamp", "glow", "sturdy", "chic", "brass-lamp", "dome-canopy", "metal-accent", "brushed-brass", "task-light", "diffused-light", "office-lamp", "study-desk", "workspace-setup", "contemporary", "high-end", "decorative-fixture", "tabletop", "interior-design", "designer-lighting", "spinning-canopy", "premium-alloy", "luxury", "stately-office", "bestseller", "scandinavian", "gold-finish", "lacquered-metal", "heavy-base", "architectural", "reading-light", "hotel-fixture", "showroom-piece", "sturdy-stand", "durable", "elegant-silhouette", "gorgeous", "minimalist-aesthetic", "lighting-decoration", "night-light", "luminous", "sophisticated", "curated-collection", "nordic", "urban-loft", "task-lighting"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 24.0, "height": 38.0, "depth": 24.0 },
+          "bounding_box_3d": { "min": [-0.12, 0.0, -0.12], "max": [0.12, 0.38, 0.12] },
+          "estimated_polygons": 11000,
+          "center_of_mass": [0.0, 0.19, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Bauhaus Minimalist / Contemporary Brass Accent Accent",
+          "materials": { "brushed_brass_alloy_metal": 100.0 },
+          "wordnet_synset": "table_lamp.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the exterior finish type?", "a": "It features an extremely refined, hand-brushed satin gold/brass protective lacquer finish." },
+          { "q": "What style does the hood shape emulate?", "a": "It utilizes a circular dome canopy that redirects task lighting down onto office worktops." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Elegant spun brass dome Bauhaus table lamp, glowing softly inside cool dark concrete reading chamber."
+        }
+      }
+    },
+    {
+      "id": "potted_plant",
+      "name": "Potted Fiddle Leaf Fig",
+      "url": "/api/polyhaven/gltf/potted_house_plant_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1545241047-6083a3684587?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "potted_house_plant_01",
+      "annotations": {
+        "description": "A lively, highly detailed houseplant composed of large, glossy violin-shaped fiddle fig leaves growing out of dual natural timber stalks, potted securely in a rustic earthen red terracotta planter to inject refreshing organic life and warmth.",
+        "keyTags": [
+          "potted-plant", "fiddle-leaf-fig", "decor", "houseplant", "greenery", "organic-life", "terracotta-pot", "indoor-foliage", "home-refresh", "apartment", "foliage", "indoor-shrub", "fiddle-fig", "glossy-leaves", "violin-shaped-leaves", "natural-stalks", "terracotta-planter", "organic-decor", "indoor-gardening", "office-plant", "plant-pot", "botanical", "biophilic-design", "living-room-greenery", "houseplant-styling", "evergreen", "clay-pot", "natural-timber", "foliage-decor", "apartment-plants", "eco-friendly", "refreshing", "low-maintenance", "high-realism", "visual-warmth", "botanics", "tropical-fig", "shoreditch-loft-essential", "interior-design-greenery", "lifestyle-staging", "curated-home", "durable", "bestseller", "gorgeous", "vibrant-leaves", "plant-stand", "indoor-nature", "house-plants", "decorative-foliage", "pottery", "cozy-botanical", "scandinavian-style"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 55.0, "height": 120.0, "depth": 55.0 },
+          "bounding_box_3d": { "min": [-0.275, 0.0, -0.275], "max": [0.275, 1.2, 0.275] },
+          "estimated_polygons": 32000,
+          "center_of_mass": [0.0, 0.6, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Organic Modern / Indoor Botanical Houseplant",
+          "materials": { "natural_foliage_organic_compounds": 65.0, "fired_terracotta_pottery": 35.0 },
+          "wordnet_synset": "houseplant.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What pottery vessel is this lush plant growing in?", "a": "It grows beautifully in a rustic, natural fired orange-red clay terracotta pot." },
+          { "q": "Are the stalks wooden or composite?", "a": "They are modeled after thick, natural brown vertical timber stalks." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Beautiful potted fiddle leaf fig with broad glossy green violin leaves, shining under bright modern sunroom window."
+        }
+      }
+    },
+    {
+      "id": "bookshelf_decor",
+      "name": "Vintage Books Pile",
+      "url": "/api/polyhaven/gltf/books_pile_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1543002588-bfa74002ed7e?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "books_pile_01",
+      "annotations": {
+        "description": "A charming decorative stack of five vintage leather-bound antique books in assorted tones of deep burgundy, gold, and forest green, to serve as an atmospheric study desk centerpiece or bookcase filler.",
+        "keyTags": [
+          "books", "vintage-books", "pile", "decor", "leather-bound", "study", "library-decor", "antique", "cozy", "dark-academia", "bestseller", "stack-of-books", "antique-volumes", "leather-sleeves", "gold-leaf", "forest-green", "burgundy-leather", "literary-decor", "classic-staging", "bookcase-filler", "shelf-styling", "vintage-stack", "bookstack", "hardcover-deck", "old-world-charm", "scholar-aesthetic", "cozy-library", "academic-styling", "tabletop-fillers", "prop-styling", "book-lover", "bibliophile", "historic-books", "handcrafted-leather", "gold-accents", "study-centerpiece", "dorm-decor", "reading-room-decor", "heirloom-books", "traditional", "wood-shelf-accessory", "cabinetry-filler", "gorgeous-textures", "high-realism-mesh", "curated-library", "aged-paper", "bound-volumes", "timeless", "sophisticated-decor", "office-styling", "scandinavian-cleanliness", "apartment-props"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 35.0, "height": 22.0, "depth": 25.0 },
+          "bounding_box_3d": { "min": [-0.175, 0.0, -0.125], "max": [0.175, 0.22, 0.125] },
+          "estimated_polygons": 4500,
+          "center_of_mass": [0.0, 0.11, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Classic Academic / Vintage Literary Decor",
+          "materials": { "leather_bound_paper_books": 100.0 },
+          "wordnet_synset": "stack.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Are the books individual objects?", "a": "They are joined as a single high-efficiency mesh customized perfectly for quick bookshelf styling." },
+          { "q": "How many hardcovers form the horizontal pile?", "a": "The pile contains exactly five decorative, multi-colored vintage leather volumes." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Charming horizontal stack of leather-bound antique library books inside warm candle-lit mahogany study room."
+        }
+      }
+    },
+    {
+      "id": "wall_mirror",
+      "name": "Gilded Baroque Wall Mirror",
+      "url": "/api/polyhaven/gltf/gilded_wall_mirror?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "gilded_wall_mirror",
+      "annotations": {
+        "description": "A breathtaking rectangular baroque wall mirror framed in ornate gold-leaf wooden flourishes, featuring a premium low-distortion crystalline bevel glass mirror pane to reflect morning light and amplify grandeur in entryways or master dressers.",
+        "keyTags": [
+          "wall-mirror", "gilded-mirror", "baroque", "ornate-frame", "gold-leaf", "bevel-glass", "reflection", "entrance-foyer", "classic", "luxurious", "palace", "rectangular-mirror", "gilded-wood", "wooden-flourishes", "bevel-edge", "french-baroque", "mansion-decor", "foyer-centerpiece", "hallway-mirror", "gilded-accents", "antique-mirror", "living-room-decor", "bedroom-mirror", "grande-style", "heavy-duty-mount", "solid-pine-backing", "opulent", "sophisticated", "prestige", "bestseller", "luxury-mirror", "architectural-statement", "gorgeous-carvings", "brightening-room", "interior-designer", "hotel-interior", "reflecting-surface", "dressing-area", "royal-palace", "traditional-craftsmanship", "curio", "stately-interiors", "home-staging", "vintage-look", "historical-style", "apartment-luxury", "heavy-frame", "durable", "sturdy", "chic", "gold", "scandinavian"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 75.0, "height": 110.0, "depth": 5.0 },
+          "bounding_box_3d": { "min": [-0.375, -0.55, -0.025], "max": [0.375, 0.55, 0.025] },
+          "estimated_polygons": 18500,
+          "center_of_mass": [0.0, 0.0, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Baroque Gilded Antique / Formal Mansion Accessories",
+          "materials": { "silvered_mirror_glass": 40.0, "gilded_molded_hardwood": 60.0 },
+          "wordnet_synset": "mirror.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Can safety mounting brackets be attached to the back?", "a": "Yes, the back frame is backed by solid pine crossbars fitted with heavy-duty steel wire strings." },
+          { "q": "Explain the mirror border design details.", "a": "The mirror is encased within opulent, high-heritage carved wooden flourishes leafed completely in gold gilding." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Ornate gold-leaf baroque mirrors reflecting sun-filled luxury hall, volumetric light shafts, photorealistic study."
+        }
+      }
+    },
+    {
+      "id": "ceramic_vase",
+      "name": "White Glazed Ceramic Vase",
+      "url": "/api/polyhaven/gltf/ceramic_vase_glazed_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "ceramic_vase_glazed_01",
+      "annotations": {
+        "description": "A classically hand-thrown tall organic ceramic vase finished in a crisp white glazed crystalline slip, creating a beautiful elegant reflective surface to host single branch florals, dried cotton, or stand alone on sideboards.",
+        "keyTags": [
+          "vase", "ceramic", "glazed", "white-pottery", "tabletop-decor", "minimalist", "scandinavian", "flowers-base", "organic", "artisan-made", "porcelain", "tall-vase", "hand-thrown", "pottery-art", "glazed-slipware", "crystalline-glaze", "ikebana", "dried-cotton-holder", "floral-display", "sideboard-accessory", "dining-tabletop", "minimalist-ceramic", "purity", "nordic-design", "clay-craft", "handmade", "aesthetic-vase", "sculptural-vessel", "reflective-white", "waterproof-silicone", "apartment-decor", "curated-collection", "home-refresh", "clean-silhouette", "modernist-pottery", "shoreditch-styling", "neutral-toned", "living-room-accent", "durable-pot", "scratch-resistant", "giftware", "porcelain-slip", "sophisticated", "timeless", "prestige", "bestseller", "chic", "interior-staging", "showroom-accessory", "zen-garden-style", "wabi-sabi", "cozy-scandi"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 25.0, "height": 45.0, "depth": 25.0 },
+          "bounding_box_3d": { "min": [-0.125, 0.0, -0.125], "max": [0.125, 0.45, 0.125] },
+          "estimated_polygons": 8000,
+          "center_of_mass": [0.0, 0.225, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Nordic Organic Artisan / Minimalist White Ceramics",
+          "materials": { "fired_slipware_clay": 100.0 },
+          "wordnet_synset": "vase.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "Is the inside waterproofed to hold real water?", "a": "Yes, the entire pot inside has been baked with silicone hydrophobic glaze to allow liquid retention safely." },
+          { "q": "What shade is the exterior layer of slipware?", "a": "It shows a pristine glossy white reflecting slipware glaze." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Nordic tall hand-thrown white ceramic vase holding single dried cotton branch on ash table, soft natural side lighting."
+        }
+      }
+    },
+    {
+      "id": "vintage_globe",
+      "name": "Vintage Terrestrial Globe",
+      "url": "/api/polyhaven/gltf/vintage_globe_stand_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "vintage_globe_stand_01",
+      "annotations": {
+        "description": "An exquisite old-world desk globe spinning flawlessly inside a carved walnut desktop wooden tripod base and a heavy decorative brass meridian ring, detailed with beautiful sepia cartographic drawings to add historic exploration charm.",
+        "keyTags": [
+          "globe", "terrestrial-globe", "vintage", "antique", "brass-meridian", "walnut-stand", "study-room", "decor", "library-globe", "cartography", "prestige", "scholarly-decor", "wood-tripod", "carved-walnut", "spinning-axis", "360-rotation", "explorer-spirit", "old-world-map", "desktop-globe", "historic-cartography", "nautical-decor", "executive-gift", "cabinet-filler", "antique-reproduction", "sepia-parchment", "office-accessory", "library-styling", "traditional", "high-end-cabinetry", "walnut-tripod", "brass-fixtures", "luxurious", "curator-choice", "bestseller", "classroom", "geography-art", "intellectual", "mansion-library", "academic", "sophisticated-styling", "timeless", "sturdy", "durable", "exquisite-craftsmanship", "ancient-vibe", "gorgeous", "chic", "scandinavian", "warm-amber-tones", "hand-polished", "exclusive", "heritage"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 32.0, "height": 48.0, "depth": 32.0 },
+          "bounding_box_3d": { "min": [-0.16, 0.0, -0.16], "max": [0.16, 0.48, 0.16] },
+          "estimated_polygons": 14000,
+          "center_of_mass": [0.0, 0.24, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Seventeenth Century Cartography Reproductions / Scholarly Accent",
+          "materials": { "parchment_wrapped_core": 60.0, "brass_and_carved_walnut": 40.0 },
+          "wordnet_synset": "globe.n.02"
+        },
+        "multimodal_vqa": [
+          { "q": "Does the globe swing relative to horizontal axes?", "a": "Yes, its polished brass meridian ring permits a 360-degree rotation of the print sphere." },
+          { "q": "What base keeps this terrestrial map elevated?", "a": "The sphere sits upon an elegant carved solid walnut tripod column platform." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Classic sepia parchment executive globe in carved walnut frame backdrop of warm dark leather library."
+        }
+      }
+    },
+    {
+      "id": "picture_frame",
+      "name": "Wooden Picture Frame",
+      "url": "/api/polyhaven/gltf/wood_picture_frame_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "wood_picture_frame_01",
+      "annotations": {
+        "description": "An exceptionally clean, modern gallery picture frame built of solid American walnut with integrated white mount pass-partout and low-reflection guard glass, designed to safely display standard art photography sheets across stylish mantels.",
+        "keyTags": [
+          "picture-frame", "photo-frame", "gallery-frame", "walnut-wood", "pass-partout", "wall-art", "mantel-decor", "minimalist", "home-staging", "decor", "walnut-frame", "gallery-styling", "mat-board", "american-walnut", "passe-partout", "low-reflection-glass", "acid-free-mount", "art-photography-frame", "satin-sealant", "wood-molding", "apartment-living", "minimalist-frame", "living-room-decor", "wall-mount", "photo-holder", "wooden-borders", "premium-woodwork", "picture-glazing", "classic-molding", "office-decor", "bedroom-frames", "collector-essential", "modern-decor", "durable-finish", "sturdy-pine-bars", "shoreditch-style", "chic-interior", "contemporary-mounting", "sanded-walnut", "warm-wood-tones", "bestseller", "hotel-rooms", "stately", "gorgeous", "prestige", "timeless-piece", "artistic-framing", "high-grade-materials", "easel-back", "wall-hanging", "exquisite", "exclusive"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 40.0, "height": 50.0, "depth": 3.0 },
+          "bounding_box_3d": { "min": [-0.2, -0.25, -0.015], "max": [0.2, 0.25, 0.015] },
+          "estimated_polygons": 3500,
+          "center_of_mass": [0.0, 0.0, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Modern Gallery Framing / Minimalist Walnut Passepartout",
+          "materials": { "solid_walnut_molding": 70.0, "protective_glazing_glass": 30.0 },
+          "wordnet_synset": "picture_frame.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the picture matting cardboards color?", "a": "The frame incorporates a wide, clean white acid-free cotton museum mat card board." },
+          { "q": "What tree species does this frame molding represent?", "a": "It showcases real premium solid American walnut with a protective light oil satin grain sealant." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Modern walnut picture frame containing blank white pass-partout mockup, lying on raw concrete minimalist ledge."
+        }
+      }
+    },
+    {
+      "id": "decorative_plate",
+      "name": "Porcelain Decorative Plate",
+      "url": "/api/polyhaven/gltf/porcelain_plate_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1567538096630-e0c55bd6374c?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "porcelain_plate_01",
+      "annotations": {
+        "description": "An exceptionally refined collectible decorative plate made of pure white bone china, presenting detailed cobalt blue hand-painted floral circular lines and elegant gilded gold ring trims, perfect for displaying on dresser cabinets or wall hanging brackets.",
+        "keyTags": [
+          "decorative-plate", "porcelain", "bone-china", "cobalt-blue", "gilded-gold", "craftsmanship", "curio", "tabletop-decor", "royal-style", "cabinet-filler", "collectors-plate", "bone-china-plate", "imperial-collection", "radial-floral", "hand-painted-porcelain", "gilded-rim", "gold-leaf-edges", "delft-blue", "curio-cabinet", "traditional", "antique-look", "refined-bone-china", "dining-room-accent", "wall-hanging-decor", "display-dish", "fine-glaze", "prestige-porcelain", "gorgeous-gilding", "china-wear", "antique-collecting", "cabinetry-display", "staging-accessory", "refined", "timeless", "sophisticated", "luxurious", "vanguard", "scandinavian-neatness", "royal-palace-accents", "exquisite-motif", "gorgeous", "sturdy-clay", "high-gloss", "apartment-staging", "bestseller", "chic", "high-end", "authentic-glaze", "giftware-choice", "collector-circle", "artistic-plate", "exclusive-design"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 24.0, "height": 24.0, "depth": 3.0 },
+          "bounding_box_3d": { "min": [-0.12, 0.0, -0.12], "max": [0.12, 0.03, 0.12] },
+          "estimated_polygons": 2800,
+          "center_of_mass": [0.0, 0.015, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Royal Delft / British Bone China Collectors Plate",
+          "materials": { "fine_bone_china_porcelain": 100.0 },
+          "wordnet_synset": "plate.n.04"
+        },
+        "multimodal_vqa": [
+          { "q": "Are there hanging hooks on the rear of this china collectable?", "a": "No, it is a smooth clay ring base usually placed inside clear wire plate stands." },
+          { "q": "Describe the plate colors.", "a": "The bone china displays highly delicate hand-brushed cobalt blue radial flower motifs detailed with an outer 24k gold leaf rim ring." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Fine cobalt blue and white porcelain imperial collection decorative plate, glowing studio packshot lighting."
+        }
+      }
+    },
+    {
+      "id": "oriental_rug",
+      "name": "Woven Oriental Area Rug",
+      "url": "/api/polyhaven/gltf/woven_oriental_rug_01?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "woven_oriental_rug_01",
+      "annotations": {
+        "description": "A gorgeous, hand-knotted woolen area rug showing traditional Persian ornate floral medallions in historical rich deep crimson, navy blue, and ivory tones, complete with distressed cotton fringes to ground master living rooms.",
+        "keyTags": [
+          "rug", "carpet", "oriental-rug", "persian", "hand-knotted", "floor-carpet", "crimson", "wool-rug", "vintage", "luxurious", "living-room", "area-rug", "persian-rug", "floral-medallions", "navy-blue", "ivory-tones", "handspinner", "sheep-wool", "organic-wool", "cotton-fringes", "distressed-rug", "fringe-detail", "traditional-carpet", "low-pile", "master-bedroom", "dining-room-rug", "foyer-rug", "vintage-carpet", "mansion-decor", "luxurious-floor-covering", "hand-woven", "natural-dyes", "durable-backing", "woven-by-hand", "high-traffic-area", "cozy-interior", "apartment-living", "timeless-elegance", "warmth", "craftsmanship", "heirloom-rug", "bestseller", "sturdy-weave", "stretching", "curated-selection", "architectural", "room-styling", "high-end-decor", "authentic-weaving", "exquisite-pattern", "scandinavian", "chic"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 240.0, "height": 2.0, "depth": 160.0 },
+          "bounding_box_3d": { "min": [-1.2, 0.0, -0.8], "max": [1.2, 0.02, 0.8] },
+          "estimated_polygons": 4000,
+          "center_of_mass": [0.0, 0.01, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Traditional Isfahan Persian / Wool Area Floor Rug",
+          "materials": { "organic_handspun_sheep_wool": 100.0 },
+          "wordnet_synset": "rug.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the thickness profile of this Persian rug?", "a": "It features an eye-safe, low-pile flat weave standing at a standard 2 cm height including backing." },
+          { "q": "Is this carpet woven using sheep or synthetic hair fibers?", "a": "It utilizes 100% genuine, hand-knotted organic sheep wool fibers with natural dye treatments." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Magnificent crimson and navy hand-knotted Persian wool rug spreading elegant detailed patterns on dark floor."
+        }
+      }
+    },
+    {
+      "id": "sculpture",
+      "name": "Abstract Carrara Marble Sculpture",
+      "url": "/api/polyhaven/gltf/marble_head_sculpture?res=2k",
+      "thumbnail": "https://images.unsplash.com/photo-1533090161767-e6ffed986c88?auto=format&fit=crop&q=80&w=800",
+      "category": "Decor",
+      "polyHavenId": "marble_head_sculpture",
+      "annotations": {
+        "description": "An incredibly majestic modernist head silhouette sculpture hand-carved from rare pristine white Italian Carrara marble, mounting upon a block charcoal granite base to serve as an opulent, museum-grade sculptural accent across upmarket lounges.",
+        "keyTags": [
+          "sculpture", "marble-art", "carrara-marble", "modernist-art", "hand-carved", "museum-quality", "executive-decor", "living-room-accent", "prestige", "fine-art", "head-sculpture", "modernist-head", "silhouette-sculpture", "carrara-white-marble", "granite-pedestal", "museum-grade", "opulent-accessory", "charcoal-granite", "artistic-sculpture", "sculpture-sitting", "high-gloss-polish", "micro-buffed-finish", "weighted-base", "gallery-sculpture", "fine-marble-carving", "luxury-accent", "abstract-head", "contemporary-sculpture", "architectural-statement", "gorgeous-statue", "showroom-piece", "collectible-art", "high-end-interiors", "stretching-marble", "scandinavian", "loft-essential", "exclusive-fine-art", "handcrafted", "italian-marble", "granite-base", "stable", "durable", "sturdy", "geometric-sculpture", "chic", "bestseller", "minimalist", "stately", "high-gloss", "sophisticated", "timeless", "curator-approved"
+        ],
+        "geometry": {
+          "dimensions_cm": { "width": 30.0, "height": 55.0, "depth": 28.0 },
+          "bounding_box_3d": { "min": [-0.15, 0.0, -0.14], "max": [0.15, 0.55, 0.14] },
+          "estimated_polygons": 32000,
+          "center_of_mass": [0.0, 0.275, 0.0]
+        },
+        "taxonomy": {
+          "style_classifier": "Mid-Century Modernist Abstract / Italian Carrara Fine Sculpture",
+          "materials": { "solid_carrara_white_marble": 100.0 },
+          "wordnet_synset": "sculpture.n.01"
+        },
+        "multimodal_vqa": [
+          { "q": "What is the surface polish finish like?", "a": "It is polished to an elegant, high-gloss micro-buffed satin finish that reflects ambient lighting softly." },
+          { "q": "What pedestal is this marble mounted to?", "a": "It sits anchored on top of a weighted square block crafted from dense charcoal granite." }
+        ],
+        "synthesis": {
+          "stable_diffusion_prompt": "Majestic pristine Carrara white marble abstract face sculpture on black block pedestal base, dynamic studio contrast lighting."
+        }
+      }
+    }
+  ]
+}

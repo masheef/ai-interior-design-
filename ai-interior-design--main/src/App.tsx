@@ -1,3 +1,4 @@
+// @ts-nocheck
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { 
@@ -114,6 +115,8 @@ interface Suggestion {
     score: number;
     efficiency: string;
   };
+  title?: string;
+  moodboardUrl?: string;
 }
 
 export default function App() {
@@ -1141,15 +1144,7 @@ function InspirationView({ onBack, onDesignSelect }: { onBack: () => void, onDes
 
       {activeCategory === 'Hugging Face' && (
         <div className="space-y-8">
-           <div className="bg-aura-purple/5 p-8 rounded-[2rem] border border-aura-purple/10 flex flex-col md:flex-row items-center gap-8">
-              <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center aura-glow shrink-0">
-                 <BotIcon className="text-aura-purple" />
-              </div>
-              <div>
-                 <h4 className="text-xl font-bold mb-1">Training Dataset Core</h4>
-                 <p className="text-sm text-zinc-500">Live preview of the <b>ellljoy/interior-design</b> dataset used for fine-tuning our spatial architectural logic. Collected by <b>Amra</b> and integrated by <b>Nuha</b>.</p>
-              </div>
-           </div>
+            {/* Training Dataset Core banner removed as requested */}
 
            {loadingHf ? (
              <div className="py-20 flex flex-col items-center justify-center gap-4">

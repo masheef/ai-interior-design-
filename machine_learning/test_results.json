@@ -1,0 +1,2805 @@
+{
+  "metrics": {
+    "total_queries": 68,
+    "dataset_size": 53,
+    "embedding_model": "all-MiniLM-L6-v2",
+    "embedding_dimension": 384,
+    "precision@1": 0.6764705882352942,
+    "precision@3": 0.34803921568627444,
+    "precision@5": 0.25588235294117645,
+    "mean_reciprocal_rank": 0.7723039215686275,
+    "ndcg@5": 0.7738230904783933,
+    "avg_similarity": 0.45098993743167204,
+    "std_similarity": 0.09003773076429147
+  },
+  "test_results": [
+    {
+      "query": "Find me seating",
+      "relevant_ids": [
+        "modern_armchair",
+        "antique_chair",
+        "sofa",
+        "classic_chair",
+        "modern_sofa",
+        "curvy_sofa",
+        "mid_century_lounge_chair",
+        "ottoman",
+        "dining_chair",
+        "rocking_chair",
+        "bar_stool",
+        "bench",
+        "chinese_armchair",
+        "painted_sofa",
+        "wooden_stool",
+        "folding_stool"
+      ],
+      "results": [
+        [
+          "sofa",
+          "Sofa",
+          0.41856950521469116
+        ],
+        [
+          "ottoman",
+          "Ottoman",
+          0.41325467824935913
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.40310901403427124
+        ],
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.3830462098121643
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.3825092911720276
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "Find me tables",
+      "relevant_ids": [
+        "industrial_coffee_table",
+        "modern_coffee_table",
+        "round_coffee_table",
+        "wooden_dining_table",
+        "wooden_side_table",
+        "console_table",
+        "nightstand",
+        "classic_coffee_table",
+        "desk",
+        "rustic_nightstand",
+        "tall_side_table",
+        "small_round_table",
+        "chinese_console_table"
+      ],
+      "results": [
+        [
+          "chinese_console_table",
+          "Chinese Console Table",
+          0.3856186866760254
+        ],
+        [
+          "wooden_side_table",
+          "Wooden Side Table",
+          0.38054776191711426
+        ],
+        [
+          "tall_side_table",
+          "Tall Side Table",
+          0.3775773048400879
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.3728640079498291
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.36456233263015747
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "Find me lighting",
+      "relevant_ids": [
+        "chandelier",
+        "modern_ceiling_lamp",
+        "desk_lamp",
+        "floor_lamp",
+        "wall_sconce",
+        "bedside_lamp",
+        "table_lamp_modern"
+      ],
+      "results": [
+        [
+          "wall_sconce",
+          "Industrial Wall Sconce",
+          0.4378225803375244
+        ],
+        [
+          "desk_lamp",
+          "Desk Lamp",
+          0.41762059926986694
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.399774432182312
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.3878031373023987
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.3803492784500122
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 1.0,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "Find me storage",
+      "relevant_ids": [
+        "bookshelf",
+        "wardrobe",
+        "chest_of_drawers",
+        "sideboard",
+        "filing_cabinet",
+        "storage_cabinet",
+        "credenza",
+        "accent_cabinet"
+      ],
+      "results": [
+        [
+          "filing_cabinet",
+          "Steel Filing Cabinet",
+          0.2666277289390564
+        ],
+        [
+          "chest_of_drawers",
+          "Pine Chest of Drawers",
+          0.2556185722351074
+        ],
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.242326021194458
+        ],
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.2264491319656372
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.22216403484344482
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 0.8,
+        "mrr": 1.0,
+        "ndcg@5": 0.8687949224876582
+      }
+    },
+    {
+      "query": "Find me decor",
+      "relevant_ids": [
+        "potted_plant",
+        "bookshelf_decor",
+        "wall_mirror",
+        "ceramic_vase",
+        "vintage_globe",
+        "picture_frame",
+        "decorative_plate",
+        "oriental_rug",
+        "sculpture"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.40591561794281006
+        ],
+        [
+          "modern_coffee_table",
+          "Modern Coffee Table",
+          0.33772844076156616
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.33039724826812744
+        ],
+        [
+          "potted_plant",
+          "Potted Fiddle Leaf Fig",
+          0.32909059524536133
+        ],
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.32568359375
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.4,
+        "mrr": 0.25,
+        "ndcg@5": 0.27727342735504823
+      }
+    },
+    {
+      "query": "I want a Mid-Century Modern / Scandinavian piece",
+      "relevant_ids": [
+        "modern_armchair"
+      ],
+      "results": [
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.4149351716041565
+        ],
+        [
+          "modern_armchair",
+          "Modern Armchair",
+          0.3898271322250366
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.3732755780220032
+        ],
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.3613508343696594
+        ],
+        [
+          "modern_coffee_table",
+          "Modern Coffee Table",
+          0.35391664505004883
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Victorian Gothic Revival / Antique piece",
+      "relevant_ids": [
+        "antique_chair"
+      ],
+      "results": [
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.5400212407112122
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.515590488910675
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.5015091896057129
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4831686019897461
+        ],
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.38709163665771484
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Classic Victorian / Gothic Revival piece",
+      "relevant_ids": [
+        "sofa"
+      ],
+      "results": [
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.48339134454727173
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.47689205408096313
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4626823663711548
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.43763118982315063
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.35512280464172363
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      }
+    },
+    {
+      "query": "I want a Neo-Gothic / Cathedral Woodwork piece",
+      "relevant_ids": [
+        "classic_chair"
+      ],
+      "results": [
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.591776430606842
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4688541889190674
+        ],
+        [
+          "picture_frame",
+          "Wooden Picture Frame",
+          0.462732195854187
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.45132195949554443
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.4342242479324341
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Chesterfield / Classic Transition piece",
+      "relevant_ids": [
+        "modern_sofa"
+      ],
+      "results": [
+        [
+          "modern_sofa",
+          "Modern Sofa",
+          0.5117518901824951
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4767521023750305
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.45810258388519287
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.442688524723053
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.4234863519668579
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Rococo Revival / Victorian piece",
+      "relevant_ids": [
+        "curvy_sofa"
+      ],
+      "results": [
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.5183615684509277
+        ],
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.3813333511352539
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.35790157318115234
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.3527122139930725
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.34606558084487915
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Eames Era / Mid-Century Modern piece",
+      "relevant_ids": [
+        "mid_century_lounge_chair"
+      ],
+      "results": [
+        [
+          "mid_century_lounge_chair",
+          "Mid Century Lounge Chair",
+          0.3890444040298462
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.3570607900619507
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.33830761909484863
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.33245861530303955
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.32182371616363525
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Transitional Lounge piece",
+      "relevant_ids": [
+        "ottoman"
+      ],
+      "results": [
+        [
+          "ottoman",
+          "Ottoman",
+          0.5591374039649963
+        ],
+        [
+          "mid_century_lounge_chair",
+          "Mid Century Lounge Chair",
+          0.5386545062065125
+        ],
+        [
+          "round_coffee_table",
+          "Round Coffee Table",
+          0.4943399429321289
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4922829866409302
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.47015178203582764
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Contemporary Elegant Dining piece",
+      "relevant_ids": [
+        "dining_chair"
+      ],
+      "results": [
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.6640236377716064
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.592819333076477
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.5080886483192444
+        ],
+        [
+          "round_coffee_table",
+          "Round Coffee Table",
+          0.4934241771697998
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.48881006240844727
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a American Country Craft / Shaker Style piece",
+      "relevant_ids": [
+        "rocking_chair"
+      ],
+      "results": [
+        [
+          "rocking_chair",
+          "Rocking Chair",
+          0.5080097317695618
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.39935553073883057
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.3923295736312866
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.3678598403930664
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.3590073585510254
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Industrial Modern / Pub Classic piece",
+      "relevant_ids": [
+        "bar_stool"
+      ],
+      "results": [
+        [
+          "bar_stool",
+          "Bar Stool",
+          0.43908190727233887
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.43712836503982544
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.42447566986083984
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.4202711582183838
+        ],
+        [
+          "modern_sofa",
+          "Modern Sofa",
+          0.41662299633026123
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Garden Traditional / Country Craftsman piece",
+      "relevant_ids": [
+        "bench"
+      ],
+      "results": [
+        [
+          "bench",
+          "Bench",
+          0.4779995083808899
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.4409623146057129
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.4034954905509949
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.38077491521835327
+        ],
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.37358272075653076
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Classical Chinese / Ming Dynasty Era piece",
+      "relevant_ids": [
+        "chinese_armchair"
+      ],
+      "results": [
+        [
+          "chinese_console_table",
+          "Chinese Console Table",
+          0.4551422595977783
+        ],
+        [
+          "chinese_armchair",
+          "Chinese Armchair",
+          0.4438750147819519
+        ],
+        [
+          "oriental_rug",
+          "Woven Oriental Area Rug",
+          0.366629958152771
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.3397732377052307
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.2802084684371948
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Farmhouse Cottage / Shabby Chic piece",
+      "relevant_ids": [
+        "painted_sofa"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5584011673927307
+        ],
+        [
+          "painted_sofa",
+          "Painted Sofa",
+          0.49286651611328125
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.4364877939224243
+        ],
+        [
+          "bench",
+          "Bench",
+          0.4349671006202698
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.42927122116088867
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Organic Minimalist / Rustic Folk Art piece",
+      "relevant_ids": [
+        "wooden_stool"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.49701404571533203
+        ],
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.4773147702217102
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.46439021825790405
+        ],
+        [
+          "picture_frame",
+          "Wooden Picture Frame",
+          0.455660343170166
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.4455295205116272
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Scandinavian Utility / Mid-Century Portable piece",
+      "relevant_ids": [
+        "folding_stool"
+      ],
+      "results": [
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.47206223011016846
+        ],
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.4689643383026123
+        ],
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.45575404167175293
+        ],
+        [
+          "small_round_table",
+          "Small Round Table",
+          0.44791460037231445
+        ],
+        [
+          "folding_stool",
+          "Folding Stool",
+          0.4409298896789551
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "mrr": 0.2,
+        "ndcg@5": 0.38685280723454163
+      }
+    },
+    {
+      "query": "I want a Industrial Chic / Urban Reclaimed piece",
+      "relevant_ids": [
+        "industrial_coffee_table"
+      ],
+      "results": [
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.5007661581039429
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.4917163848876953
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.36777037382125854
+        ],
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.35895323753356934
+        ],
+        [
+          "modern_coffee_table",
+          "Modern Coffee Table",
+          0.34687769412994385
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Contemporary Organic / Minimalist Luxe piece",
+      "relevant_ids": [
+        "modern_coffee_table"
+      ],
+      "results": [
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.5297053456306458
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.456687867641449
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.44540226459503174
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.40426814556121826
+        ],
+        [
+          "bedside_lamp",
+          "Cozy Bedroom Table Lamp",
+          0.3904848098754883
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "I want a Glamourous Contemporary / Mid-Century Luxe piece",
+      "relevant_ids": [
+        "round_coffee_table"
+      ],
+      "results": [
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.4436933994293213
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.4274308681488037
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.41465842723846436
+        ],
+        [
+          "mid_century_lounge_chair",
+          "Mid Century Lounge Chair",
+          0.4087376594543457
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.39827805757522583
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "I want a Classic Traditional / Elegant Farmhouse piece",
+      "relevant_ids": [
+        "wooden_dining_table"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5482422709465027
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.5353769063949585
+        ],
+        [
+          "bench",
+          "Bench",
+          0.5208888053894043
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.47377580404281616
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4504600763320923
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Traditional American / Vintage Accent piece",
+      "relevant_ids": [
+        "wooden_side_table"
+      ],
+      "results": [
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.397447407245636
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.3892011046409607
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.3890860080718994
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.3686387538909912
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.35871070623397827
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "I want a Neoclassical Hallway Accent / Formal Antique piece",
+      "relevant_ids": [
+        "console_table"
+      ],
+      "results": [
+        [
+          "console_table",
+          "Console Table",
+          0.5390430688858032
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.5223448872566223
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.5134302377700806
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.5114100575447083
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4753955006599426
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Shaker Traditional / Bedroom Classic piece",
+      "relevant_ids": [
+        "nightstand"
+      ],
+      "results": [
+        [
+          "nightstand",
+          "Nightstand",
+          0.5772470831871033
+        ],
+        [
+          "rocking_chair",
+          "Rocking Chair",
+          0.5388643145561218
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5131904482841492
+        ],
+        [
+          "classic_coffee_table",
+          "Classic Coffee Table",
+          0.4515669345855713
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.4507778286933899
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Federal Traditional / Parlor Centerpiece piece",
+      "relevant_ids": [
+        "classic_coffee_table"
+      ],
+      "results": [
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.48023492097854614
+        ],
+        [
+          "round_coffee_table",
+          "Round Coffee Table",
+          0.46834588050842285
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.4585934281349182
+        ],
+        [
+          "tall_side_table",
+          "Tall Side Table",
+          0.43618786334991455
+        ],
+        [
+          "classic_coffee_table",
+          "Classic Coffee Table",
+          0.43289685249328613
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "mrr": 0.2,
+        "ndcg@5": 0.38685280723454163
+      }
+    },
+    {
+      "query": "I want a Industrial Modernist / Executive Studio piece",
+      "relevant_ids": [
+        "desk"
+      ],
+      "results": [
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.40788519382476807
+        ],
+        [
+          "desk",
+          "Desk",
+          0.4045094847679138
+        ],
+        [
+          "desk_lamp",
+          "Desk Lamp",
+          0.38585007190704346
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.3854042887687683
+        ],
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.3756243586540222
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Rustic Cottage / Distressed Folk Art piece",
+      "relevant_ids": [
+        "rustic_nightstand"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5836379528045654
+        ],
+        [
+          "painted_sofa",
+          "Painted Sofa",
+          0.492550253868103
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.4859875440597534
+        ],
+        [
+          "bench",
+          "Bench",
+          0.4690837860107422
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.4394068717956543
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Victorian Classic / Ornamental Accent Pedestal piece",
+      "relevant_ids": [
+        "tall_side_table"
+      ],
+      "results": [
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.5276984572410583
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.5186644792556763
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.5049221515655518
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.501695454120636
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.5011173486709595
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "I want a Scandinavian Nordic / Organic Minimalist piece",
+      "relevant_ids": [
+        "small_round_table"
+      ],
+      "results": [
+        [
+          "small_round_table",
+          "Small Round Table",
+          0.4692859649658203
+        ],
+        [
+          "ceramic_vase",
+          "White Glazed Ceramic Vase",
+          0.41838139295578003
+        ],
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.4096529483795166
+        ],
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.39402973651885986
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.3930608034133911
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Imperial Chinese / Qing Dynasty Era Console piece",
+      "relevant_ids": [
+        "chinese_console_table"
+      ],
+      "results": [
+        [
+          "chinese_console_table",
+          "Chinese Console Table",
+          0.6577945947647095
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.43719398975372314
+        ],
+        [
+          "chinese_armchair",
+          "Chinese Armchair",
+          0.39235812425613403
+        ],
+        [
+          "console_table",
+          "Console Table",
+          0.38596051931381226
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.3553961515426636
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Medieval Gothic Revival / Rustic Manor Chandelier piece",
+      "relevant_ids": [
+        "chandelier"
+      ],
+      "results": [
+        [
+          "chandelier",
+          "Chandelier",
+          0.5817721486091614
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.4994426369667053
+        ],
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.45166701078414917
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.4500211477279663
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.44394397735595703
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Scandinavian Minimalist / Contemporary Industrial piece",
+      "relevant_ids": [
+        "modern_ceiling_lamp"
+      ],
+      "results": [
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.4212249517440796
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.4158514738082886
+        ],
+        [
+          "small_round_table",
+          "Small Round Table",
+          0.39441317319869995
+        ],
+        [
+          "ceramic_vase",
+          "White Glazed Ceramic Vase",
+          0.38979005813598633
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.38700127601623535
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "I want a Architectural Drafting Lamp / Mid-Century Professional piece",
+      "relevant_ids": [
+        "desk_lamp"
+      ],
+      "results": [
+        [
+          "desk_lamp",
+          "Desk Lamp",
+          0.6449098587036133
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.5323569774627686
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.50275719165802
+        ],
+        [
+          "wall_sconce",
+          "Industrial Wall Sconce",
+          0.4784296751022339
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.47582364082336426
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a English Country Library / Solid Hardwood Storage piece",
+      "relevant_ids": [
+        "bookshelf"
+      ],
+      "results": [
+        [
+          "bookshelf",
+          "Classic Oak Bookshelf",
+          0.6405291557312012
+        ],
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.5217413902282715
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.4836435317993164
+        ],
+        [
+          "chest_of_drawers",
+          "Pine Chest of Drawers",
+          0.4801328182220459
+        ],
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.47077882289886475
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Federal American Bedroom / Aromatic Cedar Armoire piece",
+      "relevant_ids": [
+        "wardrobe"
+      ],
+      "results": [
+        [
+          "wardrobe",
+          "Grand Cedar Wardrobe",
+          0.5923095345497131
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.5364903211593628
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.48564982414245605
+        ],
+        [
+          "chest_of_drawers",
+          "Pine Chest of Drawers",
+          0.47001439332962036
+        ],
+        [
+          "wooden_side_table",
+          "Wooden Side Table",
+          0.45992136001586914
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Country Farmhouse Dresser / Bedroom Wooden Cabinet piece",
+      "relevant_ids": [
+        "chest_of_drawers"
+      ],
+      "results": [
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5790478587150574
+        ],
+        [
+          "chest_of_drawers",
+          "Pine Chest of Drawers",
+          0.5605456829071045
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.5405056476593018
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.5300854444503784
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.5020332336425781
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.6309297535714575
+      }
+    },
+    {
+      "query": "I want a Danish Modernist Sideboard / High-End Credenza piece",
+      "relevant_ids": [
+        "sideboard"
+      ],
+      "results": [
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.6765549778938293
+        ],
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.5757178664207458
+        ],
+        [
+          "tall_side_table",
+          "Tall Side Table",
+          0.49064314365386963
+        ],
+        [
+          "wooden_side_table",
+          "Wooden Side Table",
+          0.4247482419013977
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.41594672203063965
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Industrial Functional Office / Utility Archive piece",
+      "relevant_ids": [
+        "filing_cabinet"
+      ],
+      "results": [
+        [
+          "desk",
+          "Desk",
+          0.45119547843933105
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.43107175827026367
+        ],
+        [
+          "filing_cabinet",
+          "Steel Filing Cabinet",
+          0.4134010672569275
+        ],
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.3585059642791748
+        ],
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.3294203281402588
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.3333333333333333,
+        "ndcg@5": 0.5
+      }
+    },
+    {
+      "query": "I want a Mid-Century Showcase / Dining Room Vitrine piece",
+      "relevant_ids": [
+        "storage_cabinet"
+      ],
+      "results": [
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.5548003911972046
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.47982096672058105
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.43576085567474365
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.4306260347366333
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4289431571960449
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Mid-Century Scandinavian Executive / Teak Bureau piece",
+      "relevant_ids": [
+        "credenza"
+      ],
+      "results": [
+        [
+          "credenza",
+          "Solid Wood Credenza",
+          0.4117467999458313
+        ],
+        [
+          "sideboard",
+          "Teak Credenza Sideboard",
+          0.3466588258743286
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.33662301301956177
+        ],
+        [
+          "small_round_table",
+          "Small Round Table",
+          0.33318960666656494
+        ],
+        [
+          "desk",
+          "Desk",
+          0.26697736978530884
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Eco Chic Reclaimed / Rustic Bohemian Cabinets piece",
+      "relevant_ids": [
+        "accent_cabinet"
+      ],
+      "results": [
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.7169238924980164
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.4761171340942383
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.46378517150878906
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.43144112825393677
+        ],
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.4167788028717041
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Scandinavian Minimalist Floor Lighting / Modern Torchiere piece",
+      "relevant_ids": [
+        "floor_lamp"
+      ],
+      "results": [
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.6324425339698792
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.5611550807952881
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.5233312249183655
+        ],
+        [
+          "chandelier",
+          "Chandelier",
+          0.4418429136276245
+        ],
+        [
+          "picture_frame",
+          "Wooden Picture Frame",
+          0.4282571077346802
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Industrial Vintage Gooseneck / Loft Accent Sconce piece",
+      "relevant_ids": [
+        "wall_sconce"
+      ],
+      "results": [
+        [
+          "wall_sconce",
+          "Industrial Wall Sconce",
+          0.5207014679908752
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4362567663192749
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4019814729690552
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.3832054138183594
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.3754899501800537
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Traditional American Bedside / Cozy Ceramic Decor piece",
+      "relevant_ids": [
+        "bedside_lamp"
+      ],
+      "results": [
+        [
+          "bedside_lamp",
+          "Cozy Bedroom Table Lamp",
+          0.607406735420227
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.5532212853431702
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.5385845899581909
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.5019924640655518
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.4914478063583374
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Bauhaus Minimalist / Contemporary Brass Accent Accent piece",
+      "relevant_ids": [
+        "table_lamp_modern"
+      ],
+      "results": [
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.4317566156387329
+        ],
+        [
+          "accent_cabinet",
+          "Reclaimed Wood Accent Cabinet",
+          0.3273027539253235
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.3203608989715576
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.279962420463562
+        ],
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.2777807116508484
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Organic Modern / Indoor Botanical Houseplant piece",
+      "relevant_ids": [
+        "potted_plant"
+      ],
+      "results": [
+        [
+          "potted_plant",
+          "Potted Fiddle Leaf Fig",
+          0.5554119348526001
+        ],
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.3833737373352051
+        ],
+        [
+          "tall_side_table",
+          "Tall Side Table",
+          0.37233394384384155
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.37208640575408936
+        ],
+        [
+          "ceramic_vase",
+          "White Glazed Ceramic Vase",
+          0.367523193359375
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Classic Academic / Vintage Literary Decor piece",
+      "relevant_ids": [
+        "bookshelf_decor"
+      ],
+      "results": [
+        [
+          "bookshelf_decor",
+          "Vintage Books Pile",
+          0.5315135717391968
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.4956122636795044
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.44416314363479614
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.41837674379348755
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4167752265930176
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Baroque Gilded Antique / Formal Mansion Accessories piece",
+      "relevant_ids": [
+        "wall_mirror"
+      ],
+      "results": [
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.6879393458366394
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.5757377743721008
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.5447924137115479
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.5163647532463074
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.47778230905532837
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Nordic Organic Artisan / Minimalist White Ceramics piece",
+      "relevant_ids": [
+        "ceramic_vase"
+      ],
+      "results": [
+        [
+          "ceramic_vase",
+          "White Glazed Ceramic Vase",
+          0.6191025376319885
+        ],
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.3997606039047241
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.3866841197013855
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.38523757457733154
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.37043678760528564
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Seventeenth Century Cartography Reproductions / Scholarly Accent piece",
+      "relevant_ids": [
+        "vintage_globe"
+      ],
+      "results": [
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.3814869523048401
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.3313361406326294
+        ],
+        [
+          "bookshelf_decor",
+          "Vintage Books Pile",
+          0.32166945934295654
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.3163110017776489
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.30184614658355713
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Modern Gallery Framing / Minimalist Walnut Passepartout piece",
+      "relevant_ids": [
+        "picture_frame"
+      ],
+      "results": [
+        [
+          "picture_frame",
+          "Wooden Picture Frame",
+          0.8009614944458008
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.49623966217041016
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.48249387741088867
+        ],
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.47824573516845703
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.4664696455001831
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Royal Delft / British Bone China Collectors Plate piece",
+      "relevant_ids": [
+        "decorative_plate"
+      ],
+      "results": [
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.6818837523460388
+        ],
+        [
+          "chinese_console_table",
+          "Chinese Console Table",
+          0.45979928970336914
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.36886662244796753
+        ],
+        [
+          "chinese_armchair",
+          "Chinese Armchair",
+          0.3386732339859009
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.3262574076652527
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Traditional Isfahan Persian / Wool Area Floor Rug piece",
+      "relevant_ids": [
+        "oriental_rug"
+      ],
+      "results": [
+        [
+          "oriental_rug",
+          "Woven Oriental Area Rug",
+          0.8054938912391663
+        ],
+        [
+          "chinese_armchair",
+          "Chinese Armchair",
+          0.35286152362823486
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.34882378578186035
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.3484063148498535
+        ],
+        [
+          "ottoman",
+          "Ottoman",
+          0.3176001310348511
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "I want a Mid-Century Modernist Abstract / Italian Carrara Fine Sculpture piece",
+      "relevant_ids": [
+        "sculpture"
+      ],
+      "results": [
+        [
+          "sculpture",
+          "Abstract Carrara Marble Sculpture",
+          0.7125621438026428
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.42821794748306274
+        ],
+        [
+          "round_coffee_table",
+          "Round Coffee Table",
+          0.41573846340179443
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.4042806625366211
+        ],
+        [
+          "wall_mirror",
+          "Gilded Baroque Wall Mirror",
+          0.3978177309036255
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "wooden furniture with natural finish",
+      "relevant_ids": [
+        "modern_armchair",
+        "classic_chair",
+        "wooden_stool"
+      ],
+      "results": [
+        [
+          "wooden_stool",
+          "Wooden Stool",
+          0.5662870407104492
+        ],
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.5418619513511658
+        ],
+        [
+          "bench",
+          "Bench",
+          0.5385153293609619
+        ],
+        [
+          "wooden_dining_table",
+          "Wooden Dining Table",
+          0.5349292755126953
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.528182864189148
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.6508205185601091
+      }
+    },
+    {
+      "query": "leather seating comfortable",
+      "relevant_ids": [
+        "modern_armchair",
+        "dining_chair",
+        "ottoman"
+      ],
+      "results": [
+        [
+          "ottoman",
+          "Ottoman",
+          0.5691962838172913
+        ],
+        [
+          "modern_armchair",
+          "Modern Armchair",
+          0.5681960582733154
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.5264928340911865
+        ],
+        [
+          "modern_sofa",
+          "Modern Sofa",
+          0.5243966579437256
+        ],
+        [
+          "mid_century_lounge_chair",
+          "Mid Century Lounge Chair",
+          0.5067720413208008
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "metal and industrial style",
+      "relevant_ids": [
+        "industrial_coffee_table",
+        "desk",
+        "wall_sconce"
+      ],
+      "results": [
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.4780607223510742
+        ],
+        [
+          "desk",
+          "Desk",
+          0.4061325788497925
+        ],
+        [
+          "wall_sconce",
+          "Industrial Wall Sconce",
+          0.3608694076538086
+        ],
+        [
+          "filing_cabinet",
+          "Steel Filing Cabinet",
+          0.3492254614830017
+        ],
+        [
+          "decorative_plate",
+          "Porcelain Decorative Plate",
+          0.34828293323516846
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 1.0,
+        "precision@5": 0.6,
+        "mrr": 1.0,
+        "ndcg@5": 1.0
+      }
+    },
+    {
+      "query": "comfortable seating for relaxation",
+      "relevant_ids": [
+        "ottoman",
+        "mid_century_lounge_chair",
+        "modern_sofa"
+      ],
+      "results": [
+        [
+          "ottoman",
+          "Ottoman",
+          0.49404823780059814
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.4692157506942749
+        ],
+        [
+          "modern_armchair",
+          "Modern Armchair",
+          0.43662941455841064
+        ],
+        [
+          "sofa",
+          "Sofa",
+          0.4307820200920105
+        ],
+        [
+          "folding_stool",
+          "Folding Stool",
+          0.4188673496246338
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 1.0,
+        "ndcg@5": 0.46927872602275644
+      }
+    },
+    {
+      "query": "storage and organization cabinet",
+      "relevant_ids": [
+        "bookshelf",
+        "filing_cabinet",
+        "credenza"
+      ],
+      "results": [
+        [
+          "filing_cabinet",
+          "Steel Filing Cabinet",
+          0.5700310468673706
+        ],
+        [
+          "storage_cabinet",
+          "Retro Glass Storage Cabinet",
+          0.47673022747039795
+        ],
+        [
+          "bookshelf",
+          "Classic Oak Bookshelf",
+          0.47471320629119873
+        ],
+        [
+          "desk",
+          "Desk",
+          0.4608269929885864
+        ],
+        [
+          "chest_of_drawers",
+          "Pine Chest of Drawers",
+          0.45676344633102417
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.6666666666666666,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.7039180890341347
+      }
+    },
+    {
+      "query": "lighting for ambiance",
+      "relevant_ids": [
+        "floor_lamp",
+        "chandelier",
+        "wall_sconce"
+      ],
+      "results": [
+        [
+          "desk_lamp",
+          "Desk Lamp",
+          0.4637497663497925
+        ],
+        [
+          "bedside_lamp",
+          "Cozy Bedroom Table Lamp",
+          0.4239548444747925
+        ],
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.42040300369262695
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.4096463918685913
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.386768102645874
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.2,
+        "mrr": 0.2,
+        "ndcg@5": 0.18154179253735267
+      }
+    },
+    {
+      "query": "small table for bedroom",
+      "relevant_ids": [
+        "nightstand",
+        "rustic_nightstand",
+        "tall_side_table"
+      ],
+      "results": [
+        [
+          "wooden_side_table",
+          "Wooden Side Table",
+          0.5605427622795105
+        ],
+        [
+          "tall_side_table",
+          "Tall Side Table",
+          0.5337109565734863
+        ],
+        [
+          "small_round_table",
+          "Small Round Table",
+          0.5279964804649353
+        ],
+        [
+          "nightstand",
+          "Nightstand",
+          0.5081132054328918
+        ],
+        [
+          "rustic_nightstand",
+          "Rustic Nightstand",
+          0.4873236417770386
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.6,
+        "mrr": 0.5,
+        "ndcg@5": 0.6797310500037655
+      }
+    },
+    {
+      "query": "modern minimalist design",
+      "relevant_ids": [
+        "modern_armchair",
+        "modern_coffee_table",
+        "desk"
+      ],
+      "results": [
+        [
+          "table_lamp_modern",
+          "Minimalist Brass Desk Lamp",
+          0.451951265335083
+        ],
+        [
+          "floor_lamp",
+          "Modern Floor Lamp",
+          0.37589961290359497
+        ],
+        [
+          "modern_ceiling_lamp",
+          "Modern Ceiling Lamp",
+          0.35716497898101807
+        ],
+        [
+          "picture_frame",
+          "Wooden Picture Frame",
+          0.32786673307418823
+        ],
+        [
+          "ceramic_vase",
+          "White Glazed Ceramic Vase",
+          0.2753944993019104
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.0,
+        "precision@5": 0.0,
+        "mrr": 0.0,
+        "ndcg@5": 0.0
+      }
+    },
+    {
+      "query": "vintage antique aesthetic",
+      "relevant_ids": [
+        "antique_chair",
+        "grandfather_clock",
+        "vintage_globe"
+      ],
+      "results": [
+        [
+          "antique_chair",
+          "Antique Chair",
+          0.6290780305862427
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.5586718320846558
+        ],
+        [
+          "bookshelf_decor",
+          "Vintage Books Pile",
+          0.49914848804473877
+        ],
+        [
+          "vintage_globe",
+          "Vintage Terrestrial Globe",
+          0.4946296215057373
+        ],
+        [
+          "classic_chair",
+          "Classic Chair",
+          0.4897650480270386
+        ]
+      ],
+      "metrics": {
+        "precision@1": 1.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.4,
+        "mrr": 1.0,
+        "ndcg@5": 0.6713860725233041
+      }
+    },
+    {
+      "query": "luxury high-end furniture",
+      "relevant_ids": [
+        "curvy_sofa",
+        "crystal_chandelier",
+        "ornate_mirror"
+      ],
+      "results": [
+        [
+          "sofa",
+          "Sofa",
+          0.6354170441627502
+        ],
+        [
+          "curvy_sofa",
+          "Curvy Sofa",
+          0.6033817529678345
+        ],
+        [
+          "modern_sofa",
+          "Modern Sofa",
+          0.597019612789154
+        ],
+        [
+          "industrial_coffee_table",
+          "Industrial Coffee Table",
+          0.5682013630867004
+        ],
+        [
+          "dining_chair",
+          "Dining Chair",
+          0.5647239685058594
+        ]
+      ],
+      "metrics": {
+        "precision@1": 0.0,
+        "precision@3": 0.3333333333333333,
+        "precision@5": 0.2,
+        "mrr": 0.5,
+        "ndcg@5": 0.2960819109658652
+      }
+    }
+  ]
+}

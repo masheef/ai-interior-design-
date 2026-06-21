@@ -1,0 +1,4 @@
+node_modules/
+machine_learning/model_checkpoint/
+machine_learning/__pycache__/
+
